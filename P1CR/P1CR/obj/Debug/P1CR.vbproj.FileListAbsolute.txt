@@ -1,0 +1,12 @@
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\bin\Debug\P1CR.exe.config
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\bin\Debug\P1CR.exe
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\bin\Debug\P1CR.pdb
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\bin\Debug\P1CR.xml
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.vbprojResolveAssemblyReference.cache
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.MainForm.resources
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.Resources.resources
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.vbproj.GenerateResource.Cache
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.exe
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.xml
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.pdb
+F:\Maestria\COIS 5200\5200\P1CR\P1CR\obj\Debug\P1CR.Login.resources
