@@ -49,7 +49,7 @@
 
         If p = 3 Then
             Dim conn As New Oracle.ManagedDataAccess.Client.OracleConnection
-            conn.ConnectionString = "DATA SOURCE=LAPTOP-ND4K7KG8:1521/xe;PASSWORD=05c28r92;USER ID=ELCARLOS"
+            conn.ConnectionString = "DATA SOURCE=LAPTOP-ND4K7KG8:1521/xe;PASSWORD=asdf;USER ID=ELCARLOS"
             conn.Open()
 
 
