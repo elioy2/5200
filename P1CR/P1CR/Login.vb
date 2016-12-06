@@ -10,6 +10,16 @@
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         MainForm.Show()
+        Dim table As New DataTable
+        Dim sqlStr As String
+        sqlStr = "Select * FROM S_EMP"
+        Dim connectionString As String = oradb
+        Dim dataAdapter As New Oracle.ManagedDataAccess.Client.OracleDataAdapter(sqlStr, connectionString)
+        Dim commandBuilder As New Oracle.ManagedDataAccess.Client.OracleCommandBuilder(dataAdapter)
+        dataAdapter.Fill(table)
+        dataAdapter.Dispose()
+        'DataGridView1.DataSource = table
+        'LAPTOP-ND4K7KG8 conn string = 
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
