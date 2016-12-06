@@ -36,3 +36,4 @@ C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.Login.resources
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.MainForm.resources
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.Resources.resources
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.vbproj.GenerateResource.Cache
+C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.AboutBox1.resources

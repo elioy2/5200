@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("P1CR")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("Summit Power")>
+<Assembly: AssemblyDescription("Aplicación desarrollada por Eloy Gomez Reyes y Carlos A. Rosario De León.")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("P1CR")>
+<Assembly: AssemblyProduct("Summit Power")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")>
 <Assembly: AssemblyTrademark("")>
 
