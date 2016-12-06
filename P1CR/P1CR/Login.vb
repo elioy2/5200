@@ -2,6 +2,7 @@
 
     Dim p As Integer = 0
     Dim sqlStr2 As String
+
     ' TODO: Insert code to perform custom authentication using the provided username and password 
     ' (See http://go.microsoft.com/fwlink/?LinkId=35339).  
     ' The custom principal can then be attached to the current thread's principal as follows: 
@@ -15,8 +16,9 @@
         Dim sqlStr As String
         Dim userv As String
         Dim passv As String
+        Dim statusv As Integer
 
-        sqlStr = "Select  USERID, password from S_EMP where USERID='" + txtuser.Text.Trim + "'"
+        sqlStr = "Select  USERID, password, status from S_EMP where USERID='" + txtuser.Text + "'"
         Dim connectionString As String = oradb
         'Dim connectionString As New Oracle.ManagedDataAccess.Client.OracleConnection(oradb)
         'connectionString.Open()
@@ -29,38 +31,42 @@
         If table.Rows.Count > 0 And p <= 3 Then
             userv = table.Rows(0).ItemArray(0).ToString()
             passv = table.Rows(0).ItemArray(1).ToString()
+            statusv = table.Rows(0).ItemArray(2)
 
             'Validar los 3 intentos
+            If txtuser.Text = userv Then
+                If statusv = "1" Then
+                    p += 1
+                    If txtpass.Text = passv Then
+                        MessageBox.Show("¡Login exitoso!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MainForm.Show()
+                        Me.Close()
 
-
-            If txtpass.Text = passv And txtuser.Text = userv Then
-                MessageBox.Show("SE fue por el 2")
-                MainForm.Show()
+                    Else
+                        MessageBox.Show("Contraseña incorrecta")
+                    End If
+                Else
+                    MessageBox.Show("Esta cuenta se encuentra inactiva")
+                End If
             Else
-                p += 1
-                MessageBox.Show("Tas en la soquiiii")
+                MessageBox.Show("Este usuario no existe")
             End If
 
         Else
 
-            p += 1
-            MessageBox.Show("Tas en la soquiiii")
+            MessageBox.Show("Este usuario no existe =(")
         End If
 
         If p = 3 Then
-            Dim conn As New Oracle.ManagedDataAccess.Client.OracleConnection
-            conn.ConnectionString = "DATA SOURCE=LAPTOP-ND4K7KG8:1521/xe;PASSWORD=asdf;USER ID=ELCARLOS"
+            Dim conn As New Oracle.ManagedDataAccess.Client.OracleConnection(oradb)
             conn.Open()
-
-
-            Dim da As Oracle.ManagedDataAccess.Client.OracleDataAdapter = New Oracle.ManagedDataAccess.Client.OracleDataAdapter
             Dim cmd As New Oracle.ManagedDataAccess.Client.OracleCommand
-            cmd = New Oracle.ManagedDataAccess.Client.OracleCommand
+            cmd.Connection = conn
             cmd.CommandText = "UPDATE S_EMP SET STATUS = 0 WHERE USERID ='" + txtuser.Text + "'"
-            da.UpdateCommand = cmd
-            da.Dispose()
-            conn.Close()
-            MessageBox.Show("Bye")
+            cmd.CommandType = CommandType.Text
+            cmd.ExecuteNonQuery()
+            conn.Dispose()
+            MessageBox.Show("Ha sobrepasado los intentos permitidos, su cuenta ha sido desactivada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.Close()
         End If
         'DataGridView1.DataSource = table
