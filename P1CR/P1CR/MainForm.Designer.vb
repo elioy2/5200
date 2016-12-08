@@ -91,7 +91,7 @@ Partial Class MainForm
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.AboutToolStripMenuItem.Text = "About..."
         '
         'MainForm
