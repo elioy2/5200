@@ -148,6 +148,9 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOrdenes.resx">
       <DependentUpon>frmOrdenes.vb</DependentUpon>
     </EmbeddedResource>

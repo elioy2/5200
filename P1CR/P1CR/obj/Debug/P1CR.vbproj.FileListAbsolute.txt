@@ -26,7 +26,6 @@ C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\bin\Debug\P1CR.exe.config
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.exe
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.xml
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.pdb
-C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\bin\Debug\P1CR.exe
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\bin\Debug\P1CR.pdb
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\bin\Debug\P1CR.xml
@@ -38,3 +37,7 @@ C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.Resources.resour
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.vbproj.GenerateResource.Cache
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.AboutBox1.resources
 C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.frmClientes.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.AboutBox1.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmClientes.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmOrdenes.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmEmpleados.resources

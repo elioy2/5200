@@ -16,4 +16,15 @@
         frmOrdenes.Show()
         Me.Hide()
     End Sub
+
+    Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
+        Login.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub EmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem.Click
+        frmEmpleados.Show()
+        Me.Hide()
+    End Sub
 End Class
