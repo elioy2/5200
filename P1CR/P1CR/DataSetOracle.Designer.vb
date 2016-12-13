@@ -7618,18 +7618,18 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_CUSTOMER"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :O"& _ 
-                "riginal_NAME) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = :Origin"& _ 
-                "al_PHONE)) AND ((:IsNull_ADDRESS = 1 AND ""ADDRESS"" IS NULL) OR (""ADDRESS"" = :Ori"& _ 
-                "ginal_ADDRESS)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Origina"& _ 
-                "l_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR (""STATE"" = :Original_ST"& _ 
-                "ATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR (""COUNTRY"" = :Original"& _ 
-                "_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :"& _ 
-                "Original_ZIP_CODE)) AND ((:IsNull_CREDIT_RATING = 1 AND ""CREDIT_RATING"" IS NULL)"& _ 
-                " OR (""CREDIT_RATING"" = :Original_CREDIT_RATING)) AND ((:IsNull_SALES_REP_ID = 1 "& _ 
-                "AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original_SALES_REP_ID)) AND (("& _ 
-                ":IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION_ID"" = :Original_REGIO"& _ 
-                "N_ID)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Orig"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_CUSTOMER"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :O" &
+                "riginal_NAME) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = :Origin" &
+                "al_PHONE)) AND ((:IsNull_ADDRESS = 1 AND ""ADDRESS"" IS NULL) OR (""ADDRESS"" = :Ori" &
+                "ginal_ADDRESS)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Origina" &
+                "l_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR (""STATE"" = :Original_ST" &
+                "ATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR (""COUNTRY"" = :Original" &
+                "_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :" &
+                "Original_ZIP_CODE)) AND ((:IsNull_CREDIT_RATING = 1 AND ""CREDIT_RATING"" IS NULL)" &
+                " OR (""CREDIT_RATING"" = :Original_CREDIT_RATING)) AND ((:IsNull_SALES_REP_ID = 1 " &
+                "AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original_SALES_REP_ID)) AND ((" &
+                ":IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION_ID"" = :Original_REGIO" &
+                "N_ID)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Orig" &
                 "inal_COMMENTS)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7833,9 +7833,9 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_CUSTOMER"" (""ID"", ""NAME"", ""PHONE"", ""ADDRESS"", ""CITY"", ""S"& _ 
-                "TATE"", ""COUNTRY"", ""ZIP_CODE"", ""CREDIT_RATING"", ""SALES_REP_ID"", ""REGION_ID"", ""COM"& _ 
-                "MENTS"") VALUES (:ID, :NAME, :PHONE, :ADDRESS, :CITY, :STATE, :COUNTRY, :ZIP_CODE"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_CUSTOMER"" (""ID"", ""NAME"", ""PHONE"", ""ADDRESS"", ""CITY"", ""S" &
+                "TATE"", ""COUNTRY"", ""ZIP_CODE"", ""CREDIT_RATING"", ""SALES_REP_ID"", ""REGION_ID"", ""COM" &
+                "MENTS"") VALUES (:ID, :NAME, :PHONE, :ADDRESS, :CITY, :STATE, :COUNTRY, :ZIP_CODE" &
                 ", :CREDIT_RATING, :SALES_REP_ID, :REGION_ID, :COMMENTS)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -7927,21 +7927,21 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_CUSTOMER"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""PHONE"" = :PHONE, "& _ 
-                """ADDRESS"" = :ADDRESS, ""CITY"" = :CITY, ""STATE"" = :STATE, ""COUNTRY"" = :COUNTRY, ""Z"& _ 
-                "IP_CODE"" = :ZIP_CODE, ""CREDIT_RATING"" = :CREDIT_RATING, ""SALES_REP_ID"" = :SALES_"& _ 
-                "REP_ID, ""REGION_ID"" = :REGION_ID, ""COMMENTS"" = :COMMENTS WHERE ((""ID"" = :Origina"& _ 
-                "l_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL)"& _ 
-                " OR (""PHONE"" = :Original_PHONE)) AND ((:IsNull_ADDRESS = 1 AND ""ADDRESS"" IS NULL"& _ 
-                ") OR (""ADDRESS"" = :Original_ADDRESS)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL)"& _ 
-                " OR (""CITY"" = :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR ("& _ 
-                """STATE"" = :Original_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR "& _ 
-                "(""COUNTRY"" = :Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NU"& _ 
-                "LL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_CREDIT_RATING = 1 AND ""C"& _ 
-                "REDIT_RATING"" IS NULL) OR (""CREDIT_RATING"" = :Original_CREDIT_RATING)) AND ((:Is"& _ 
-                "Null_SALES_REP_ID = 1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original"& _ 
-                "_SALES_REP_ID)) AND ((:IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION"& _ 
-                "_ID"" = :Original_REGION_ID)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) "& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_CUSTOMER"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""PHONE"" = :PHONE, " &
+                """ADDRESS"" = :ADDRESS, ""CITY"" = :CITY, ""STATE"" = :STATE, ""COUNTRY"" = :COUNTRY, ""Z" &
+                "IP_CODE"" = :ZIP_CODE, ""CREDIT_RATING"" = :CREDIT_RATING, ""SALES_REP_ID"" = :SALES_" &
+                "REP_ID, ""REGION_ID"" = :REGION_ID, ""COMMENTS"" = :COMMENTS WHERE ((""ID"" = :Origina" &
+                "l_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL)" &
+                " OR (""PHONE"" = :Original_PHONE)) AND ((:IsNull_ADDRESS = 1 AND ""ADDRESS"" IS NULL" &
+                ") OR (""ADDRESS"" = :Original_ADDRESS)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL)" &
+                " OR (""CITY"" = :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR (" &
+                """STATE"" = :Original_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR " &
+                "(""COUNTRY"" = :Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NU" &
+                "LL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_CREDIT_RATING = 1 AND ""C" &
+                "REDIT_RATING"" IS NULL) OR (""CREDIT_RATING"" = :Original_CREDIT_RATING)) AND ((:Is" &
+                "Null_SALES_REP_ID = 1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original" &
+                "_SALES_REP_ID)) AND ((:IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION" &
+                "_ID"" = :Original_REGION_ID)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) " &
                 "OR (""COMMENTS"" = :Original_COMMENTS)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -8245,13 +8245,13 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
-                " SALES_REP_ID, REGION_ID, COMMENTS FROM ELCARLOS.S_CUSTOMER"
+            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING," &
+                " SALES_REP_ID, REGION_ID, COMMENTS FROM S_CUSTOMER"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
-                " SALES_REP_ID, REGION_ID, COMMENTS FROM ELCARLOS.S_CUSTOMER WHERE UPPER(""NAME"") "& _ 
+            Me._commandCollection(1).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING," &
+                " SALES_REP_ID, REGION_ID, COMMENTS FROM S_CUSTOMER WHERE UPPER(""NAME"") " &
                 "LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -8845,8 +8845,8 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_DEPT"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Origi"& _ 
-                "nal_NAME) AND ((:IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION_ID"" ="& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_DEPT"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Origi" &
+                "nal_NAME) AND ((:IsNull_REGION_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION_ID"" =" &
                 " :Original_REGION_ID)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -8887,7 +8887,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_DEPT"" (""ID"", ""NAME"", ""REGION_ID"") VALUES (:ID, :NAME, :"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_DEPT"" (""ID"", ""NAME"", ""REGION_ID"") VALUES (:ID, :NAME, :" &
                 "REGION_ID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -8915,8 +8915,8 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_DEPT"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""REGION_ID"" = :REGION_"& _ 
-                "ID WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_REGI"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_DEPT"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""REGION_ID"" = :REGION_" &
+                "ID WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_REGI" &
                 "ON_ID = 1 AND ""REGION_ID"" IS NULL) OR (""REGION_ID"" = :Original_REGION_ID)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -8993,7 +8993,7 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", REGION_ID FROM ELCARLOS.S_DEPT"
+            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", REGION_ID FROM S_DEPT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -9309,18 +9309,18 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_EMP"" WHERE ((""ID"" = :Original_ID) AND (""LAST_NAME"" = :O"& _ 
-                "riginal_LAST_NAME) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""F"& _ 
-                "IRST_NAME"" = :Original_FIRST_NAME)) AND (""USERID"" = :Original_USERID) AND ((:IsN"& _ 
-                "ull_START_DATE = 1 AND ""START_DATE"" IS NULL) OR (""START_DATE"" = :Original_START_"& _ 
-                "DATE)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Orig"& _ 
-                "inal_COMMENTS)) AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL) OR (""MANA"& _ 
-                "GER_ID"" = :Original_MANAGER_ID)) AND ((:IsNull_TITLE = 1 AND ""TITLE"" IS NULL) OR"& _ 
-                " (""TITLE"" = :Original_TITLE)) AND ((:IsNull_DEPT_ID = 1 AND ""DEPT_ID"" IS NULL) O"& _ 
-                "R (""DEPT_ID"" = :Original_DEPT_ID)) AND ((:IsNull_SALARY = 1 AND ""SALARY"" IS NULL"& _ 
-                ") OR (""SALARY"" = :Original_SALARY)) AND ((:IsNull_COMMISSION_PCT = 1 AND ""COMMIS"& _ 
-                "SION_PCT"" IS NULL) OR (""COMMISSION_PCT"" = :Original_COMMISSION_PCT)) AND ((:IsNu"& _ 
-                "ll_PASSWORD = 1 AND ""PASSWORD"" IS NULL) OR (""PASSWORD"" = :Original_PASSWORD)) AN"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_EMP"" WHERE ((""ID"" = :Original_ID) AND (""LAST_NAME"" = :O" &
+                "riginal_LAST_NAME) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""F" &
+                "IRST_NAME"" = :Original_FIRST_NAME)) AND (""USERID"" = :Original_USERID) AND ((:IsN" &
+                "ull_START_DATE = 1 AND ""START_DATE"" IS NULL) OR (""START_DATE"" = :Original_START_" &
+                "DATE)) AND ((:IsNull_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Orig" &
+                "inal_COMMENTS)) AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL) OR (""MANA" &
+                "GER_ID"" = :Original_MANAGER_ID)) AND ((:IsNull_TITLE = 1 AND ""TITLE"" IS NULL) OR" &
+                " (""TITLE"" = :Original_TITLE)) AND ((:IsNull_DEPT_ID = 1 AND ""DEPT_ID"" IS NULL) O" &
+                "R (""DEPT_ID"" = :Original_DEPT_ID)) AND ((:IsNull_SALARY = 1 AND ""SALARY"" IS NULL" &
+                ") OR (""SALARY"" = :Original_SALARY)) AND ((:IsNull_COMMISSION_PCT = 1 AND ""COMMIS" &
+                "SION_PCT"" IS NULL) OR (""COMMISSION_PCT"" = :Original_COMMISSION_PCT)) AND ((:IsNu" &
+                "ll_PASSWORD = 1 AND ""PASSWORD"" IS NULL) OR (""PASSWORD"" = :Original_PASSWORD)) AN" &
                 "D (""STATUS"" = :Original_STATUS))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -9526,10 +9526,10 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_EMP"" (""ID"", ""LAST_NAME"", ""FIRST_NAME"", ""USERID"", ""START"& _ 
-                "_DATE"", ""COMMENTS"", ""MANAGER_ID"", ""TITLE"", ""DEPT_ID"", ""SALARY"", ""COMMISSION_PCT"""& _ 
-                ", ""PASSWORD"", ""STATUS"") VALUES (:ID, :LAST_NAME, :FIRST_NAME, :USERID, :START_DA"& _ 
-                "TE, :COMMENTS, :MANAGER_ID, :TITLE, :DEPT_ID, :SALARY, :COMMISSION_PCT, :PASSWOR"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_EMP"" (""ID"", ""LAST_NAME"", ""FIRST_NAME"", ""USERID"", ""START" &
+                "_DATE"", ""COMMENTS"", ""MANAGER_ID"", ""TITLE"", ""DEPT_ID"", ""SALARY"", ""COMMISSION_PCT""" &
+                ", ""PASSWORD"", ""STATUS"") VALUES (:ID, :LAST_NAME, :FIRST_NAME, :USERID, :START_DA" &
+                "TE, :COMMENTS, :MANAGER_ID, :TITLE, :DEPT_ID, :SALARY, :COMMISSION_PCT, :PASSWOR" &
                 "D, :STATUS)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -9632,22 +9632,22 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_EMP"" SET ""ID"" = :ID, ""LAST_NAME"" = :LAST_NAME, ""FIRST_NAME"" "& _ 
-                "= :FIRST_NAME, ""USERID"" = :USERID, ""START_DATE"" = :START_DATE, ""COMMENTS"" = :COM"& _ 
-                "MENTS, ""MANAGER_ID"" = :MANAGER_ID, ""TITLE"" = :TITLE, ""DEPT_ID"" = :DEPT_ID, ""SALA"& _ 
-                "RY"" = :SALARY, ""COMMISSION_PCT"" = :COMMISSION_PCT, ""PASSWORD"" = :PASSWORD, ""STAT"& _ 
-                "US"" = :STATUS WHERE ((""ID"" = :Original_ID) AND (""LAST_NAME"" = :Original_LAST_NAM"& _ 
-                "E) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Or"& _ 
-                "iginal_FIRST_NAME)) AND (""USERID"" = :Original_USERID) AND ((:IsNull_START_DATE ="& _ 
-                " 1 AND ""START_DATE"" IS NULL) OR (""START_DATE"" = :Original_START_DATE)) AND ((:Is"& _ 
-                "Null_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Original_COMMENTS)) "& _ 
-                "AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL) OR (""MANAGER_ID"" = :Origi"& _ 
-                "nal_MANAGER_ID)) AND ((:IsNull_TITLE = 1 AND ""TITLE"" IS NULL) OR (""TITLE"" = :Ori"& _ 
-                "ginal_TITLE)) AND ((:IsNull_DEPT_ID = 1 AND ""DEPT_ID"" IS NULL) OR (""DEPT_ID"" = :"& _ 
-                "Original_DEPT_ID)) AND ((:IsNull_SALARY = 1 AND ""SALARY"" IS NULL) OR (""SALARY"" ="& _ 
-                " :Original_SALARY)) AND ((:IsNull_COMMISSION_PCT = 1 AND ""COMMISSION_PCT"" IS NUL"& _ 
-                "L) OR (""COMMISSION_PCT"" = :Original_COMMISSION_PCT)) AND ((:IsNull_PASSWORD = 1 "& _ 
-                "AND ""PASSWORD"" IS NULL) OR (""PASSWORD"" = :Original_PASSWORD)) AND (""STATUS"" = :O"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_EMP"" SET ""ID"" = :ID, ""LAST_NAME"" = :LAST_NAME, ""FIRST_NAME"" " &
+                "= :FIRST_NAME, ""USERID"" = :USERID, ""START_DATE"" = :START_DATE, ""COMMENTS"" = :COM" &
+                "MENTS, ""MANAGER_ID"" = :MANAGER_ID, ""TITLE"" = :TITLE, ""DEPT_ID"" = :DEPT_ID, ""SALA" &
+                "RY"" = :SALARY, ""COMMISSION_PCT"" = :COMMISSION_PCT, ""PASSWORD"" = :PASSWORD, ""STAT" &
+                "US"" = :STATUS WHERE ((""ID"" = :Original_ID) AND (""LAST_NAME"" = :Original_LAST_NAM" &
+                "E) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Or" &
+                "iginal_FIRST_NAME)) AND (""USERID"" = :Original_USERID) AND ((:IsNull_START_DATE =" &
+                " 1 AND ""START_DATE"" IS NULL) OR (""START_DATE"" = :Original_START_DATE)) AND ((:Is" &
+                "Null_COMMENTS = 1 AND ""COMMENTS"" IS NULL) OR (""COMMENTS"" = :Original_COMMENTS)) " &
+                "AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL) OR (""MANAGER_ID"" = :Origi" &
+                "nal_MANAGER_ID)) AND ((:IsNull_TITLE = 1 AND ""TITLE"" IS NULL) OR (""TITLE"" = :Ori" &
+                "ginal_TITLE)) AND ((:IsNull_DEPT_ID = 1 AND ""DEPT_ID"" IS NULL) OR (""DEPT_ID"" = :" &
+                "Original_DEPT_ID)) AND ((:IsNull_SALARY = 1 AND ""SALARY"" IS NULL) OR (""SALARY"" =" &
+                " :Original_SALARY)) AND ((:IsNull_COMMISSION_PCT = 1 AND ""COMMISSION_PCT"" IS NUL" &
+                "L) OR (""COMMISSION_PCT"" = :Original_COMMISSION_PCT)) AND ((:IsNull_PASSWORD = 1 " &
+                "AND ""PASSWORD"" IS NULL) OR (""PASSWORD"" = :Original_PASSWORD)) AND (""STATUS"" = :O" &
                 "riginal_STATUS))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -9964,8 +9964,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, LAST_NAME, FIRST_NAME, USERID, START_DATE, COMMENTS, MANAGER_ID, TITLE"& _ 
-                ", DEPT_ID, SALARY, COMMISSION_PCT, PASSWORD, STATUS FROM ELCARLOS.S_EMP"
+            Me._commandCollection(0).CommandText = "SELECT ID, LAST_NAME, FIRST_NAME, USERID, START_DATE, COMMENTS, MANAGER_ID, TITLE" &
+                ", DEPT_ID, SALARY, COMMISSION_PCT, PASSWORD, STATUS FROM S_EMP"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -10540,10 +10540,10 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_IMAGE"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_FORMA"& _ 
-                "T = 1 AND ""FORMAT"" IS NULL) OR (""FORMAT"" = :Original_FORMAT)) AND ((:IsNull_USE_"& _ 
-                "FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_FILE"& _ 
-                "NAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :Orig"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_IMAGE"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_FORMA" &
+                "T = 1 AND ""FORMAT"" IS NULL) OR (""FORMAT"" = :Original_FORMAT)) AND ((:IsNull_USE_" &
+                "FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_FILE" &
+                "NAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :Orig" &
                 "inal_FILENAME)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -10611,7 +10611,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_IMAGE"" (""ID"", ""FORMAT"", ""USE_FILENAME"", ""FILENAME"", ""IM"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_IMAGE"" (""ID"", ""FORMAT"", ""USE_FILENAME"", ""FILENAME"", ""IM" &
                 "AGE"") VALUES (:ID, :FORMAT, :USE_FILENAME, :FILENAME, :IMAGE)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -10653,11 +10653,11 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_IMAGE"" SET ""ID"" = :ID, ""FORMAT"" = :FORMAT, ""USE_FILENAME"" = "& _ 
-                ":USE_FILENAME, ""FILENAME"" = :FILENAME, ""IMAGE"" = :IMAGE WHERE ((""ID"" = :Original"& _ 
-                "_ID) AND ((:IsNull_FORMAT = 1 AND ""FORMAT"" IS NULL) OR (""FORMAT"" = :Original_FOR"& _ 
-                "MAT)) AND ((:IsNull_USE_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENA"& _ 
-                "ME"" = :Original_USE_FILENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_IMAGE"" SET ""ID"" = :ID, ""FORMAT"" = :FORMAT, ""USE_FILENAME"" = " &
+                ":USE_FILENAME, ""FILENAME"" = :FILENAME, ""IMAGE"" = :IMAGE WHERE ((""ID"" = :Original" &
+                "_ID) AND ((:IsNull_FORMAT = 1 AND ""FORMAT"" IS NULL) OR (""FORMAT"" = :Original_FOR" &
+                "MAT)) AND ((:IsNull_USE_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENA" &
+                "ME"" = :Original_USE_FILENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL" &
                 ") OR (""FILENAME"" = :Original_FILENAME)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -10775,7 +10775,7 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, FORMAT, USE_FILENAME, FILENAME, IMAGE FROM ELCARLOS.S_IMAGE"
+            Me._commandCollection(0).CommandText = "SELECT ID, FORMAT, USE_FILENAME, FILENAME, IMAGE FROM S_IMAGE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11123,14 +11123,14 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_INVENTORY"" WHERE ((""PRODUCT_ID"" = :Original_PRODUCT_ID)"& _ 
-                " AND (""WAREHOUSE_ID"" = :Original_WAREHOUSE_ID) AND ((:IsNull_AMOUNT_IN_STOCK = 1"& _ 
-                " AND ""AMOUNT_IN_STOCK"" IS NULL) OR (""AMOUNT_IN_STOCK"" = :Original_AMOUNT_IN_STOC"& _ 
-                "K)) AND ((:IsNull_REORDER_POINT = 1 AND ""REORDER_POINT"" IS NULL) OR (""REORDER_PO"& _ 
-                "INT"" = :Original_REORDER_POINT)) AND ((:IsNull_MAX_IN_STOCK = 1 AND ""MAX_IN_STOC"& _ 
-                "K"" IS NULL) OR (""MAX_IN_STOCK"" = :Original_MAX_IN_STOCK)) AND ((:p3 = 1 AND ""OUT"& _ 
-                "_OF_STOCK_EXPLANATION"" IS NULL) OR (""OUT_OF_STOCK_EXPLANATION"" = :p2)) AND ((:Is"& _ 
-                "Null_RESTOCK_DATE = 1 AND ""RESTOCK_DATE"" IS NULL) OR (""RESTOCK_DATE"" = :Original"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_INVENTORY"" WHERE ((""PRODUCT_ID"" = :Original_PRODUCT_ID)" &
+                " AND (""WAREHOUSE_ID"" = :Original_WAREHOUSE_ID) AND ((:IsNull_AMOUNT_IN_STOCK = 1" &
+                " AND ""AMOUNT_IN_STOCK"" IS NULL) OR (""AMOUNT_IN_STOCK"" = :Original_AMOUNT_IN_STOC" &
+                "K)) AND ((:IsNull_REORDER_POINT = 1 AND ""REORDER_POINT"" IS NULL) OR (""REORDER_PO" &
+                "INT"" = :Original_REORDER_POINT)) AND ((:IsNull_MAX_IN_STOCK = 1 AND ""MAX_IN_STOC" &
+                "K"" IS NULL) OR (""MAX_IN_STOCK"" = :Original_MAX_IN_STOCK)) AND ((:p3 = 1 AND ""OUT" &
+                "_OF_STOCK_EXPLANATION"" IS NULL) OR (""OUT_OF_STOCK_EXPLANATION"" = :p2)) AND ((:Is" &
+                "Null_RESTOCK_DATE = 1 AND ""RESTOCK_DATE"" IS NULL) OR (""RESTOCK_DATE"" = :Original" &
                 "_RESTOCK_DATE)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -11247,9 +11247,9 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_INVENTORY"" (""PRODUCT_ID"", ""WAREHOUSE_ID"", ""AMOUNT_IN_ST"& _ 
-                "OCK"", ""REORDER_POINT"", ""MAX_IN_STOCK"", ""OUT_OF_STOCK_EXPLANATION"", ""RESTOCK_DATE"& _ 
-                """) VALUES (:PRODUCT_ID, :WAREHOUSE_ID, :AMOUNT_IN_STOCK, :REORDER_POINT, :MAX_IN"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_INVENTORY"" (""PRODUCT_ID"", ""WAREHOUSE_ID"", ""AMOUNT_IN_ST" &
+                "OCK"", ""REORDER_POINT"", ""MAX_IN_STOCK"", ""OUT_OF_STOCK_EXPLANATION"", ""RESTOCK_DATE" &
+                """) VALUES (:PRODUCT_ID, :WAREHOUSE_ID, :AMOUNT_IN_STOCK, :REORDER_POINT, :MAX_IN" &
                 "_STOCK, :p1, :RESTOCK_DATE)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -11309,17 +11309,17 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_INVENTORY"" SET ""PRODUCT_ID"" = :PRODUCT_ID, ""WAREHOUSE_ID"" = "& _ 
-                ":WAREHOUSE_ID, ""AMOUNT_IN_STOCK"" = :AMOUNT_IN_STOCK, ""REORDER_POINT"" = :REORDER_"& _ 
-                "POINT, ""MAX_IN_STOCK"" = :MAX_IN_STOCK, ""OUT_OF_STOCK_EXPLANATION"" = :p1, ""RESTOC"& _ 
-                "K_DATE"" = :RESTOCK_DATE WHERE ((""PRODUCT_ID"" = :Original_PRODUCT_ID) AND (""WAREH"& _ 
-                "OUSE_ID"" = :Original_WAREHOUSE_ID) AND ((:IsNull_AMOUNT_IN_STOCK = 1 AND ""AMOUNT"& _ 
-                "_IN_STOCK"" IS NULL) OR (""AMOUNT_IN_STOCK"" = :Original_AMOUNT_IN_STOCK)) AND ((:I"& _ 
-                "sNull_REORDER_POINT = 1 AND ""REORDER_POINT"" IS NULL) OR (""REORDER_POINT"" = :Orig"& _ 
-                "inal_REORDER_POINT)) AND ((:IsNull_MAX_IN_STOCK = 1 AND ""MAX_IN_STOCK"" IS NULL) "& _ 
-                "OR (""MAX_IN_STOCK"" = :Original_MAX_IN_STOCK)) AND ((:p3 = 1 AND ""OUT_OF_STOCK_EX"& _ 
-                "PLANATION"" IS NULL) OR (""OUT_OF_STOCK_EXPLANATION"" = :p2)) AND ((:IsNull_RESTOCK"& _ 
-                "_DATE = 1 AND ""RESTOCK_DATE"" IS NULL) OR (""RESTOCK_DATE"" = :Original_RESTOCK_DAT"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_INVENTORY"" SET ""PRODUCT_ID"" = :PRODUCT_ID, ""WAREHOUSE_ID"" = " &
+                ":WAREHOUSE_ID, ""AMOUNT_IN_STOCK"" = :AMOUNT_IN_STOCK, ""REORDER_POINT"" = :REORDER_" &
+                "POINT, ""MAX_IN_STOCK"" = :MAX_IN_STOCK, ""OUT_OF_STOCK_EXPLANATION"" = :p1, ""RESTOC" &
+                "K_DATE"" = :RESTOCK_DATE WHERE ((""PRODUCT_ID"" = :Original_PRODUCT_ID) AND (""WAREH" &
+                "OUSE_ID"" = :Original_WAREHOUSE_ID) AND ((:IsNull_AMOUNT_IN_STOCK = 1 AND ""AMOUNT" &
+                "_IN_STOCK"" IS NULL) OR (""AMOUNT_IN_STOCK"" = :Original_AMOUNT_IN_STOCK)) AND ((:I" &
+                "sNull_REORDER_POINT = 1 AND ""REORDER_POINT"" IS NULL) OR (""REORDER_POINT"" = :Orig" &
+                "inal_REORDER_POINT)) AND ((:IsNull_MAX_IN_STOCK = 1 AND ""MAX_IN_STOCK"" IS NULL) " &
+                "OR (""MAX_IN_STOCK"" = :Original_MAX_IN_STOCK)) AND ((:p3 = 1 AND ""OUT_OF_STOCK_EX" &
+                "PLANATION"" IS NULL) OR (""OUT_OF_STOCK_EXPLANATION"" = :p2)) AND ((:IsNull_RESTOCK" &
+                "_DATE = 1 AND ""RESTOCK_DATE"" IS NULL) OR (""RESTOCK_DATE"" = :Original_RESTOCK_DAT" &
                 "E)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -11504,8 +11504,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PRODUCT_ID, WAREHOUSE_ID, AMOUNT_IN_STOCK, REORDER_POINT, MAX_IN_STOCK, OU"& _ 
-                "T_OF_STOCK_EXPLANATION, RESTOCK_DATE FROM ELCARLOS.S_INVENTORY"
+            Me._commandCollection(0).CommandText = "SELECT PRODUCT_ID, WAREHOUSE_ID, AMOUNT_IN_STOCK, REORDER_POINT, MAX_IN_STOCK, OU" &
+                "T_OF_STOCK_EXPLANATION, RESTOCK_DATE FROM S_INVENTORY"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -11894,11 +11894,11 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_ITEM"" WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""ITEM_I"& _ 
-                "D"" = :Original_ITEM_ID) AND (""PRODUCT_ID"" = :Original_PRODUCT_ID) AND ((:IsNull_"& _ 
-                "PRICE = 1 AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUA"& _ 
-                "NTITY = 1 AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)) AND ((:I"& _ 
-                "sNull_QUANTITY_SHIPPED = 1 AND ""QUANTITY_SHIPPED"" IS NULL) OR (""QUANTITY_SHIPPED"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_ITEM"" WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""ITEM_I" &
+                "D"" = :Original_ITEM_ID) AND (""PRODUCT_ID"" = :Original_PRODUCT_ID) AND ((:IsNull_" &
+                "PRICE = 1 AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUA" &
+                "NTITY = 1 AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)) AND ((:I" &
+                "sNull_QUANTITY_SHIPPED = 1 AND ""QUANTITY_SHIPPED"" IS NULL) OR (""QUANTITY_SHIPPED" &
                 """ = :Original_QUANTITY_SHIPPED)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -11987,8 +11987,8 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_ITEM"" (""ORD_ID"", ""ITEM_ID"", ""PRODUCT_ID"", ""PRICE"", ""QUA"& _ 
-                "NTITY"", ""QUANTITY_SHIPPED"") VALUES (:ORD_ID, :ITEM_ID, :PRODUCT_ID, :PRICE, :QUA"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_ITEM"" (""ORD_ID"", ""ITEM_ID"", ""PRODUCT_ID"", ""PRICE"", ""QUA" &
+                "NTITY"", ""QUANTITY_SHIPPED"") VALUES (:ORD_ID, :ITEM_ID, :PRODUCT_ID, :PRICE, :QUA" &
                 "NTITY, :QUANTITY_SHIPPED)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -12041,13 +12041,13 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_ITEM"" SET ""ORD_ID"" = :ORD_ID, ""ITEM_ID"" = :ITEM_ID, ""PRODUCT"& _ 
-                "_ID"" = :PRODUCT_ID, ""PRICE"" = :PRICE, ""QUANTITY"" = :QUANTITY, ""QUANTITY_SHIPPED"""& _ 
-                " = :QUANTITY_SHIPPED WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""ITEM_ID"" = :Orig"& _ 
-                "inal_ITEM_ID) AND (""PRODUCT_ID"" = :Original_PRODUCT_ID) AND ((:IsNull_PRICE = 1 "& _ 
-                "AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUANTITY = 1 "& _ 
-                "AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)) AND ((:IsNull_QUAN"& _ 
-                "TITY_SHIPPED = 1 AND ""QUANTITY_SHIPPED"" IS NULL) OR (""QUANTITY_SHIPPED"" = :Origi"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_ITEM"" SET ""ORD_ID"" = :ORD_ID, ""ITEM_ID"" = :ITEM_ID, ""PRODUCT" &
+                "_ID"" = :PRODUCT_ID, ""PRICE"" = :PRICE, ""QUANTITY"" = :QUANTITY, ""QUANTITY_SHIPPED""" &
+                " = :QUANTITY_SHIPPED WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""ITEM_ID"" = :Orig" &
+                "inal_ITEM_ID) AND (""PRODUCT_ID"" = :Original_PRODUCT_ID) AND ((:IsNull_PRICE = 1 " &
+                "AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUANTITY = 1 " &
+                "AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)) AND ((:IsNull_QUAN" &
+                "TITY_SHIPPED = 1 AND ""QUANTITY_SHIPPED"" IS NULL) OR (""QUANTITY_SHIPPED"" = :Origi" &
                 "nal_QUANTITY_SHIPPED)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -12197,8 +12197,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ORD_ID, ITEM_ID, PRODUCT_ID, PRICE, QUANTITY, QUANTITY_SHIPPED FROM ELCARL"& _ 
-                "OS.S_ITEM"
+            Me._commandCollection(0).CommandText = "SELECT ORD_ID, ITEM_ID, PRODUCT_ID, PRICE, QUANTITY, QUANTITY_SHIPPED FROM " &
+                "S_ITEM"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12541,10 +12541,10 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_LONGTEXT"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_US"& _ 
-                "E_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_FI"& _ 
-                "LENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :Or"& _ 
-                "iginal_FILENAME)) AND ((:IsNull_TEXT = 1 AND ""TEXT"" IS NULL) OR (""TEXT"" = :Origi"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_LONGTEXT"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_US" &
+                "E_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_FI" &
+                "LENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :Or" &
+                "iginal_FILENAME)) AND ((:IsNull_TEXT = 1 AND ""TEXT"" IS NULL) OR (""TEXT"" = :Origi" &
                 "nal_TEXT)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -12612,7 +12612,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_LONGTEXT"" (""ID"", ""USE_FILENAME"", ""FILENAME"", ""TEXT"") VA"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_LONGTEXT"" (""ID"", ""USE_FILENAME"", ""FILENAME"", ""TEXT"") VA" &
                 "LUES (:ID, :USE_FILENAME, :FILENAME, :TEXT)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -12646,11 +12646,11 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_LONGTEXT"" SET ""ID"" = :ID, ""USE_FILENAME"" = :USE_FILENAME, ""F"& _ 
-                "ILENAME"" = :FILENAME, ""TEXT"" = :TEXT WHERE ((""ID"" = :Original_ID) AND ((:IsNull_"& _ 
-                "USE_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_"& _ 
-                "FILENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :"& _ 
-                "Original_FILENAME)) AND ((:IsNull_TEXT = 1 AND ""TEXT"" IS NULL) OR (""TEXT"" = :Ori"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_LONGTEXT"" SET ""ID"" = :ID, ""USE_FILENAME"" = :USE_FILENAME, ""F" &
+                "ILENAME"" = :FILENAME, ""TEXT"" = :TEXT WHERE ((""ID"" = :Original_ID) AND ((:IsNull_" &
+                "USE_FILENAME = 1 AND ""USE_FILENAME"" IS NULL) OR (""USE_FILENAME"" = :Original_USE_" &
+                "FILENAME)) AND ((:IsNull_FILENAME = 1 AND ""FILENAME"" IS NULL) OR (""FILENAME"" = :" &
+                "Original_FILENAME)) AND ((:IsNull_TEXT = 1 AND ""TEXT"" IS NULL) OR (""TEXT"" = :Ori" &
                 "ginal_TEXT)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -12760,7 +12760,7 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, USE_FILENAME, FILENAME, TEXT FROM ELCARLOS.S_LONGTEXT"
+            Me._commandCollection(0).CommandText = "SELECT ID, USE_FILENAME, FILENAME, TEXT FROM S_LONGTEXT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -13099,14 +13099,14 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_ORD"" WHERE ((""ID"" = :Original_ID) AND (""CUSTOMER_ID"" = "& _ 
-                ":Original_CUSTOMER_ID) AND ((:IsNull_DATE_ORDERED = 1 AND ""DATE_ORDERED"" IS NULL"& _ 
-                ") OR (""DATE_ORDERED"" = :Original_DATE_ORDERED)) AND ((:IsNull_DATE_SHIPPED = 1 A"& _ 
-                "ND ""DATE_SHIPPED"" IS NULL) OR (""DATE_SHIPPED"" = :Original_DATE_SHIPPED)) AND ((:"& _ 
-                "IsNull_SALES_REP_ID = 1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Origin"& _ 
-                "al_SALES_REP_ID)) AND ((:IsNull_TOTAL = 1 AND ""TOTAL"" IS NULL) OR (""TOTAL"" = :Or"& _ 
-                "iginal_TOTAL)) AND ((:IsNull_PAYMENT_TYPE = 1 AND ""PAYMENT_TYPE"" IS NULL) OR (""P"& _ 
-                "AYMENT_TYPE"" = :Original_PAYMENT_TYPE)) AND ((:IsNull_ORDER_FILLED = 1 AND ""ORDE"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_ORD"" WHERE ((""ID"" = :Original_ID) AND (""CUSTOMER_ID"" = " &
+                ":Original_CUSTOMER_ID) AND ((:IsNull_DATE_ORDERED = 1 AND ""DATE_ORDERED"" IS NULL" &
+                ") OR (""DATE_ORDERED"" = :Original_DATE_ORDERED)) AND ((:IsNull_DATE_SHIPPED = 1 A" &
+                "ND ""DATE_SHIPPED"" IS NULL) OR (""DATE_SHIPPED"" = :Original_DATE_SHIPPED)) AND ((:" &
+                "IsNull_SALES_REP_ID = 1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Origin" &
+                "al_SALES_REP_ID)) AND ((:IsNull_TOTAL = 1 AND ""TOTAL"" IS NULL) OR (""TOTAL"" = :Or" &
+                "iginal_TOTAL)) AND ((:IsNull_PAYMENT_TYPE = 1 AND ""PAYMENT_TYPE"" IS NULL) OR (""P" &
+                "AYMENT_TYPE"" = :Original_PAYMENT_TYPE)) AND ((:IsNull_ORDER_FILLED = 1 AND ""ORDE" &
                 "R_FILLED"" IS NULL) OR (""ORDER_FILLED"" = :Original_ORDER_FILLED)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -13241,9 +13241,9 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_ORD"" (""ID"", ""CUSTOMER_ID"", ""DATE_ORDERED"", ""DATE_SHIPPE"& _ 
-                "D"", ""SALES_REP_ID"", ""TOTAL"", ""PAYMENT_TYPE"", ""ORDER_FILLED"") VALUES (:ID, :CUSTO"& _ 
-                "MER_ID, :DATE_ORDERED, :DATE_SHIPPED, :SALES_REP_ID, :TOTAL, :PAYMENT_TYPE, :ORD"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_ORD"" (""ID"", ""CUSTOMER_ID"", ""DATE_ORDERED"", ""DATE_SHIPPE" &
+                "D"", ""SALES_REP_ID"", ""TOTAL"", ""PAYMENT_TYPE"", ""ORDER_FILLED"") VALUES (:ID, :CUSTO" &
+                "MER_ID, :DATE_ORDERED, :DATE_SHIPPED, :SALES_REP_ID, :TOTAL, :PAYMENT_TYPE, :ORD" &
                 "ER_FILLED)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -13310,17 +13310,17 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_ORD"" SET ""ID"" = :ID, ""CUSTOMER_ID"" = :CUSTOMER_ID, ""DATE_ORD"& _ 
-                "ERED"" = :DATE_ORDERED, ""DATE_SHIPPED"" = :DATE_SHIPPED, ""SALES_REP_ID"" = :SALES_R"& _ 
-                "EP_ID, ""TOTAL"" = :TOTAL, ""PAYMENT_TYPE"" = :PAYMENT_TYPE, ""ORDER_FILLED"" = :ORDER"& _ 
-                "_FILLED WHERE ((""ID"" = :Original_ID) AND (""CUSTOMER_ID"" = :Original_CUSTOMER_ID)"& _ 
-                " AND ((:IsNull_DATE_ORDERED = 1 AND ""DATE_ORDERED"" IS NULL) OR (""DATE_ORDERED"" ="& _ 
-                " :Original_DATE_ORDERED)) AND ((:IsNull_DATE_SHIPPED = 1 AND ""DATE_SHIPPED"" IS N"& _ 
-                "ULL) OR (""DATE_SHIPPED"" = :Original_DATE_SHIPPED)) AND ((:IsNull_SALES_REP_ID = "& _ 
-                "1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original_SALES_REP_ID)) AND "& _ 
-                "((:IsNull_TOTAL = 1 AND ""TOTAL"" IS NULL) OR (""TOTAL"" = :Original_TOTAL)) AND ((:"& _ 
-                "IsNull_PAYMENT_TYPE = 1 AND ""PAYMENT_TYPE"" IS NULL) OR (""PAYMENT_TYPE"" = :Origin"& _ 
-                "al_PAYMENT_TYPE)) AND ((:IsNull_ORDER_FILLED = 1 AND ""ORDER_FILLED"" IS NULL) OR "& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_ORD"" SET ""ID"" = :ID, ""CUSTOMER_ID"" = :CUSTOMER_ID, ""DATE_ORD" &
+                "ERED"" = :DATE_ORDERED, ""DATE_SHIPPED"" = :DATE_SHIPPED, ""SALES_REP_ID"" = :SALES_R" &
+                "EP_ID, ""TOTAL"" = :TOTAL, ""PAYMENT_TYPE"" = :PAYMENT_TYPE, ""ORDER_FILLED"" = :ORDER" &
+                "_FILLED WHERE ((""ID"" = :Original_ID) AND (""CUSTOMER_ID"" = :Original_CUSTOMER_ID)" &
+                " AND ((:IsNull_DATE_ORDERED = 1 AND ""DATE_ORDERED"" IS NULL) OR (""DATE_ORDERED"" =" &
+                " :Original_DATE_ORDERED)) AND ((:IsNull_DATE_SHIPPED = 1 AND ""DATE_SHIPPED"" IS N" &
+                "ULL) OR (""DATE_SHIPPED"" = :Original_DATE_SHIPPED)) AND ((:IsNull_SALES_REP_ID = " &
+                "1 AND ""SALES_REP_ID"" IS NULL) OR (""SALES_REP_ID"" = :Original_SALES_REP_ID)) AND " &
+                "((:IsNull_TOTAL = 1 AND ""TOTAL"" IS NULL) OR (""TOTAL"" = :Original_TOTAL)) AND ((:" &
+                "IsNull_PAYMENT_TYPE = 1 AND ""PAYMENT_TYPE"" IS NULL) OR (""PAYMENT_TYPE"" = :Origin" &
+                "al_PAYMENT_TYPE)) AND ((:IsNull_ORDER_FILLED = 1 AND ""ORDER_FILLED"" IS NULL) OR " &
                 "(""ORDER_FILLED"" = :Original_ORDER_FILLED)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -13530,8 +13530,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, CUSTOMER_ID, DATE_ORDERED, DATE_SHIPPED, SALES_REP_ID, TOTAL, PAYMENT_"& _ 
-                "TYPE, ORDER_FILLED FROM ELCARLOS.S_ORD"
+            Me._commandCollection(0).CommandText = "SELECT ID, CUSTOMER_ID, DATE_ORDERED, DATE_SHIPPED, SALES_REP_ID, TOTAL, PAYMENT_" &
+                "TYPE, ORDER_FILLED FROM S_ORD"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -13961,13 +13961,13 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_PRODUCT"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Or"& _ 
-                "iginal_NAME) AND ((:IsNull_SHORT_DESC = 1 AND ""SHORT_DESC"" IS NULL) OR (""SHORT_D"& _ 
-                "ESC"" = :Original_SHORT_DESC)) AND ((:IsNull_LONGTEXT_ID = 1 AND ""LONGTEXT_ID"" IS"& _ 
-                " NULL) OR (""LONGTEXT_ID"" = :Original_LONGTEXT_ID)) AND ((:IsNull_IMAGE_ID = 1 AN"& _ 
-                "D ""IMAGE_ID"" IS NULL) OR (""IMAGE_ID"" = :Original_IMAGE_ID)) AND ((:IsNull_SUGGES"& _ 
-                "TED_WHLSL_PRICE = 1 AND ""SUGGESTED_WHLSL_PRICE"" IS NULL) OR (""SUGGESTED_WHLSL_PR"& _ 
-                "ICE"" = :Original_SUGGESTED_WHLSL_PRICE)) AND ((:IsNull_WHLSL_UNITS = 1 AND ""WHLS"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_PRODUCT"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Or" &
+                "iginal_NAME) AND ((:IsNull_SHORT_DESC = 1 AND ""SHORT_DESC"" IS NULL) OR (""SHORT_D" &
+                "ESC"" = :Original_SHORT_DESC)) AND ((:IsNull_LONGTEXT_ID = 1 AND ""LONGTEXT_ID"" IS" &
+                " NULL) OR (""LONGTEXT_ID"" = :Original_LONGTEXT_ID)) AND ((:IsNull_IMAGE_ID = 1 AN" &
+                "D ""IMAGE_ID"" IS NULL) OR (""IMAGE_ID"" = :Original_IMAGE_ID)) AND ((:IsNull_SUGGES" &
+                "TED_WHLSL_PRICE = 1 AND ""SUGGESTED_WHLSL_PRICE"" IS NULL) OR (""SUGGESTED_WHLSL_PR" &
+                "ICE"" = :Original_SUGGESTED_WHLSL_PRICE)) AND ((:IsNull_WHLSL_UNITS = 1 AND ""WHLS" &
                 "L_UNITS"" IS NULL) OR (""WHLSL_UNITS"" = :Original_WHLSL_UNITS)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -14082,8 +14082,8 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_PRODUCT"" (""ID"", ""NAME"", ""SHORT_DESC"", ""LONGTEXT_ID"", ""I"& _ 
-                "MAGE_ID"", ""SUGGESTED_WHLSL_PRICE"", ""WHLSL_UNITS"") VALUES (:ID, :NAME, :SHORT_DES"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_PRODUCT"" (""ID"", ""NAME"", ""SHORT_DESC"", ""LONGTEXT_ID"", ""I" &
+                "MAGE_ID"", ""SUGGESTED_WHLSL_PRICE"", ""WHLSL_UNITS"") VALUES (:ID, :NAME, :SHORT_DES" &
                 "C, :LONGTEXT_ID, :IMAGE_ID, :SUGGESTED_WHLSL_PRICE, :WHLSL_UNITS)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -14141,16 +14141,16 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_PRODUCT"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""SHORT_DESC"" = :SHO"& _ 
-                "RT_DESC, ""LONGTEXT_ID"" = :LONGTEXT_ID, ""IMAGE_ID"" = :IMAGE_ID, ""SUGGESTED_WHLSL_"& _ 
-                "PRICE"" = :SUGGESTED_WHLSL_PRICE, ""WHLSL_UNITS"" = :WHLSL_UNITS WHERE ((""ID"" = :Or"& _ 
-                "iginal_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_SHORT_DESC = 1 AND ""SHORT"& _ 
-                "_DESC"" IS NULL) OR (""SHORT_DESC"" = :Original_SHORT_DESC)) AND ((:IsNull_LONGTEXT"& _ 
-                "_ID = 1 AND ""LONGTEXT_ID"" IS NULL) OR (""LONGTEXT_ID"" = :Original_LONGTEXT_ID)) A"& _ 
-                "ND ((:IsNull_IMAGE_ID = 1 AND ""IMAGE_ID"" IS NULL) OR (""IMAGE_ID"" = :Original_IMA"& _ 
-                "GE_ID)) AND ((:IsNull_SUGGESTED_WHLSL_PRICE = 1 AND ""SUGGESTED_WHLSL_PRICE"" IS N"& _ 
-                "ULL) OR (""SUGGESTED_WHLSL_PRICE"" = :Original_SUGGESTED_WHLSL_PRICE)) AND ((:IsNu"& _ 
-                "ll_WHLSL_UNITS = 1 AND ""WHLSL_UNITS"" IS NULL) OR (""WHLSL_UNITS"" = :Original_WHLS"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_PRODUCT"" SET ""ID"" = :ID, ""NAME"" = :NAME, ""SHORT_DESC"" = :SHO" &
+                "RT_DESC, ""LONGTEXT_ID"" = :LONGTEXT_ID, ""IMAGE_ID"" = :IMAGE_ID, ""SUGGESTED_WHLSL_" &
+                "PRICE"" = :SUGGESTED_WHLSL_PRICE, ""WHLSL_UNITS"" = :WHLSL_UNITS WHERE ((""ID"" = :Or" &
+                "iginal_ID) AND (""NAME"" = :Original_NAME) AND ((:IsNull_SHORT_DESC = 1 AND ""SHORT" &
+                "_DESC"" IS NULL) OR (""SHORT_DESC"" = :Original_SHORT_DESC)) AND ((:IsNull_LONGTEXT" &
+                "_ID = 1 AND ""LONGTEXT_ID"" IS NULL) OR (""LONGTEXT_ID"" = :Original_LONGTEXT_ID)) A" &
+                "ND ((:IsNull_IMAGE_ID = 1 AND ""IMAGE_ID"" IS NULL) OR (""IMAGE_ID"" = :Original_IMA" &
+                "GE_ID)) AND ((:IsNull_SUGGESTED_WHLSL_PRICE = 1 AND ""SUGGESTED_WHLSL_PRICE"" IS N" &
+                "ULL) OR (""SUGGESTED_WHLSL_PRICE"" = :Original_SUGGESTED_WHLSL_PRICE)) AND ((:IsNu" &
+                "ll_WHLSL_UNITS = 1 AND ""WHLSL_UNITS"" IS NULL) OR (""WHLSL_UNITS"" = :Original_WHLS" &
                 "L_UNITS)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -14331,8 +14331,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", SHORT_DESC, LONGTEXT_ID, IMAGE_ID, SUGGESTED_WHLSL_PRICE, WHLS"& _ 
-                "L_UNITS FROM ELCARLOS.S_PRODUCT"
+            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", SHORT_DESC, LONGTEXT_ID, IMAGE_ID, SUGGESTED_WHLSL_PRICE, WHLS" &
+                "L_UNITS FROM S_PRODUCT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -14733,7 +14733,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_REGION"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Ori"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_REGION"" WHERE ((""ID"" = :Original_ID) AND (""NAME"" = :Ori" &
                 "ginal_NAME))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -14755,7 +14755,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_REGION"" (""ID"", ""NAME"") VALUES (:ID, :NAME)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_REGION"" (""ID"", ""NAME"") VALUES (:ID, :NAME)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "ID"
@@ -14774,7 +14774,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_REGION"" SET ""ID"" = :ID, ""NAME"" = :NAME WHERE ((""ID"" = :Origi"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_REGION"" SET ""ID"" = :ID, ""NAME"" = :NAME WHERE ((""ID"" = :Origi" &
                 "nal_ID) AND (""NAME"" = :Original_NAME))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -14824,7 +14824,7 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"" FROM ELCARLOS.S_REGION"
+            Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"" FROM S_REGION"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -15104,7 +15104,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_TITLE"" WHERE ((""TITLE"" = :Original_TITLE))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_TITLE"" WHERE ((""TITLE"" = :Original_TITLE))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "Original_TITLE"
@@ -15116,7 +15116,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_TITLE"" (""TITLE"") VALUES (:TITLE)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_TITLE"" (""TITLE"") VALUES (:TITLE)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = "TITLE"
@@ -15127,7 +15127,7 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_TITLE"" SET ""TITLE"" = :TITLE WHERE ((""TITLE"" = :Original_TITL"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_TITLE"" SET ""TITLE"" = :TITLE WHERE ((""TITLE"" = :Original_TITL" &
                 "E))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -15160,7 +15160,7 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT TITLE FROM ELCARLOS.S_TITLE"
+            Me._commandCollection(0).CommandText = "SELECT TITLE FROM S_TITLE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -15444,13 +15444,13 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""ELCARLOS"".""S_WAREHOUSE"" WHERE ((""ID"" = :Original_ID) AND (""REGION_ID"& _ 
-                """ = :Original_REGION_ID) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" ="& _ 
-                " :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR (""STATE"" = :Or"& _ 
-                "iginal_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR (""COUNTRY"" = "& _ 
-                ":Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_"& _ 
-                "CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""P"& _ 
-                "HONE"" = :Original_PHONE)) AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL)"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""S_WAREHOUSE"" WHERE ((""ID"" = :Original_ID) AND (""REGION_ID" &
+                """ = :Original_REGION_ID) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" =" &
+                " :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS NULL) OR (""STATE"" = :Or" &
+                "iginal_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" IS NULL) OR (""COUNTRY"" = " &
+                ":Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_" &
+                "CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""P" &
+                "HONE"" = :Original_PHONE)) AND ((:IsNull_MANAGER_ID = 1 AND ""MANAGER_ID"" IS NULL)" &
                 " OR (""MANAGER_ID"" = :Original_MANAGER_ID)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -15582,8 +15582,8 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""ELCARLOS"".""S_WAREHOUSE"" (""ID"", ""REGION_ID"", ""ADDRESS"", ""CITY"", ""STAT"& _ 
-                "E"", ""COUNTRY"", ""ZIP_CODE"", ""PHONE"", ""MANAGER_ID"") VALUES (:ID, :REGION_ID, :ADDR"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""S_WAREHOUSE"" (""ID"", ""REGION_ID"", ""ADDRESS"", ""CITY"", ""STAT" &
+                "E"", ""COUNTRY"", ""ZIP_CODE"", ""PHONE"", ""MANAGER_ID"") VALUES (:ID, :REGION_ID, :ADDR" &
                 "ESS, :CITY, :STATE, :COUNTRY, :ZIP_CODE, :PHONE, :MANAGER_ID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -15654,15 +15654,15 @@ Namespace DataSetOracleTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE ""ELCARLOS"".""S_WAREHOUSE"" SET ""ID"" = :ID, ""REGION_ID"" = :REGION_ID, ""ADDRES"& _ 
-                "S"" = :ADDRESS, ""CITY"" = :CITY, ""STATE"" = :STATE, ""COUNTRY"" = :COUNTRY, ""ZIP_CODE"& _ 
-                """ = :ZIP_CODE, ""PHONE"" = :PHONE, ""MANAGER_ID"" = :MANAGER_ID WHERE ((""ID"" = :Orig"& _ 
-                "inal_ID) AND (""REGION_ID"" = :Original_REGION_ID) AND ((:IsNull_CITY = 1 AND ""CIT"& _ 
-                "Y"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS"& _ 
-                " NULL) OR (""STATE"" = :Original_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" I"& _ 
-                "S NULL) OR (""COUNTRY"" = :Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_"& _ 
-                "CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_PHONE = 1 AND"& _ 
-                " ""PHONE"" IS NULL) OR (""PHONE"" = :Original_PHONE)) AND ((:IsNull_MANAGER_ID = 1 A"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""S_WAREHOUSE"" SET ""ID"" = :ID, ""REGION_ID"" = :REGION_ID, ""ADDRES" &
+                "S"" = :ADDRESS, ""CITY"" = :CITY, ""STATE"" = :STATE, ""COUNTRY"" = :COUNTRY, ""ZIP_CODE" &
+                """ = :ZIP_CODE, ""PHONE"" = :PHONE, ""MANAGER_ID"" = :MANAGER_ID WHERE ((""ID"" = :Orig" &
+                "inal_ID) AND (""REGION_ID"" = :Original_REGION_ID) AND ((:IsNull_CITY = 1 AND ""CIT" &
+                "Y"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_STATE = 1 AND ""STATE"" IS" &
+                " NULL) OR (""STATE"" = :Original_STATE)) AND ((:IsNull_COUNTRY = 1 AND ""COUNTRY"" I" &
+                "S NULL) OR (""COUNTRY"" = :Original_COUNTRY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_" &
+                "CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_PHONE = 1 AND" &
+                " ""PHONE"" IS NULL) OR (""PHONE"" = :Original_PHONE)) AND ((:IsNull_MANAGER_ID = 1 A" &
                 "ND ""MANAGER_ID"" IS NULL) OR (""MANAGER_ID"" = :Original_MANAGER_ID)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
@@ -15873,8 +15873,8 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, REGION_ID, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, PHONE, MANAGER_ID "& _ 
-                "FROM ELCARLOS.S_WAREHOUSE"
+            Me._commandCollection(0).CommandText = "SELECT ID, REGION_ID, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, PHONE, MANAGER_ID " &
+                "FROM S_WAREHOUSE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
