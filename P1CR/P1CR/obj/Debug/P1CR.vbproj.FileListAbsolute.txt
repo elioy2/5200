@@ -42,3 +42,5 @@ C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmClientes.resources
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmOrdenes.resources
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.frmEmpleados.resources
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.frmEmpleados.resources
+C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\obj\Debug\P1CR.frmOrdenes.resources

@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Summit Power")>
 <Assembly: AssemblyDescription("Aplicación desarrollada por Eloy Gomez Reyes y Carlos A. Rosario De León.")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("Summit LLC.")>
 <Assembly: AssemblyProduct("Summit Power")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")>
 <Assembly: AssemblyTrademark("")>

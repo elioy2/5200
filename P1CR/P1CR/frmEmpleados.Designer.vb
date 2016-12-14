@@ -47,28 +47,24 @@ Partial Class frmEmpleados
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbempinfo = New System.Windows.Forms.GroupBox()
+        Me.STATUSTextBox = New System.Windows.Forms.TextBox()
+        Me.PASSWORDTextBox = New System.Windows.Forms.TextBox()
+        Me.COMMISSION_PCTTextBox = New System.Windows.Forms.TextBox()
+        Me.SALARYTextBox = New System.Windows.Forms.TextBox()
+        Me.DEPT_IDTextBox = New System.Windows.Forms.TextBox()
+        Me.TITLETextBox = New System.Windows.Forms.TextBox()
+        Me.MANAGER_IDTextBox = New System.Windows.Forms.TextBox()
+        Me.COMMENTSTextBox = New System.Windows.Forms.TextBox()
+        Me.START_DATEDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.USERIDTextBox = New System.Windows.Forms.TextBox()
+        Me.FIRST_NAMETextBox = New System.Windows.Forms.TextBox()
+        Me.LAST_NAMETextBox = New System.Windows.Forms.TextBox()
+        Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverAlMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IDTextBox = New System.Windows.Forms.TextBox()
-        Me.LAST_NAMETextBox = New System.Windows.Forms.TextBox()
-        Me.FIRST_NAMETextBox = New System.Windows.Forms.TextBox()
-        Me.USERIDTextBox = New System.Windows.Forms.TextBox()
-        Me.START_DATEDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.COMMENTSTextBox = New System.Windows.Forms.TextBox()
-        Me.MANAGER_IDTextBox = New System.Windows.Forms.TextBox()
-        Me.TITLETextBox = New System.Windows.Forms.TextBox()
-        Me.DEPT_IDTextBox = New System.Windows.Forms.TextBox()
-        Me.SALARYTextBox = New System.Windows.Forms.TextBox()
-        Me.COMMISSION_PCTTextBox = New System.Windows.Forms.TextBox()
-        Me.PASSWORDTextBox = New System.Windows.Forms.TextBox()
-        Me.STATUSTextBox = New System.Windows.Forms.TextBox()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LASTNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FIRSTNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -82,6 +78,10 @@ Partial Class frmEmpleados
         Me.COMMISSIONPCTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PASSWORDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.STATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         IDLabel = New System.Windows.Forms.Label()
         LAST_NAMELabel = New System.Windows.Forms.Label()
         FIRST_NAMELabel = New System.Windows.Forms.Label()
@@ -102,6 +102,123 @@ Partial Class frmEmpleados
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'IDLabel
+        '
+        IDLabel.AutoSize = True
+        IDLabel.Location = New System.Drawing.Point(16, 28)
+        IDLabel.Name = "IDLabel"
+        IDLabel.Size = New System.Drawing.Size(21, 13)
+        IDLabel.TabIndex = 0
+        IDLabel.Text = "ID:"
+        '
+        'LAST_NAMELabel
+        '
+        LAST_NAMELabel.AutoSize = True
+        LAST_NAMELabel.Location = New System.Drawing.Point(6, 54)
+        LAST_NAMELabel.Name = "LAST_NAMELabel"
+        LAST_NAMELabel.Size = New System.Drawing.Size(71, 13)
+        LAST_NAMELabel.TabIndex = 2
+        LAST_NAMELabel.Text = "LAST NAME:"
+        '
+        'FIRST_NAMELabel
+        '
+        FIRST_NAMELabel.AutoSize = True
+        FIRST_NAMELabel.Location = New System.Drawing.Point(2, 80)
+        FIRST_NAMELabel.Name = "FIRST_NAMELabel"
+        FIRST_NAMELabel.Size = New System.Drawing.Size(75, 13)
+        FIRST_NAMELabel.TabIndex = 4
+        FIRST_NAMELabel.Text = "FIRST NAME:"
+        '
+        'USERIDLabel
+        '
+        USERIDLabel.AutoSize = True
+        USERIDLabel.Location = New System.Drawing.Point(26, 106)
+        USERIDLabel.Name = "USERIDLabel"
+        USERIDLabel.Size = New System.Drawing.Size(51, 13)
+        USERIDLabel.TabIndex = 6
+        USERIDLabel.Text = "USERID:"
+        '
+        'START_DATELabel
+        '
+        START_DATELabel.AutoSize = True
+        START_DATELabel.Location = New System.Drawing.Point(6, 143)
+        START_DATELabel.Name = "START_DATELabel"
+        START_DATELabel.Size = New System.Drawing.Size(78, 13)
+        START_DATELabel.TabIndex = 8
+        START_DATELabel.Text = "START DATE:"
+        '
+        'COMMENTSLabel
+        '
+        COMMENTSLabel.AutoSize = True
+        COMMENTSLabel.Location = New System.Drawing.Point(298, 145)
+        COMMENTSLabel.Name = "COMMENTSLabel"
+        COMMENTSLabel.Size = New System.Drawing.Size(72, 13)
+        COMMENTSLabel.TabIndex = 10
+        COMMENTSLabel.Text = "COMMENTS:"
+        '
+        'MANAGER_IDLabel
+        '
+        MANAGER_IDLabel.AutoSize = True
+        MANAGER_IDLabel.Location = New System.Drawing.Point(191, 31)
+        MANAGER_IDLabel.Name = "MANAGER_IDLabel"
+        MANAGER_IDLabel.Size = New System.Drawing.Size(78, 13)
+        MANAGER_IDLabel.TabIndex = 12
+        MANAGER_IDLabel.Text = "MANAGER ID:"
+        '
+        'TITLELabel
+        '
+        TITLELabel.AutoSize = True
+        TITLELabel.Location = New System.Drawing.Point(229, 57)
+        TITLELabel.Name = "TITLELabel"
+        TITLELabel.Size = New System.Drawing.Size(40, 13)
+        TITLELabel.TabIndex = 14
+        TITLELabel.Text = "TITLE:"
+        '
+        'DEPT_IDLabel
+        '
+        DEPT_IDLabel.AutoSize = True
+        DEPT_IDLabel.Location = New System.Drawing.Point(216, 83)
+        DEPT_IDLabel.Name = "DEPT_IDLabel"
+        DEPT_IDLabel.Size = New System.Drawing.Size(53, 13)
+        DEPT_IDLabel.TabIndex = 16
+        DEPT_IDLabel.Text = "DEPT ID:"
+        '
+        'SALARYLabel
+        '
+        SALARYLabel.AutoSize = True
+        SALARYLabel.Location = New System.Drawing.Point(217, 109)
+        SALARYLabel.Name = "SALARYLabel"
+        SALARYLabel.Size = New System.Drawing.Size(52, 13)
+        SALARYLabel.TabIndex = 18
+        SALARYLabel.Text = "SALARY:"
+        '
+        'COMMISSION_PCTLabel
+        '
+        COMMISSION_PCTLabel.AutoSize = True
+        COMMISSION_PCTLabel.Location = New System.Drawing.Point(384, 29)
+        COMMISSION_PCTLabel.Name = "COMMISSION_PCTLabel"
+        COMMISSION_PCTLabel.Size = New System.Drawing.Size(103, 13)
+        COMMISSION_PCTLabel.TabIndex = 20
+        COMMISSION_PCTLabel.Text = "COMMISSION PCT:"
+        '
+        'PASSWORDLabel
+        '
+        PASSWORDLabel.AutoSize = True
+        PASSWORDLabel.Location = New System.Drawing.Point(414, 55)
+        PASSWORDLabel.Name = "PASSWORDLabel"
+        PASSWORDLabel.Size = New System.Drawing.Size(73, 13)
+        PASSWORDLabel.TabIndex = 22
+        PASSWORDLabel.Text = "PASSWORD:"
+        '
+        'STATUSLabel
+        '
+        STATUSLabel.AutoSize = True
+        STATUSLabel.Location = New System.Drawing.Point(434, 81)
+        STATUSLabel.Name = "STATUSLabel"
+        STATUSLabel.Size = New System.Drawing.Size(53, 13)
+        STATUSLabel.TabIndex = 24
+        STATUSLabel.Text = "STATUS:"
         '
         'DataSetOracle
         '
@@ -169,7 +286,7 @@ Partial Class frmEmpleados
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(72, 59)
         Me.btnbuscar.TabIndex = 2
-        Me.btnbuscar.Text = "Busrcar"
+        Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -219,6 +336,111 @@ Partial Class frmEmpleados
         Me.gbempinfo.TabStop = False
         Me.gbempinfo.Text = "Información de Empleado"
         '
+        'STATUSTextBox
+        '
+        Me.STATUSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "STATUS", True))
+        Me.STATUSTextBox.Location = New System.Drawing.Point(493, 78)
+        Me.STATUSTextBox.Name = "STATUSTextBox"
+        Me.STATUSTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.STATUSTextBox.TabIndex = 25
+        '
+        'PASSWORDTextBox
+        '
+        Me.PASSWORDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "PASSWORD", True))
+        Me.PASSWORDTextBox.Location = New System.Drawing.Point(493, 52)
+        Me.PASSWORDTextBox.Name = "PASSWORDTextBox"
+        Me.PASSWORDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.PASSWORDTextBox.TabIndex = 23
+        '
+        'COMMISSION_PCTTextBox
+        '
+        Me.COMMISSION_PCTTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMISSION_PCT", True))
+        Me.COMMISSION_PCTTextBox.Location = New System.Drawing.Point(493, 26)
+        Me.COMMISSION_PCTTextBox.Name = "COMMISSION_PCTTextBox"
+        Me.COMMISSION_PCTTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.COMMISSION_PCTTextBox.TabIndex = 21
+        '
+        'SALARYTextBox
+        '
+        Me.SALARYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "SALARY", True))
+        Me.SALARYTextBox.Location = New System.Drawing.Point(275, 106)
+        Me.SALARYTextBox.Name = "SALARYTextBox"
+        Me.SALARYTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SALARYTextBox.TabIndex = 19
+        '
+        'DEPT_IDTextBox
+        '
+        Me.DEPT_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "DEPT_ID", True))
+        Me.DEPT_IDTextBox.Location = New System.Drawing.Point(275, 80)
+        Me.DEPT_IDTextBox.Name = "DEPT_IDTextBox"
+        Me.DEPT_IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.DEPT_IDTextBox.TabIndex = 17
+        '
+        'TITLETextBox
+        '
+        Me.TITLETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "TITLE", True))
+        Me.TITLETextBox.Location = New System.Drawing.Point(275, 54)
+        Me.TITLETextBox.Name = "TITLETextBox"
+        Me.TITLETextBox.Size = New System.Drawing.Size(100, 20)
+        Me.TITLETextBox.TabIndex = 15
+        '
+        'MANAGER_IDTextBox
+        '
+        Me.MANAGER_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "MANAGER_ID", True))
+        Me.MANAGER_IDTextBox.Location = New System.Drawing.Point(275, 28)
+        Me.MANAGER_IDTextBox.Name = "MANAGER_IDTextBox"
+        Me.MANAGER_IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MANAGER_IDTextBox.TabIndex = 13
+        '
+        'COMMENTSTextBox
+        '
+        Me.COMMENTSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMENTS", True))
+        Me.COMMENTSTextBox.Location = New System.Drawing.Point(376, 142)
+        Me.COMMENTSTextBox.Multiline = True
+        Me.COMMENTSTextBox.Name = "COMMENTSTextBox"
+        Me.COMMENTSTextBox.Size = New System.Drawing.Size(217, 20)
+        Me.COMMENTSTextBox.TabIndex = 11
+        '
+        'START_DATEDateTimePicker
+        '
+        Me.START_DATEDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.S_EMPBindingSource, "START_DATE", True))
+        Me.START_DATEDateTimePicker.Location = New System.Drawing.Point(90, 139)
+        Me.START_DATEDateTimePicker.Name = "START_DATEDateTimePicker"
+        Me.START_DATEDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.START_DATEDateTimePicker.TabIndex = 9
+        '
+        'USERIDTextBox
+        '
+        Me.USERIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "USERID", True))
+        Me.USERIDTextBox.Location = New System.Drawing.Point(83, 103)
+        Me.USERIDTextBox.Name = "USERIDTextBox"
+        Me.USERIDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.USERIDTextBox.TabIndex = 7
+        '
+        'FIRST_NAMETextBox
+        '
+        Me.FIRST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "FIRST_NAME", True))
+        Me.FIRST_NAMETextBox.Location = New System.Drawing.Point(83, 77)
+        Me.FIRST_NAMETextBox.Name = "FIRST_NAMETextBox"
+        Me.FIRST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
+        Me.FIRST_NAMETextBox.TabIndex = 5
+        '
+        'LAST_NAMETextBox
+        '
+        Me.LAST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "LAST_NAME", True))
+        Me.LAST_NAMETextBox.Location = New System.Drawing.Point(83, 51)
+        Me.LAST_NAMETextBox.Name = "LAST_NAMETextBox"
+        Me.LAST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
+        Me.LAST_NAMETextBox.TabIndex = 3
+        '
+        'IDTextBox
+        '
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "ID", True))
+        Me.IDTextBox.Location = New System.Drawing.Point(83, 28)
+        Me.IDTextBox.Name = "IDTextBox"
+        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IDTextBox.TabIndex = 1
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
@@ -261,263 +483,6 @@ Partial Class frmEmpleados
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(574, 254)
         Me.DataGridView1.TabIndex = 4
-        '
-        'IDLabel
-        '
-        IDLabel.AutoSize = True
-        IDLabel.Location = New System.Drawing.Point(16, 28)
-        IDLabel.Name = "IDLabel"
-        IDLabel.Size = New System.Drawing.Size(21, 13)
-        IDLabel.TabIndex = 0
-        IDLabel.Text = "ID:"
-        '
-        'IDTextBox
-        '
-        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "ID", True))
-        Me.IDTextBox.Location = New System.Drawing.Point(83, 28)
-        Me.IDTextBox.Name = "IDTextBox"
-        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.IDTextBox.TabIndex = 1
-        '
-        'LAST_NAMELabel
-        '
-        LAST_NAMELabel.AutoSize = True
-        LAST_NAMELabel.Location = New System.Drawing.Point(6, 54)
-        LAST_NAMELabel.Name = "LAST_NAMELabel"
-        LAST_NAMELabel.Size = New System.Drawing.Size(71, 13)
-        LAST_NAMELabel.TabIndex = 2
-        LAST_NAMELabel.Text = "LAST NAME:"
-        '
-        'LAST_NAMETextBox
-        '
-        Me.LAST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "LAST_NAME", True))
-        Me.LAST_NAMETextBox.Location = New System.Drawing.Point(83, 51)
-        Me.LAST_NAMETextBox.Name = "LAST_NAMETextBox"
-        Me.LAST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
-        Me.LAST_NAMETextBox.TabIndex = 3
-        '
-        'FIRST_NAMELabel
-        '
-        FIRST_NAMELabel.AutoSize = True
-        FIRST_NAMELabel.Location = New System.Drawing.Point(2, 80)
-        FIRST_NAMELabel.Name = "FIRST_NAMELabel"
-        FIRST_NAMELabel.Size = New System.Drawing.Size(75, 13)
-        FIRST_NAMELabel.TabIndex = 4
-        FIRST_NAMELabel.Text = "FIRST NAME:"
-        '
-        'FIRST_NAMETextBox
-        '
-        Me.FIRST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "FIRST_NAME", True))
-        Me.FIRST_NAMETextBox.Location = New System.Drawing.Point(83, 77)
-        Me.FIRST_NAMETextBox.Name = "FIRST_NAMETextBox"
-        Me.FIRST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FIRST_NAMETextBox.TabIndex = 5
-        '
-        'USERIDLabel
-        '
-        USERIDLabel.AutoSize = True
-        USERIDLabel.Location = New System.Drawing.Point(26, 106)
-        USERIDLabel.Name = "USERIDLabel"
-        USERIDLabel.Size = New System.Drawing.Size(51, 13)
-        USERIDLabel.TabIndex = 6
-        USERIDLabel.Text = "USERID:"
-        '
-        'USERIDTextBox
-        '
-        Me.USERIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "USERID", True))
-        Me.USERIDTextBox.Location = New System.Drawing.Point(83, 103)
-        Me.USERIDTextBox.Name = "USERIDTextBox"
-        Me.USERIDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.USERIDTextBox.TabIndex = 7
-        '
-        'START_DATELabel
-        '
-        START_DATELabel.AutoSize = True
-        START_DATELabel.Location = New System.Drawing.Point(6, 143)
-        START_DATELabel.Name = "START_DATELabel"
-        START_DATELabel.Size = New System.Drawing.Size(78, 13)
-        START_DATELabel.TabIndex = 8
-        START_DATELabel.Text = "START DATE:"
-        '
-        'START_DATEDateTimePicker
-        '
-        Me.START_DATEDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.S_EMPBindingSource, "START_DATE", True))
-        Me.START_DATEDateTimePicker.Location = New System.Drawing.Point(90, 139)
-        Me.START_DATEDateTimePicker.Name = "START_DATEDateTimePicker"
-        Me.START_DATEDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.START_DATEDateTimePicker.TabIndex = 9
-        '
-        'COMMENTSLabel
-        '
-        COMMENTSLabel.AutoSize = True
-        COMMENTSLabel.Location = New System.Drawing.Point(298, 145)
-        COMMENTSLabel.Name = "COMMENTSLabel"
-        COMMENTSLabel.Size = New System.Drawing.Size(72, 13)
-        COMMENTSLabel.TabIndex = 10
-        COMMENTSLabel.Text = "COMMENTS:"
-        '
-        'COMMENTSTextBox
-        '
-        Me.COMMENTSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMENTS", True))
-        Me.COMMENTSTextBox.Location = New System.Drawing.Point(376, 142)
-        Me.COMMENTSTextBox.Name = "COMMENTSTextBox"
-        Me.COMMENTSTextBox.Size = New System.Drawing.Size(217, 20)
-        Me.COMMENTSTextBox.TabIndex = 11
-        '
-        'MANAGER_IDLabel
-        '
-        MANAGER_IDLabel.AutoSize = True
-        MANAGER_IDLabel.Location = New System.Drawing.Point(191, 31)
-        MANAGER_IDLabel.Name = "MANAGER_IDLabel"
-        MANAGER_IDLabel.Size = New System.Drawing.Size(78, 13)
-        MANAGER_IDLabel.TabIndex = 12
-        MANAGER_IDLabel.Text = "MANAGER ID:"
-        '
-        'MANAGER_IDTextBox
-        '
-        Me.MANAGER_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "MANAGER_ID", True))
-        Me.MANAGER_IDTextBox.Location = New System.Drawing.Point(275, 28)
-        Me.MANAGER_IDTextBox.Name = "MANAGER_IDTextBox"
-        Me.MANAGER_IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.MANAGER_IDTextBox.TabIndex = 13
-        '
-        'TITLELabel
-        '
-        TITLELabel.AutoSize = True
-        TITLELabel.Location = New System.Drawing.Point(229, 57)
-        TITLELabel.Name = "TITLELabel"
-        TITLELabel.Size = New System.Drawing.Size(40, 13)
-        TITLELabel.TabIndex = 14
-        TITLELabel.Text = "TITLE:"
-        '
-        'TITLETextBox
-        '
-        Me.TITLETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "TITLE", True))
-        Me.TITLETextBox.Location = New System.Drawing.Point(275, 54)
-        Me.TITLETextBox.Name = "TITLETextBox"
-        Me.TITLETextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TITLETextBox.TabIndex = 15
-        '
-        'DEPT_IDLabel
-        '
-        DEPT_IDLabel.AutoSize = True
-        DEPT_IDLabel.Location = New System.Drawing.Point(216, 83)
-        DEPT_IDLabel.Name = "DEPT_IDLabel"
-        DEPT_IDLabel.Size = New System.Drawing.Size(53, 13)
-        DEPT_IDLabel.TabIndex = 16
-        DEPT_IDLabel.Text = "DEPT ID:"
-        '
-        'DEPT_IDTextBox
-        '
-        Me.DEPT_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "DEPT_ID", True))
-        Me.DEPT_IDTextBox.Location = New System.Drawing.Point(275, 80)
-        Me.DEPT_IDTextBox.Name = "DEPT_IDTextBox"
-        Me.DEPT_IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.DEPT_IDTextBox.TabIndex = 17
-        '
-        'SALARYLabel
-        '
-        SALARYLabel.AutoSize = True
-        SALARYLabel.Location = New System.Drawing.Point(217, 109)
-        SALARYLabel.Name = "SALARYLabel"
-        SALARYLabel.Size = New System.Drawing.Size(52, 13)
-        SALARYLabel.TabIndex = 18
-        SALARYLabel.Text = "SALARY:"
-        '
-        'SALARYTextBox
-        '
-        Me.SALARYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "SALARY", True))
-        Me.SALARYTextBox.Location = New System.Drawing.Point(275, 106)
-        Me.SALARYTextBox.Name = "SALARYTextBox"
-        Me.SALARYTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.SALARYTextBox.TabIndex = 19
-        '
-        'COMMISSION_PCTLabel
-        '
-        COMMISSION_PCTLabel.AutoSize = True
-        COMMISSION_PCTLabel.Location = New System.Drawing.Point(384, 29)
-        COMMISSION_PCTLabel.Name = "COMMISSION_PCTLabel"
-        COMMISSION_PCTLabel.Size = New System.Drawing.Size(103, 13)
-        COMMISSION_PCTLabel.TabIndex = 20
-        COMMISSION_PCTLabel.Text = "COMMISSION PCT:"
-        '
-        'COMMISSION_PCTTextBox
-        '
-        Me.COMMISSION_PCTTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMISSION_PCT", True))
-        Me.COMMISSION_PCTTextBox.Location = New System.Drawing.Point(493, 26)
-        Me.COMMISSION_PCTTextBox.Name = "COMMISSION_PCTTextBox"
-        Me.COMMISSION_PCTTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.COMMISSION_PCTTextBox.TabIndex = 21
-        '
-        'PASSWORDLabel
-        '
-        PASSWORDLabel.AutoSize = True
-        PASSWORDLabel.Location = New System.Drawing.Point(414, 55)
-        PASSWORDLabel.Name = "PASSWORDLabel"
-        PASSWORDLabel.Size = New System.Drawing.Size(73, 13)
-        PASSWORDLabel.TabIndex = 22
-        PASSWORDLabel.Text = "PASSWORD:"
-        '
-        'PASSWORDTextBox
-        '
-        Me.PASSWORDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "PASSWORD", True))
-        Me.PASSWORDTextBox.Location = New System.Drawing.Point(493, 52)
-        Me.PASSWORDTextBox.Name = "PASSWORDTextBox"
-        Me.PASSWORDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PASSWORDTextBox.TabIndex = 23
-        '
-        'STATUSLabel
-        '
-        STATUSLabel.AutoSize = True
-        STATUSLabel.Location = New System.Drawing.Point(434, 81)
-        STATUSLabel.Name = "STATUSLabel"
-        STATUSLabel.Size = New System.Drawing.Size(53, 13)
-        STATUSLabel.TabIndex = 24
-        STATUSLabel.Text = "STATUS:"
-        '
-        'STATUSTextBox
-        '
-        Me.STATUSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "STATUS", True))
-        Me.STATUSTextBox.Location = New System.Drawing.Point(493, 78)
-        Me.STATUSTextBox.Name = "STATUSTextBox"
-        Me.STATUSTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.STATUSTextBox.TabIndex = 25
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(615, 39)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 32)
-        Me.btnAdd.TabIndex = 5
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Location = New System.Drawing.Point(696, 41)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(75, 32)
-        Me.btnEdit.TabIndex = 6
-        Me.btnEdit.Text = "Editar"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Location = New System.Drawing.Point(615, 84)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 32)
-        Me.btnDelete.TabIndex = 7
-        Me.btnDelete.Text = "Borrar"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnSave
-        '
-        Me.btnSave.Location = New System.Drawing.Point(696, 84)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 32)
-        Me.btnSave.TabIndex = 8
-        Me.btnSave.Text = "Guardar"
-        Me.btnSave.UseVisualStyleBackColor = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -610,6 +575,42 @@ Partial Class frmEmpleados
         Me.STATUSDataGridViewTextBoxColumn.Name = "STATUSDataGridViewTextBoxColumn"
         Me.STATUSDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(615, 39)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 32)
+        Me.btnAdd.TabIndex = 5
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Location = New System.Drawing.Point(696, 39)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(75, 32)
+        Me.btnEdit.TabIndex = 6
+        Me.btnEdit.Text = "Editar"
+        Me.btnEdit.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(615, 84)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 32)
+        Me.btnDelete.TabIndex = 7
+        Me.btnDelete.Text = "Borrar"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(696, 84)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 32)
+        Me.btnSave.TabIndex = 8
+        Me.btnSave.Text = "Guardar"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -628,6 +629,7 @@ Partial Class frmEmpleados
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleados"
         CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.S_EMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
