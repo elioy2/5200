@@ -284,7 +284,6 @@ Partial Class frmClientes
         'REGION_IDTextBox
         '
         Me.REGION_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "REGION_ID", True))
-        Me.REGION_IDTextBox.Enabled = False
         Me.REGION_IDTextBox.Location = New System.Drawing.Point(483, 88)
         Me.REGION_IDTextBox.Name = "REGION_IDTextBox"
         Me.REGION_IDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -293,7 +292,6 @@ Partial Class frmClientes
         'SALES_REP_IDTextBox
         '
         Me.SALES_REP_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "SALES_REP_ID", True))
-        Me.SALES_REP_IDTextBox.Enabled = False
         Me.SALES_REP_IDTextBox.Location = New System.Drawing.Point(483, 54)
         Me.SALES_REP_IDTextBox.Name = "SALES_REP_IDTextBox"
         Me.SALES_REP_IDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -302,7 +300,6 @@ Partial Class frmClientes
         'CREDIT_RATINGTextBox
         '
         Me.CREDIT_RATINGTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "CREDIT_RATING", True))
-        Me.CREDIT_RATINGTextBox.Enabled = False
         Me.CREDIT_RATINGTextBox.Location = New System.Drawing.Point(483, 22)
         Me.CREDIT_RATINGTextBox.Name = "CREDIT_RATINGTextBox"
         Me.CREDIT_RATINGTextBox.Size = New System.Drawing.Size(100, 20)
@@ -311,7 +308,6 @@ Partial Class frmClientes
         'ZIP_CODETextBox
         '
         Me.ZIP_CODETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ZIP_CODE", True))
-        Me.ZIP_CODETextBox.Enabled = False
         Me.ZIP_CODETextBox.Location = New System.Drawing.Point(264, 114)
         Me.ZIP_CODETextBox.Name = "ZIP_CODETextBox"
         Me.ZIP_CODETextBox.Size = New System.Drawing.Size(100, 20)
@@ -320,7 +316,6 @@ Partial Class frmClientes
         'COUNTRYTextBox
         '
         Me.COUNTRYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "COUNTRY", True))
-        Me.COUNTRYTextBox.Enabled = False
         Me.COUNTRYTextBox.Location = New System.Drawing.Point(264, 85)
         Me.COUNTRYTextBox.Name = "COUNTRYTextBox"
         Me.COUNTRYTextBox.Size = New System.Drawing.Size(100, 20)
@@ -329,7 +324,6 @@ Partial Class frmClientes
         'STATETextBox
         '
         Me.STATETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "STATE", True))
-        Me.STATETextBox.Enabled = False
         Me.STATETextBox.Location = New System.Drawing.Point(264, 55)
         Me.STATETextBox.Name = "STATETextBox"
         Me.STATETextBox.Size = New System.Drawing.Size(100, 20)
@@ -338,7 +332,6 @@ Partial Class frmClientes
         'CITYTextBox
         '
         Me.CITYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "CITY", True))
-        Me.CITYTextBox.Enabled = False
         Me.CITYTextBox.Location = New System.Drawing.Point(264, 22)
         Me.CITYTextBox.Name = "CITYTextBox"
         Me.CITYTextBox.Size = New System.Drawing.Size(100, 20)
@@ -347,7 +340,6 @@ Partial Class frmClientes
         'COMMENTSTextBox
         '
         Me.COMMENTSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "COMMENTS", True))
-        Me.COMMENTSTextBox.Enabled = False
         Me.COMMENTSTextBox.Location = New System.Drawing.Point(83, 150)
         Me.COMMENTSTextBox.Multiline = True
         Me.COMMENTSTextBox.Name = "COMMENTSTextBox"
@@ -357,7 +349,6 @@ Partial Class frmClientes
         'ADDRESSTextBox
         '
         Me.ADDRESSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ADDRESS", True))
-        Me.ADDRESSTextBox.Enabled = False
         Me.ADDRESSTextBox.Location = New System.Drawing.Point(73, 110)
         Me.ADDRESSTextBox.Name = "ADDRESSTextBox"
         Me.ADDRESSTextBox.Size = New System.Drawing.Size(100, 20)
@@ -366,7 +357,6 @@ Partial Class frmClientes
         'PHONETextBox
         '
         Me.PHONETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "PHONE", True))
-        Me.PHONETextBox.Enabled = False
         Me.PHONETextBox.Location = New System.Drawing.Point(73, 81)
         Me.PHONETextBox.Name = "PHONETextBox"
         Me.PHONETextBox.Size = New System.Drawing.Size(100, 20)
@@ -375,7 +365,6 @@ Partial Class frmClientes
         'NAMETextBox
         '
         Me.NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "NAME", True))
-        Me.NAMETextBox.Enabled = False
         Me.NAMETextBox.Location = New System.Drawing.Point(73, 51)
         Me.NAMETextBox.Name = "NAMETextBox"
         Me.NAMETextBox.Size = New System.Drawing.Size(100, 20)
@@ -384,7 +373,6 @@ Partial Class frmClientes
         'IDTextBox
         '
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ID", True))
-        Me.IDTextBox.Enabled = False
         Me.IDTextBox.Location = New System.Drawing.Point(73, 22)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 20)

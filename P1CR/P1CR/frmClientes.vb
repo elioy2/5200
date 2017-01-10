@@ -22,31 +22,42 @@
     End Sub
 
     Private Sub btnAddClient_Click(sender As Object, e As EventArgs) Handles btnAddClient.Click
-        IDTextBox.Clear()
+        'IDTextBox.Clear()
         IDTextBox.Enabled = True
-        NAMETextBox.Clear()
+        'NAMETextBox.Clear()
         NAMETextBox.Enabled = True
-        PHONETextBox.Clear()
+        'PHONETextBox.Clear()
         PHONETextBox.Enabled = True
-        ADDRESSTextBox.Clear()
+        'ADDRESSTextBox.Clear()
         ADDRESSTextBox.Enabled = True
-        COMMENTSTextBox.Clear()
+        'COMMENTSTextBox.Clear()
         COMMENTSTextBox.Enabled = True
-        CITYTextBox.Clear()
+        'CITYTextBox.Clear()
         CITYTextBox.Enabled = True
-        STATETextBox.Clear()
+        'STATETextBox.Clear()
         STATETextBox.Enabled = True
-        COUNTRYTextBox.Clear()
+        'COUNTRYTextBox.Clear()
         COUNTRYTextBox.Enabled = True
-        ZIP_CODETextBox.Clear()
+        'ZIP_CODETextBox.Clear()
         ZIP_CODETextBox.Enabled = True
-        CREDIT_RATINGTextBox.Clear()
+        'CREDIT_RATINGTextBox.Clear()
         CREDIT_RATINGTextBox.Enabled = True
-        SALES_REP_IDTextBox.Clear()
+        'SALES_REP_IDTextBox.Clear()
         SALES_REP_IDTextBox.Enabled = True
-        REGION_IDTextBox.Clear()
+        'REGION_IDTextBox.Clear()
         REGION_IDTextBox.Enabled = True
-        IDTextBox.Focus()
+        'IDTextBox.Focus()
+        SCUSTOMERBindingSource.AddNew()
+    End Sub
+
+    Private Sub btnDeleteClient_Click(sender As Object, e As EventArgs) Handles btnDeleteClient.Click
+        SCUSTOMERBindingSource.RemoveCurrent()
+        S_CUSTOMERTableAdapter.Update(DataSetOracle.S_CUSTOMER)
+    End Sub
+
+    Private Sub btnSaveClient_Click(sender As Object, e As EventArgs) Handles btnSaveClient.Click
+        SCUSTOMERBindingSource.EndEdit()
+        S_CUSTOMERTableAdapter.Update(DataSetOracle.S_CUSTOMER)
     End Sub
 
     'Private Function count() As Integer
