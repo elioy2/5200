@@ -55,13 +55,13 @@ Partial Class MainForm
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesion "
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CloseToolStripMenuItem.Text = "&Close"
         '
         'ClientesToolStripMenuItem

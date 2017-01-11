@@ -27,4 +27,9 @@
         frmEmpleados.Show()
         Me.Hide()
     End Sub
+
+    Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
+        frmProductos.Show()
+        Me.Hide()
+    End Sub
 End Class
