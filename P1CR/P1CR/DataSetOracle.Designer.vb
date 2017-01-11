@@ -8242,7 +8242,7 @@ Namespace DataSetOracleTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(3) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
@@ -8250,21 +8250,34 @@ Namespace DataSetOracleTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT DISTINCT SALES_REP_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ELCARLOS.S_CUSTOMER"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "SALES_REP_ID IS NOT NULL)"
+            Me._commandCollection(1).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
+                " SALES_REP_ID, REGION_ID, COMMENTS FROM ELCARLOS.S_CUSTOMER WHERE ID = :id"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":id"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "ID"
+            Me._commandCollection(1).Parameters.Add(param)
             Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
+            Me._commandCollection(2).CommandText = "SELECT DISTINCT SALES_REP_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ELCARLOS.S_CUSTOMER"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
+                "SALES_REP_ID IS NOT NULL)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT ID, ""NAME"", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING,"& _ 
                 " SALES_REP_ID, REGION_ID, COMMENTS FROM ELCARLOS.S_CUSTOMER WHERE UPPER(""NAME"") "& _ 
                 "LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":name"
             param.DbType = Global.System.Data.DbType.AnsiString
             param.Size = 1024
             param.IsNullable = true
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8295,8 +8308,22 @@ Namespace DataSetOracleTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByREPID(ByVal dataTable As DataSetOracle.S_CUSTOMERDataTable) As Integer
+        Public Overloads Overridable Function FillByID(ByVal dataTable As DataSetOracle.S_CUSTOMERDataTable, ByVal id As Decimal) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByREPID(ByVal dataTable As DataSetOracle.S_CUSTOMERDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8309,7 +8336,7 @@ Namespace DataSetOracleTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataByRepID() As DataSetOracle.S_CUSTOMERDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Dim dataTable As DataSetOracle.S_CUSTOMERDataTable = New DataSetOracle.S_CUSTOMERDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8320,7 +8347,7 @@ Namespace DataSetOracleTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function FillBySearch(ByVal dataTable As DataSetOracle.S_CUSTOMERDataTable, ByVal name As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("name")
             Else

@@ -1,21 +1,29 @@
 ﻿Imports System.ComponentModel
-
 Public Class frmClientes
     Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSetOracle.S_CUSTOMER' table. You can move, or remove it, as needed.
         Me.S_CUSTOMERTableAdapter.Fill(Me.DataSetOracle.S_CUSTOMER)
-        'Label2.Text = count().ToString
-
     End Sub
 
     Private Sub btnSearchClient_Click(sender As Object, e As EventArgs) Handles btnSearchClient.Click
         Dim buscar As String = txtSearchClient.Text
-        Me.S_CUSTOMERTableAdapter.FillBySearch(Me.DataSetOracle.S_CUSTOMER, buscar)
+        If rbNombre.Checked = True Then
+            Me.S_CUSTOMERTableAdapter.FillBySearch(Me.DataSetOracle.S_CUSTOMER, buscar)
+        ElseIf rbID.Checked = True Then
+            If IsNumeric(txtSearchClient.Text) Then
+                Me.S_CUSTOMERTableAdapter.FillByID(Me.DataSetOracle.S_CUSTOMER, buscar)
+            Else
+                MessageBox.Show("El valor del campo debe ser numérico")
+            End If
+        ElseIf rbID.Checked = False And rbNombre.Checked = False Then
+                MessageBox.Show("Favor seleccionar un criterio de búsqueda")
+        End If
         'Label2.Text = count().ToString
     End Sub
 
     Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.Click
         Me.Close()
+        MainForm.Close()
     End Sub
 
     Private Sub VolverAlMenuToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverAlMenuToolStripMenuItem.Click
@@ -26,40 +34,18 @@ Public Class frmClientes
     Private Sub btnAddClient_Click(sender As Object, e As EventArgs) Handles btnAddClient.Click
 
         IDTextBox.Enabled = True
-
         NAMETextBox.Enabled = True
-
         PHONETextBox.Enabled = True
-
         ADDRESSTextBox.Enabled = True
-
         COMMENTSTextBox.Enabled = True
-
         CITYTextBox.Enabled = True
-
         STATETextBox.Enabled = True
-
         COUNTRYTextBox.Enabled = True
-
         ZIP_CODETextBox.Enabled = True
-
         CREDIT_RATINGTextBox.Enabled = True
-
         SALES_REP_IDTextBox.Enabled = True
-
         REGION_IDTextBox.Enabled = True
-        'IDTextBox.Focus()
-        'Dim table As New DataTable
-        'Dim sqlStr As String = "Select ID, First_Name || ' ' || Last_Name As Name FROM S_EMP WHERE MANAGER_ID = 3"
-        'Dim connectionString As String = oradb
-        'Dim dataAdapter As New Oracle.ManagedDataAccess.Client.OracleDataAdapter(sqlStr, connectionString)
-        'Dim commandbuilder As New Oracle.ManagedDataAccess.Client.OracleCommandBuilder(dataAdapter)
-        'dataAdapter.Fill(table)
-        'SALES_REP_IDComboBox.DataSource = New BindingSource(table, Nothing)
-        'SALES_REP_IDComboBox.DisplayMember = "Name"
-        'SALES_REP_IDComboBox.ValueMember = "ID"
-        'SALES_REP_IDComboBox.DataSource = SCUSTOMERBindingSource
-        'SALES_REP_IDComboBox.DisplayMember = "SALES_REP_ID"
+
         Try
             SCUSTOMERBindingSource.AddNew()
         Catch ex As Exception
