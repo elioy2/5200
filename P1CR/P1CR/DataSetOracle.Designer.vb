@@ -10017,12 +10017,38 @@ Namespace DataSetOracleTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, LAST_NAME, FIRST_NAME, USERID, START_DATE, COMMENTS, MANAGER_ID, TITLE"& _ 
                 ", DEPT_ID, SALARY, COMMISSION_PCT, PASSWORD, STATUS FROM ELCARLOS.S_EMP"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT ID, LAST_NAME, FIRST_NAME, USERID, START_DATE, COMMENTS, MANAGER_ID, TITLE"& _ 
+                ", DEPT_ID, SALARY, COMMISSION_PCT, PASSWORD, STATUS FROM S_EMP WHERE ID = :id"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":id"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "ID"
+            Me._commandCollection(1).Parameters.Add(param)
+            Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        ID, LAST_NAME, FIRST_NAME, USERID, START_DATE, COMMENTS, MANAGER_ID"& _ 
+                ", TITLE, DEPT_ID, SALARY, COMMISSION_PCT, PASSWORD, STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ELCA"& _ 
+                "RLOS.S_EMP"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        CONCAT(UPPER(FIRST_NAME), UPPER(LAST_NAME)) LIKE CONCAT"& _ 
+                "('%', CONCAT(UPPER(:name), '%'))"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":name"
+            param.DbType = Global.System.Data.DbType.AnsiString
+            param.Size = 1024
+            param.IsNullable = true
+            Me._commandCollection(2).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10047,6 +10073,38 @@ Namespace DataSetOracleTableAdapters
             Dim dataTable As DataSetOracle.S_EMPDataTable = New DataSetOracle.S_EMPDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByID(ByVal dataTable As DataSetOracle.S_EMPDataTable, ByVal id As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBySearch(ByVal dataTable As DataSetOracle.S_EMPDataTable, ByVal name As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (name Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("name")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(name,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

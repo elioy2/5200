@@ -78,7 +78,7 @@ Public Class frmClientes
             SALES_REP_IDTextBox.Enabled = False
             REGION_IDTextBox.Enabled = False
         Catch ex As DataException
-            MessageBox.Show("No puede haber valores nulos")
+            MessageBox.Show("No puede haber valores en blanco")
         End Try
 
     End Sub

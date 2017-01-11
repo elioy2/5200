@@ -37,13 +37,9 @@ Partial Class frmEmpleados
         Dim PASSWORDLabel As System.Windows.Forms.Label
         Dim STATUSLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpleados))
-        Me.DataSetOracle = New P1CR.DataSetOracle()
-        Me.S_EMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.S_EMPTableAdapter = New P1CR.DataSetOracleTableAdapters.S_EMPTableAdapter()
-        Me.TableAdapterManager = New P1CR.DataSetOracleTableAdapters.TableAdapterManager()
         Me.rbID = New System.Windows.Forms.RadioButton()
         Me.rbNombre = New System.Windows.Forms.RadioButton()
-        Me.txtSearchemp = New System.Windows.Forms.TextBox()
+        Me.txtSearchEmp = New System.Windows.Forms.TextBox()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbempinfo = New System.Windows.Forms.GroupBox()
@@ -65,23 +61,24 @@ Partial Class frmEmpleados
         Me.VolverAlMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.S_EMPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetOracle = New P1CR.DataSetOracle()
+        Me.S_EMPTableAdapter = New P1CR.DataSetOracleTableAdapters.S_EMPTableAdapter()
+        Me.TableAdapterManager = New P1CR.DataSetOracleTableAdapters.TableAdapterManager()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LASTNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FIRSTNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USERIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.STARTDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.COMMENTSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MANAGERIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TITLEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DEPTIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SALARYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.COMMISSIONPCTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PASSWORDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.STATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
         IDLabel = New System.Windows.Forms.Label()
         LAST_NAMELabel = New System.Windows.Forms.Label()
         FIRST_NAMELabel = New System.Windows.Forms.Label()
@@ -95,12 +92,12 @@ Partial Class frmEmpleados
         COMMISSION_PCTLabel = New System.Windows.Forms.Label()
         PASSWORDLabel = New System.Windows.Forms.Label()
         STATUSLabel = New System.Windows.Forms.Label()
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.S_EMPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.gbempinfo.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.S_EMPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDLabel
@@ -220,37 +217,6 @@ Partial Class frmEmpleados
         STATUSLabel.TabIndex = 24
         STATUSLabel.Text = "STATUS:"
         '
-        'DataSetOracle
-        '
-        Me.DataSetOracle.DataSetName = "DataSetOracle"
-        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'S_EMPBindingSource
-        '
-        Me.S_EMPBindingSource.DataMember = "S_EMP"
-        Me.S_EMPBindingSource.DataSource = Me.DataSetOracle
-        '
-        'S_EMPTableAdapter
-        '
-        Me.S_EMPTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.S_CUSTOMERTableAdapter = Nothing
-        Me.TableAdapterManager.S_DEPTTableAdapter = Nothing
-        Me.TableAdapterManager.S_EMPTableAdapter = Me.S_EMPTableAdapter
-        Me.TableAdapterManager.S_IMAGETableAdapter = Nothing
-        Me.TableAdapterManager.S_INVENTORYTableAdapter = Nothing
-        Me.TableAdapterManager.S_ITEMTableAdapter = Nothing
-        Me.TableAdapterManager.S_LONGTEXTTableAdapter = Nothing
-        Me.TableAdapterManager.S_ORDTableAdapter = Nothing
-        Me.TableAdapterManager.S_PRODUCTTableAdapter = Nothing
-        Me.TableAdapterManager.S_REGIONTableAdapter = Nothing
-        Me.TableAdapterManager.S_TITLETableAdapter = Nothing
-        Me.TableAdapterManager.S_WAREHOUSETableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = P1CR.DataSetOracleTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'rbID
         '
         Me.rbID.AutoSize = True
@@ -273,12 +239,12 @@ Partial Class frmEmpleados
         Me.rbNombre.Text = "Nombre"
         Me.rbNombre.UseVisualStyleBackColor = True
         '
-        'txtSearchemp
+        'txtSearchEmp
         '
-        Me.txtSearchemp.Location = New System.Drawing.Point(0, 94)
-        Me.txtSearchemp.Name = "txtSearchemp"
-        Me.txtSearchemp.Size = New System.Drawing.Size(177, 20)
-        Me.txtSearchemp.TabIndex = 0
+        Me.txtSearchEmp.Location = New System.Drawing.Point(0, 94)
+        Me.txtSearchEmp.Name = "txtSearchEmp"
+        Me.txtSearchEmp.Size = New System.Drawing.Size(177, 20)
+        Me.txtSearchEmp.TabIndex = 0
         '
         'btnbuscar
         '
@@ -291,7 +257,7 @@ Partial Class frmEmpleados
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txtSearchemp)
+        Me.GroupBox1.Controls.Add(Me.txtSearchEmp)
         Me.GroupBox1.Controls.Add(Me.rbNombre)
         Me.GroupBox1.Controls.Add(Me.rbID)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 205)
@@ -339,6 +305,7 @@ Partial Class frmEmpleados
         'STATUSTextBox
         '
         Me.STATUSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "STATUS", True))
+        Me.STATUSTextBox.Enabled = False
         Me.STATUSTextBox.Location = New System.Drawing.Point(493, 78)
         Me.STATUSTextBox.Name = "STATUSTextBox"
         Me.STATUSTextBox.Size = New System.Drawing.Size(100, 20)
@@ -347,6 +314,7 @@ Partial Class frmEmpleados
         'PASSWORDTextBox
         '
         Me.PASSWORDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "PASSWORD", True))
+        Me.PASSWORDTextBox.Enabled = False
         Me.PASSWORDTextBox.Location = New System.Drawing.Point(493, 52)
         Me.PASSWORDTextBox.Name = "PASSWORDTextBox"
         Me.PASSWORDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -355,6 +323,7 @@ Partial Class frmEmpleados
         'COMMISSION_PCTTextBox
         '
         Me.COMMISSION_PCTTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMISSION_PCT", True))
+        Me.COMMISSION_PCTTextBox.Enabled = False
         Me.COMMISSION_PCTTextBox.Location = New System.Drawing.Point(493, 26)
         Me.COMMISSION_PCTTextBox.Name = "COMMISSION_PCTTextBox"
         Me.COMMISSION_PCTTextBox.Size = New System.Drawing.Size(100, 20)
@@ -363,6 +332,7 @@ Partial Class frmEmpleados
         'SALARYTextBox
         '
         Me.SALARYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "SALARY", True))
+        Me.SALARYTextBox.Enabled = False
         Me.SALARYTextBox.Location = New System.Drawing.Point(275, 106)
         Me.SALARYTextBox.Name = "SALARYTextBox"
         Me.SALARYTextBox.Size = New System.Drawing.Size(100, 20)
@@ -371,6 +341,7 @@ Partial Class frmEmpleados
         'DEPT_IDTextBox
         '
         Me.DEPT_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "DEPT_ID", True))
+        Me.DEPT_IDTextBox.Enabled = False
         Me.DEPT_IDTextBox.Location = New System.Drawing.Point(275, 80)
         Me.DEPT_IDTextBox.Name = "DEPT_IDTextBox"
         Me.DEPT_IDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -379,6 +350,7 @@ Partial Class frmEmpleados
         'TITLETextBox
         '
         Me.TITLETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "TITLE", True))
+        Me.TITLETextBox.Enabled = False
         Me.TITLETextBox.Location = New System.Drawing.Point(275, 54)
         Me.TITLETextBox.Name = "TITLETextBox"
         Me.TITLETextBox.Size = New System.Drawing.Size(100, 20)
@@ -387,6 +359,7 @@ Partial Class frmEmpleados
         'MANAGER_IDTextBox
         '
         Me.MANAGER_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "MANAGER_ID", True))
+        Me.MANAGER_IDTextBox.Enabled = False
         Me.MANAGER_IDTextBox.Location = New System.Drawing.Point(275, 28)
         Me.MANAGER_IDTextBox.Name = "MANAGER_IDTextBox"
         Me.MANAGER_IDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -395,6 +368,7 @@ Partial Class frmEmpleados
         'COMMENTSTextBox
         '
         Me.COMMENTSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "COMMENTS", True))
+        Me.COMMENTSTextBox.Enabled = False
         Me.COMMENTSTextBox.Location = New System.Drawing.Point(376, 142)
         Me.COMMENTSTextBox.Multiline = True
         Me.COMMENTSTextBox.Name = "COMMENTSTextBox"
@@ -404,6 +378,7 @@ Partial Class frmEmpleados
         'START_DATEDateTimePicker
         '
         Me.START_DATEDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.S_EMPBindingSource, "START_DATE", True))
+        Me.START_DATEDateTimePicker.Enabled = False
         Me.START_DATEDateTimePicker.Location = New System.Drawing.Point(90, 139)
         Me.START_DATEDateTimePicker.Name = "START_DATEDateTimePicker"
         Me.START_DATEDateTimePicker.Size = New System.Drawing.Size(200, 20)
@@ -412,6 +387,7 @@ Partial Class frmEmpleados
         'USERIDTextBox
         '
         Me.USERIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "USERID", True))
+        Me.USERIDTextBox.Enabled = False
         Me.USERIDTextBox.Location = New System.Drawing.Point(83, 103)
         Me.USERIDTextBox.Name = "USERIDTextBox"
         Me.USERIDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -420,6 +396,7 @@ Partial Class frmEmpleados
         'FIRST_NAMETextBox
         '
         Me.FIRST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "FIRST_NAME", True))
+        Me.FIRST_NAMETextBox.Enabled = False
         Me.FIRST_NAMETextBox.Location = New System.Drawing.Point(83, 77)
         Me.FIRST_NAMETextBox.Name = "FIRST_NAMETextBox"
         Me.FIRST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
@@ -428,6 +405,7 @@ Partial Class frmEmpleados
         'LAST_NAMETextBox
         '
         Me.LAST_NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "LAST_NAME", True))
+        Me.LAST_NAMETextBox.Enabled = False
         Me.LAST_NAMETextBox.Location = New System.Drawing.Point(83, 51)
         Me.LAST_NAMETextBox.Name = "LAST_NAMETextBox"
         Me.LAST_NAMETextBox.Size = New System.Drawing.Size(100, 20)
@@ -436,6 +414,7 @@ Partial Class frmEmpleados
         'IDTextBox
         '
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.S_EMPBindingSource, "ID", True))
+        Me.IDTextBox.Enabled = False
         Me.IDTextBox.Location = New System.Drawing.Point(83, 28)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
@@ -475,7 +454,7 @@ Partial Class frmEmpleados
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.LASTNAMEDataGridViewTextBoxColumn, Me.FIRSTNAMEDataGridViewTextBoxColumn, Me.USERIDDataGridViewTextBoxColumn, Me.STARTDATEDataGridViewTextBoxColumn, Me.COMMENTSDataGridViewTextBoxColumn, Me.MANAGERIDDataGridViewTextBoxColumn, Me.TITLEDataGridViewTextBoxColumn, Me.DEPTIDDataGridViewTextBoxColumn, Me.SALARYDataGridViewTextBoxColumn, Me.COMMISSIONPCTDataGridViewTextBoxColumn, Me.PASSWORDDataGridViewTextBoxColumn, Me.STATUSDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.LASTNAMEDataGridViewTextBoxColumn, Me.FIRSTNAMEDataGridViewTextBoxColumn, Me.USERIDDataGridViewTextBoxColumn, Me.STARTDATEDataGridViewTextBoxColumn, Me.MANAGERIDDataGridViewTextBoxColumn, Me.TITLEDataGridViewTextBoxColumn, Me.DEPTIDDataGridViewTextBoxColumn, Me.SALARYDataGridViewTextBoxColumn, Me.STATUSDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.S_EMPBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(210, 205)
         Me.DataGridView1.Name = "DataGridView1"
@@ -483,97 +462,6 @@ Partial Class frmEmpleados
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(574, 254)
         Me.DataGridView1.TabIndex = 4
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'LASTNAMEDataGridViewTextBoxColumn
-        '
-        Me.LASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "LAST_NAME"
-        Me.LASTNAMEDataGridViewTextBoxColumn.HeaderText = "LAST_NAME"
-        Me.LASTNAMEDataGridViewTextBoxColumn.Name = "LASTNAMEDataGridViewTextBoxColumn"
-        Me.LASTNAMEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FIRSTNAMEDataGridViewTextBoxColumn
-        '
-        Me.FIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "FIRST_NAME"
-        Me.FIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "FIRST_NAME"
-        Me.FIRSTNAMEDataGridViewTextBoxColumn.Name = "FIRSTNAMEDataGridViewTextBoxColumn"
-        Me.FIRSTNAMEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'USERIDDataGridViewTextBoxColumn
-        '
-        Me.USERIDDataGridViewTextBoxColumn.DataPropertyName = "USERID"
-        Me.USERIDDataGridViewTextBoxColumn.HeaderText = "USERID"
-        Me.USERIDDataGridViewTextBoxColumn.Name = "USERIDDataGridViewTextBoxColumn"
-        Me.USERIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'STARTDATEDataGridViewTextBoxColumn
-        '
-        Me.STARTDATEDataGridViewTextBoxColumn.DataPropertyName = "START_DATE"
-        Me.STARTDATEDataGridViewTextBoxColumn.HeaderText = "START_DATE"
-        Me.STARTDATEDataGridViewTextBoxColumn.Name = "STARTDATEDataGridViewTextBoxColumn"
-        Me.STARTDATEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'COMMENTSDataGridViewTextBoxColumn
-        '
-        Me.COMMENTSDataGridViewTextBoxColumn.DataPropertyName = "COMMENTS"
-        Me.COMMENTSDataGridViewTextBoxColumn.HeaderText = "COMMENTS"
-        Me.COMMENTSDataGridViewTextBoxColumn.Name = "COMMENTSDataGridViewTextBoxColumn"
-        Me.COMMENTSDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MANAGERIDDataGridViewTextBoxColumn
-        '
-        Me.MANAGERIDDataGridViewTextBoxColumn.DataPropertyName = "MANAGER_ID"
-        Me.MANAGERIDDataGridViewTextBoxColumn.HeaderText = "MANAGER_ID"
-        Me.MANAGERIDDataGridViewTextBoxColumn.Name = "MANAGERIDDataGridViewTextBoxColumn"
-        Me.MANAGERIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TITLEDataGridViewTextBoxColumn
-        '
-        Me.TITLEDataGridViewTextBoxColumn.DataPropertyName = "TITLE"
-        Me.TITLEDataGridViewTextBoxColumn.HeaderText = "TITLE"
-        Me.TITLEDataGridViewTextBoxColumn.Name = "TITLEDataGridViewTextBoxColumn"
-        Me.TITLEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DEPTIDDataGridViewTextBoxColumn
-        '
-        Me.DEPTIDDataGridViewTextBoxColumn.DataPropertyName = "DEPT_ID"
-        Me.DEPTIDDataGridViewTextBoxColumn.HeaderText = "DEPT_ID"
-        Me.DEPTIDDataGridViewTextBoxColumn.Name = "DEPTIDDataGridViewTextBoxColumn"
-        Me.DEPTIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SALARYDataGridViewTextBoxColumn
-        '
-        Me.SALARYDataGridViewTextBoxColumn.DataPropertyName = "SALARY"
-        Me.SALARYDataGridViewTextBoxColumn.HeaderText = "SALARY"
-        Me.SALARYDataGridViewTextBoxColumn.Name = "SALARYDataGridViewTextBoxColumn"
-        Me.SALARYDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'COMMISSIONPCTDataGridViewTextBoxColumn
-        '
-        Me.COMMISSIONPCTDataGridViewTextBoxColumn.DataPropertyName = "COMMISSION_PCT"
-        Me.COMMISSIONPCTDataGridViewTextBoxColumn.HeaderText = "COMMISSION_PCT"
-        Me.COMMISSIONPCTDataGridViewTextBoxColumn.Name = "COMMISSIONPCTDataGridViewTextBoxColumn"
-        Me.COMMISSIONPCTDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PASSWORDDataGridViewTextBoxColumn
-        '
-        Me.PASSWORDDataGridViewTextBoxColumn.DataPropertyName = "PASSWORD"
-        Me.PASSWORDDataGridViewTextBoxColumn.HeaderText = "PASSWORD"
-        Me.PASSWORDDataGridViewTextBoxColumn.Name = "PASSWORDDataGridViewTextBoxColumn"
-        Me.PASSWORDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'STATUSDataGridViewTextBoxColumn
-        '
-        Me.STATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS"
-        Me.STATUSDataGridViewTextBoxColumn.HeaderText = "STATUS"
-        Me.STATUSDataGridViewTextBoxColumn.Name = "STATUSDataGridViewTextBoxColumn"
-        Me.STATUSDataGridViewTextBoxColumn.ReadOnly = True
         '
         'btnAdd
         '
@@ -611,6 +499,107 @@ Partial Class frmEmpleados
         Me.btnSave.Text = "Guardar"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'S_EMPBindingSource
+        '
+        Me.S_EMPBindingSource.DataMember = "S_EMP"
+        Me.S_EMPBindingSource.DataSource = Me.DataSetOracle
+        '
+        'DataSetOracle
+        '
+        Me.DataSetOracle.DataSetName = "DataSetOracle"
+        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'S_EMPTableAdapter
+        '
+        Me.S_EMPTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.S_CUSTOMERTableAdapter = Nothing
+        Me.TableAdapterManager.S_DEPTTableAdapter = Nothing
+        Me.TableAdapterManager.S_EMPTableAdapter = Me.S_EMPTableAdapter
+        Me.TableAdapterManager.S_IMAGETableAdapter = Nothing
+        Me.TableAdapterManager.S_INVENTORYTableAdapter = Nothing
+        Me.TableAdapterManager.S_ITEMTableAdapter = Nothing
+        Me.TableAdapterManager.S_LONGTEXTTableAdapter = Nothing
+        Me.TableAdapterManager.S_ORDTableAdapter = Nothing
+        Me.TableAdapterManager.S_PRODUCTTableAdapter = Nothing
+        Me.TableAdapterManager.S_REGIONTableAdapter = Nothing
+        Me.TableAdapterManager.S_TITLETableAdapter = Nothing
+        Me.TableAdapterManager.S_WAREHOUSETableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = P1CR.DataSetOracleTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LASTNAMEDataGridViewTextBoxColumn
+        '
+        Me.LASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "LAST_NAME"
+        Me.LASTNAMEDataGridViewTextBoxColumn.HeaderText = "LAST_NAME"
+        Me.LASTNAMEDataGridViewTextBoxColumn.Name = "LASTNAMEDataGridViewTextBoxColumn"
+        Me.LASTNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FIRSTNAMEDataGridViewTextBoxColumn
+        '
+        Me.FIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "FIRST_NAME"
+        Me.FIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "FIRST_NAME"
+        Me.FIRSTNAMEDataGridViewTextBoxColumn.Name = "FIRSTNAMEDataGridViewTextBoxColumn"
+        Me.FIRSTNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'USERIDDataGridViewTextBoxColumn
+        '
+        Me.USERIDDataGridViewTextBoxColumn.DataPropertyName = "USERID"
+        Me.USERIDDataGridViewTextBoxColumn.HeaderText = "USERID"
+        Me.USERIDDataGridViewTextBoxColumn.Name = "USERIDDataGridViewTextBoxColumn"
+        Me.USERIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'STARTDATEDataGridViewTextBoxColumn
+        '
+        Me.STARTDATEDataGridViewTextBoxColumn.DataPropertyName = "START_DATE"
+        Me.STARTDATEDataGridViewTextBoxColumn.HeaderText = "START_DATE"
+        Me.STARTDATEDataGridViewTextBoxColumn.Name = "STARTDATEDataGridViewTextBoxColumn"
+        Me.STARTDATEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MANAGERIDDataGridViewTextBoxColumn
+        '
+        Me.MANAGERIDDataGridViewTextBoxColumn.DataPropertyName = "MANAGER_ID"
+        Me.MANAGERIDDataGridViewTextBoxColumn.HeaderText = "MANAGER_ID"
+        Me.MANAGERIDDataGridViewTextBoxColumn.Name = "MANAGERIDDataGridViewTextBoxColumn"
+        Me.MANAGERIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TITLEDataGridViewTextBoxColumn
+        '
+        Me.TITLEDataGridViewTextBoxColumn.DataPropertyName = "TITLE"
+        Me.TITLEDataGridViewTextBoxColumn.HeaderText = "TITLE"
+        Me.TITLEDataGridViewTextBoxColumn.Name = "TITLEDataGridViewTextBoxColumn"
+        Me.TITLEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DEPTIDDataGridViewTextBoxColumn
+        '
+        Me.DEPTIDDataGridViewTextBoxColumn.DataPropertyName = "DEPT_ID"
+        Me.DEPTIDDataGridViewTextBoxColumn.HeaderText = "DEPT_ID"
+        Me.DEPTIDDataGridViewTextBoxColumn.Name = "DEPTIDDataGridViewTextBoxColumn"
+        Me.DEPTIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SALARYDataGridViewTextBoxColumn
+        '
+        Me.SALARYDataGridViewTextBoxColumn.DataPropertyName = "SALARY"
+        Me.SALARYDataGridViewTextBoxColumn.HeaderText = "SALARY"
+        Me.SALARYDataGridViewTextBoxColumn.Name = "SALARYDataGridViewTextBoxColumn"
+        Me.SALARYDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'STATUSDataGridViewTextBoxColumn
+        '
+        Me.STATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS"
+        Me.STATUSDataGridViewTextBoxColumn.HeaderText = "STATUS"
+        Me.STATUSDataGridViewTextBoxColumn.Name = "STATUSDataGridViewTextBoxColumn"
+        Me.STATUSDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -631,8 +620,6 @@ Partial Class frmEmpleados
         Me.Name = "frmEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleados"
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.S_EMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbempinfo.ResumeLayout(False)
@@ -640,6 +627,8 @@ Partial Class frmEmpleados
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.S_EMPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -650,7 +639,7 @@ Partial Class frmEmpleados
     Friend WithEvents TableAdapterManager As DataSetOracleTableAdapters.TableAdapterManager
     Friend WithEvents rbID As RadioButton
     Friend WithEvents rbNombre As RadioButton
-    Friend WithEvents txtSearchemp As TextBox
+    Friend WithEvents txtSearchEmp As TextBox
     Friend WithEvents btnbuscar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents gbempinfo As GroupBox
@@ -681,12 +670,9 @@ Partial Class frmEmpleados
     Friend WithEvents FIRSTNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents USERIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents STARTDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents COMMENTSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MANAGERIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TITLEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DEPTIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SALARYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents COMMISSIONPCTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PASSWORDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents STATUSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

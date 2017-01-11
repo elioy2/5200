@@ -35,14 +35,13 @@ Partial Class frmClientes
         Dim CREDIT_RATINGLabel As System.Windows.Forms.Label
         Dim SALES_REP_IDLabel As System.Windows.Forms.Label
         Dim REGION_IDLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.mnuClientes = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverAlMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SALES_REP_IDTextBox = New System.Windows.Forms.TextBox()
-        Me.SCUSTOMERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetOracle = New P1CR.DataSetOracle()
         Me.REGION_IDTextBox = New System.Windows.Forms.TextBox()
         Me.CREDIT_RATINGTextBox = New System.Windows.Forms.TextBox()
         Me.ZIP_CODETextBox = New System.Windows.Forms.TextBox()
@@ -55,6 +54,15 @@ Partial Class frmClientes
         Me.NAMETextBox = New System.Windows.Forms.TextBox()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.dgvClients = New System.Windows.Forms.DataGridView()
+        Me.btnSearchClient = New System.Windows.Forms.Button()
+        Me.btnSaveClient = New System.Windows.Forms.Button()
+        Me.btnDeleteClient = New System.Windows.Forms.Button()
+        Me.btnEditClient = New System.Windows.Forms.Button()
+        Me.btnAddClient = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtSearchClient = New System.Windows.Forms.TextBox()
+        Me.rbNombre = New System.Windows.Forms.RadioButton()
+        Me.rbID = New System.Windows.Forms.RadioButton()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PHONEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,15 +75,8 @@ Partial Class frmClientes
         Me.SALESREPIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.REGIONIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.COMMENTSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnSearchClient = New System.Windows.Forms.Button()
-        Me.btnSaveClient = New System.Windows.Forms.Button()
-        Me.btnDeleteClient = New System.Windows.Forms.Button()
-        Me.btnEditClient = New System.Windows.Forms.Button()
-        Me.btnAddClient = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtSearchClient = New System.Windows.Forms.TextBox()
-        Me.rbNombre = New System.Windows.Forms.RadioButton()
-        Me.rbID = New System.Windows.Forms.RadioButton()
+        Me.SCUSTOMERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetOracle = New P1CR.DataSetOracle()
         Me.S_CUSTOMERTableAdapter = New P1CR.DataSetOracleTableAdapters.S_CUSTOMERTableAdapter()
         Me.TableAdapterManager = New P1CR.DataSetOracleTableAdapters.TableAdapterManager()
         IDLabel = New System.Windows.Forms.Label()
@@ -92,10 +93,10 @@ Partial Class frmClientes
         REGION_IDLabel = New System.Windows.Forms.Label()
         Me.mnuClientes.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvClients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDLabel
@@ -276,16 +277,6 @@ Partial Class frmClientes
         Me.SALES_REP_IDTextBox.Size = New System.Drawing.Size(100, 20)
         Me.SALES_REP_IDTextBox.TabIndex = 24
         '
-        'SCUSTOMERBindingSource
-        '
-        Me.SCUSTOMERBindingSource.DataMember = "S_CUSTOMER"
-        Me.SCUSTOMERBindingSource.DataSource = Me.DataSetOracle
-        '
-        'DataSetOracle
-        '
-        Me.DataSetOracle.DataSetName = "DataSetOracle"
-        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'REGION_IDTextBox
         '
         Me.REGION_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "REGION_ID", True))
@@ -401,90 +392,6 @@ Partial Class frmClientes
         Me.dgvClients.Size = New System.Drawing.Size(561, 206)
         Me.dgvClients.TabIndex = 7
         '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NAMEDataGridViewTextBoxColumn
-        '
-        Me.NAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME"
-        Me.NAMEDataGridViewTextBoxColumn.HeaderText = "NAME"
-        Me.NAMEDataGridViewTextBoxColumn.Name = "NAMEDataGridViewTextBoxColumn"
-        Me.NAMEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PHONEDataGridViewTextBoxColumn
-        '
-        Me.PHONEDataGridViewTextBoxColumn.DataPropertyName = "PHONE"
-        Me.PHONEDataGridViewTextBoxColumn.HeaderText = "PHONE"
-        Me.PHONEDataGridViewTextBoxColumn.Name = "PHONEDataGridViewTextBoxColumn"
-        Me.PHONEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ADDRESSDataGridViewTextBoxColumn
-        '
-        Me.ADDRESSDataGridViewTextBoxColumn.DataPropertyName = "ADDRESS"
-        Me.ADDRESSDataGridViewTextBoxColumn.HeaderText = "ADDRESS"
-        Me.ADDRESSDataGridViewTextBoxColumn.Name = "ADDRESSDataGridViewTextBoxColumn"
-        Me.ADDRESSDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CITYDataGridViewTextBoxColumn
-        '
-        Me.CITYDataGridViewTextBoxColumn.DataPropertyName = "CITY"
-        Me.CITYDataGridViewTextBoxColumn.HeaderText = "CITY"
-        Me.CITYDataGridViewTextBoxColumn.Name = "CITYDataGridViewTextBoxColumn"
-        Me.CITYDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'STATEDataGridViewTextBoxColumn
-        '
-        Me.STATEDataGridViewTextBoxColumn.DataPropertyName = "STATE"
-        Me.STATEDataGridViewTextBoxColumn.HeaderText = "STATE"
-        Me.STATEDataGridViewTextBoxColumn.Name = "STATEDataGridViewTextBoxColumn"
-        Me.STATEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'COUNTRYDataGridViewTextBoxColumn
-        '
-        Me.COUNTRYDataGridViewTextBoxColumn.DataPropertyName = "COUNTRY"
-        Me.COUNTRYDataGridViewTextBoxColumn.HeaderText = "COUNTRY"
-        Me.COUNTRYDataGridViewTextBoxColumn.Name = "COUNTRYDataGridViewTextBoxColumn"
-        Me.COUNTRYDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ZIPCODEDataGridViewTextBoxColumn
-        '
-        Me.ZIPCODEDataGridViewTextBoxColumn.DataPropertyName = "ZIP_CODE"
-        Me.ZIPCODEDataGridViewTextBoxColumn.HeaderText = "ZIP_CODE"
-        Me.ZIPCODEDataGridViewTextBoxColumn.Name = "ZIPCODEDataGridViewTextBoxColumn"
-        Me.ZIPCODEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CREDITRATINGDataGridViewTextBoxColumn
-        '
-        Me.CREDITRATINGDataGridViewTextBoxColumn.DataPropertyName = "CREDIT_RATING"
-        Me.CREDITRATINGDataGridViewTextBoxColumn.HeaderText = "CREDIT_RATING"
-        Me.CREDITRATINGDataGridViewTextBoxColumn.Name = "CREDITRATINGDataGridViewTextBoxColumn"
-        Me.CREDITRATINGDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SALESREPIDDataGridViewTextBoxColumn
-        '
-        Me.SALESREPIDDataGridViewTextBoxColumn.DataPropertyName = "SALES_REP_ID"
-        Me.SALESREPIDDataGridViewTextBoxColumn.HeaderText = "SALES_REP_ID"
-        Me.SALESREPIDDataGridViewTextBoxColumn.Name = "SALESREPIDDataGridViewTextBoxColumn"
-        Me.SALESREPIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'REGIONIDDataGridViewTextBoxColumn
-        '
-        Me.REGIONIDDataGridViewTextBoxColumn.DataPropertyName = "REGION_ID"
-        Me.REGIONIDDataGridViewTextBoxColumn.HeaderText = "REGION_ID"
-        Me.REGIONIDDataGridViewTextBoxColumn.Name = "REGIONIDDataGridViewTextBoxColumn"
-        Me.REGIONIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'COMMENTSDataGridViewTextBoxColumn
-        '
-        Me.COMMENTSDataGridViewTextBoxColumn.DataPropertyName = "COMMENTS"
-        Me.COMMENTSDataGridViewTextBoxColumn.HeaderText = "COMMENTS"
-        Me.COMMENTSDataGridViewTextBoxColumn.Name = "COMMENTSDataGridViewTextBoxColumn"
-        Me.COMMENTSDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'btnSearchClient
         '
         Me.btnSearchClient.Location = New System.Drawing.Point(658, 140)
@@ -571,6 +478,100 @@ Partial Class frmClientes
         Me.rbID.Text = "ID"
         Me.rbID.UseVisualStyleBackColor = True
         '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NAMEDataGridViewTextBoxColumn
+        '
+        Me.NAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME"
+        Me.NAMEDataGridViewTextBoxColumn.HeaderText = "NAME"
+        Me.NAMEDataGridViewTextBoxColumn.Name = "NAMEDataGridViewTextBoxColumn"
+        Me.NAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PHONEDataGridViewTextBoxColumn
+        '
+        Me.PHONEDataGridViewTextBoxColumn.DataPropertyName = "PHONE"
+        Me.PHONEDataGridViewTextBoxColumn.HeaderText = "PHONE"
+        Me.PHONEDataGridViewTextBoxColumn.Name = "PHONEDataGridViewTextBoxColumn"
+        Me.PHONEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ADDRESSDataGridViewTextBoxColumn
+        '
+        Me.ADDRESSDataGridViewTextBoxColumn.DataPropertyName = "ADDRESS"
+        Me.ADDRESSDataGridViewTextBoxColumn.HeaderText = "ADDRESS"
+        Me.ADDRESSDataGridViewTextBoxColumn.Name = "ADDRESSDataGridViewTextBoxColumn"
+        Me.ADDRESSDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CITYDataGridViewTextBoxColumn
+        '
+        Me.CITYDataGridViewTextBoxColumn.DataPropertyName = "CITY"
+        Me.CITYDataGridViewTextBoxColumn.HeaderText = "CITY"
+        Me.CITYDataGridViewTextBoxColumn.Name = "CITYDataGridViewTextBoxColumn"
+        Me.CITYDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'STATEDataGridViewTextBoxColumn
+        '
+        Me.STATEDataGridViewTextBoxColumn.DataPropertyName = "STATE"
+        Me.STATEDataGridViewTextBoxColumn.HeaderText = "STATE"
+        Me.STATEDataGridViewTextBoxColumn.Name = "STATEDataGridViewTextBoxColumn"
+        Me.STATEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'COUNTRYDataGridViewTextBoxColumn
+        '
+        Me.COUNTRYDataGridViewTextBoxColumn.DataPropertyName = "COUNTRY"
+        Me.COUNTRYDataGridViewTextBoxColumn.HeaderText = "COUNTRY"
+        Me.COUNTRYDataGridViewTextBoxColumn.Name = "COUNTRYDataGridViewTextBoxColumn"
+        Me.COUNTRYDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ZIPCODEDataGridViewTextBoxColumn
+        '
+        Me.ZIPCODEDataGridViewTextBoxColumn.DataPropertyName = "ZIP_CODE"
+        Me.ZIPCODEDataGridViewTextBoxColumn.HeaderText = "ZIP_CODE"
+        Me.ZIPCODEDataGridViewTextBoxColumn.Name = "ZIPCODEDataGridViewTextBoxColumn"
+        Me.ZIPCODEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CREDITRATINGDataGridViewTextBoxColumn
+        '
+        Me.CREDITRATINGDataGridViewTextBoxColumn.DataPropertyName = "CREDIT_RATING"
+        Me.CREDITRATINGDataGridViewTextBoxColumn.HeaderText = "CREDIT_RATING"
+        Me.CREDITRATINGDataGridViewTextBoxColumn.Name = "CREDITRATINGDataGridViewTextBoxColumn"
+        Me.CREDITRATINGDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SALESREPIDDataGridViewTextBoxColumn
+        '
+        Me.SALESREPIDDataGridViewTextBoxColumn.DataPropertyName = "SALES_REP_ID"
+        Me.SALESREPIDDataGridViewTextBoxColumn.HeaderText = "SALES_REP_ID"
+        Me.SALESREPIDDataGridViewTextBoxColumn.Name = "SALESREPIDDataGridViewTextBoxColumn"
+        Me.SALESREPIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'REGIONIDDataGridViewTextBoxColumn
+        '
+        Me.REGIONIDDataGridViewTextBoxColumn.DataPropertyName = "REGION_ID"
+        Me.REGIONIDDataGridViewTextBoxColumn.HeaderText = "REGION_ID"
+        Me.REGIONIDDataGridViewTextBoxColumn.Name = "REGIONIDDataGridViewTextBoxColumn"
+        Me.REGIONIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'COMMENTSDataGridViewTextBoxColumn
+        '
+        Me.COMMENTSDataGridViewTextBoxColumn.DataPropertyName = "COMMENTS"
+        Me.COMMENTSDataGridViewTextBoxColumn.HeaderText = "COMMENTS"
+        Me.COMMENTSDataGridViewTextBoxColumn.Name = "COMMENTSDataGridViewTextBoxColumn"
+        Me.COMMENTSDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SCUSTOMERBindingSource
+        '
+        Me.SCUSTOMERBindingSource.DataMember = "S_CUSTOMER"
+        Me.SCUSTOMERBindingSource.DataSource = Me.DataSetOracle
+        '
+        'DataSetOracle
+        '
+        Me.DataSetOracle.DataSetName = "DataSetOracle"
+        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'S_CUSTOMERTableAdapter
         '
         Me.S_CUSTOMERTableAdapter.ClearBeforeFill = True
@@ -606,6 +607,7 @@ Partial Class frmClientes
         Me.Controls.Add(Me.dgvClients)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.mnuClientes)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mnuClientes
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -614,11 +616,11 @@ Partial Class frmClientes
         Me.mnuClientes.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvClients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
