@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmClientes
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmClientes
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim IDLabel As System.Windows.Forms.Label
@@ -35,16 +35,15 @@ Partial Class frmClientes
         Dim CREDIT_RATINGLabel As System.Windows.Forms.Label
         Dim SALES_REP_IDLabel As System.Windows.Forms.Label
         Dim REGION_IDLabel As System.Windows.Forms.Label
-        Me.SCUSTOMERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetOracle = New P1CR.DataSetOracle()
-        Me.S_CUSTOMERTableAdapter = New P1CR.DataSetOracleTableAdapters.S_CUSTOMERTableAdapter()
         Me.mnuClientes = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverAlMenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.REGION_IDTextBox = New System.Windows.Forms.TextBox()
         Me.SALES_REP_IDTextBox = New System.Windows.Forms.TextBox()
+        Me.SCUSTOMERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetOracle = New P1CR.DataSetOracle()
+        Me.REGION_IDTextBox = New System.Windows.Forms.TextBox()
         Me.CREDIT_RATINGTextBox = New System.Windows.Forms.TextBox()
         Me.ZIP_CODETextBox = New System.Windows.Forms.TextBox()
         Me.COUNTRYTextBox = New System.Windows.Forms.TextBox()
@@ -55,7 +54,6 @@ Partial Class frmClientes
         Me.PHONETextBox = New System.Windows.Forms.TextBox()
         Me.NAMETextBox = New System.Windows.Forms.TextBox()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
-        Me.TableAdapterManager = New P1CR.DataSetOracleTableAdapters.TableAdapterManager()
         Me.dgvClients = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -78,6 +76,8 @@ Partial Class frmClientes
         Me.txtSearchClient = New System.Windows.Forms.TextBox()
         Me.rbNombre = New System.Windows.Forms.RadioButton()
         Me.rbID = New System.Windows.Forms.RadioButton()
+        Me.S_CUSTOMERTableAdapter = New P1CR.DataSetOracleTableAdapters.S_CUSTOMERTableAdapter()
+        Me.TableAdapterManager = New P1CR.DataSetOracleTableAdapters.TableAdapterManager()
         IDLabel = New System.Windows.Forms.Label()
         NAMELabel = New System.Windows.Forms.Label()
         PHONELabel = New System.Windows.Forms.Label()
@@ -90,10 +90,10 @@ Partial Class frmClientes
         CREDIT_RATINGLabel = New System.Windows.Forms.Label()
         SALES_REP_IDLabel = New System.Windows.Forms.Label()
         REGION_IDLabel = New System.Windows.Forms.Label()
-        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuClientes.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvClients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -206,20 +206,6 @@ Partial Class frmClientes
         REGION_IDLabel.TabIndex = 22
         REGION_IDLabel.Text = "REGION ID:"
         '
-        'SCUSTOMERBindingSource
-        '
-        Me.SCUSTOMERBindingSource.DataMember = "S_CUSTOMER"
-        Me.SCUSTOMERBindingSource.DataSource = Me.DataSetOracle
-        '
-        'DataSetOracle
-        '
-        Me.DataSetOracle.DataSetName = "DataSetOracle"
-        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'S_CUSTOMERTableAdapter
-        '
-        Me.S_CUSTOMERTableAdapter.ClearBeforeFill = True
-        '
         'mnuClientes
         '
         Me.mnuClientes.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
@@ -250,10 +236,10 @@ Partial Class frmClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.SALES_REP_IDTextBox)
         Me.GroupBox1.Controls.Add(REGION_IDLabel)
         Me.GroupBox1.Controls.Add(Me.REGION_IDTextBox)
         Me.GroupBox1.Controls.Add(SALES_REP_IDLabel)
-        Me.GroupBox1.Controls.Add(Me.SALES_REP_IDTextBox)
         Me.GroupBox1.Controls.Add(CREDIT_RATINGLabel)
         Me.GroupBox1.Controls.Add(Me.CREDIT_RATINGTextBox)
         Me.GroupBox1.Controls.Add(ZIP_CODELabel)
@@ -276,30 +262,43 @@ Partial Class frmClientes
         Me.GroupBox1.Controls.Add(Me.IDTextBox)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(596, 209)
+        Me.GroupBox1.Size = New System.Drawing.Size(736, 210)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del Cliente"
         '
+        'SALES_REP_IDTextBox
+        '
+        Me.SALES_REP_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "SALES_REP_ID", True))
+        Me.SALES_REP_IDTextBox.Enabled = False
+        Me.SALES_REP_IDTextBox.Location = New System.Drawing.Point(483, 54)
+        Me.SALES_REP_IDTextBox.Name = "SALES_REP_IDTextBox"
+        Me.SALES_REP_IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SALES_REP_IDTextBox.TabIndex = 24
+        '
+        'SCUSTOMERBindingSource
+        '
+        Me.SCUSTOMERBindingSource.DataMember = "S_CUSTOMER"
+        Me.SCUSTOMERBindingSource.DataSource = Me.DataSetOracle
+        '
+        'DataSetOracle
+        '
+        Me.DataSetOracle.DataSetName = "DataSetOracle"
+        Me.DataSetOracle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'REGION_IDTextBox
         '
         Me.REGION_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "REGION_ID", True))
+        Me.REGION_IDTextBox.Enabled = False
         Me.REGION_IDTextBox.Location = New System.Drawing.Point(483, 88)
         Me.REGION_IDTextBox.Name = "REGION_IDTextBox"
         Me.REGION_IDTextBox.Size = New System.Drawing.Size(100, 20)
         Me.REGION_IDTextBox.TabIndex = 23
         '
-        'SALES_REP_IDTextBox
-        '
-        Me.SALES_REP_IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "SALES_REP_ID", True))
-        Me.SALES_REP_IDTextBox.Location = New System.Drawing.Point(483, 54)
-        Me.SALES_REP_IDTextBox.Name = "SALES_REP_IDTextBox"
-        Me.SALES_REP_IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.SALES_REP_IDTextBox.TabIndex = 21
-        '
         'CREDIT_RATINGTextBox
         '
         Me.CREDIT_RATINGTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "CREDIT_RATING", True))
+        Me.CREDIT_RATINGTextBox.Enabled = False
         Me.CREDIT_RATINGTextBox.Location = New System.Drawing.Point(483, 22)
         Me.CREDIT_RATINGTextBox.Name = "CREDIT_RATINGTextBox"
         Me.CREDIT_RATINGTextBox.Size = New System.Drawing.Size(100, 20)
@@ -308,6 +307,7 @@ Partial Class frmClientes
         'ZIP_CODETextBox
         '
         Me.ZIP_CODETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ZIP_CODE", True))
+        Me.ZIP_CODETextBox.Enabled = False
         Me.ZIP_CODETextBox.Location = New System.Drawing.Point(264, 114)
         Me.ZIP_CODETextBox.Name = "ZIP_CODETextBox"
         Me.ZIP_CODETextBox.Size = New System.Drawing.Size(100, 20)
@@ -316,6 +316,7 @@ Partial Class frmClientes
         'COUNTRYTextBox
         '
         Me.COUNTRYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "COUNTRY", True))
+        Me.COUNTRYTextBox.Enabled = False
         Me.COUNTRYTextBox.Location = New System.Drawing.Point(264, 85)
         Me.COUNTRYTextBox.Name = "COUNTRYTextBox"
         Me.COUNTRYTextBox.Size = New System.Drawing.Size(100, 20)
@@ -324,6 +325,7 @@ Partial Class frmClientes
         'STATETextBox
         '
         Me.STATETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "STATE", True))
+        Me.STATETextBox.Enabled = False
         Me.STATETextBox.Location = New System.Drawing.Point(264, 55)
         Me.STATETextBox.Name = "STATETextBox"
         Me.STATETextBox.Size = New System.Drawing.Size(100, 20)
@@ -332,6 +334,7 @@ Partial Class frmClientes
         'CITYTextBox
         '
         Me.CITYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "CITY", True))
+        Me.CITYTextBox.Enabled = False
         Me.CITYTextBox.Location = New System.Drawing.Point(264, 22)
         Me.CITYTextBox.Name = "CITYTextBox"
         Me.CITYTextBox.Size = New System.Drawing.Size(100, 20)
@@ -340,6 +343,7 @@ Partial Class frmClientes
         'COMMENTSTextBox
         '
         Me.COMMENTSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "COMMENTS", True))
+        Me.COMMENTSTextBox.Enabled = False
         Me.COMMENTSTextBox.Location = New System.Drawing.Point(83, 150)
         Me.COMMENTSTextBox.Multiline = True
         Me.COMMENTSTextBox.Name = "COMMENTSTextBox"
@@ -349,6 +353,7 @@ Partial Class frmClientes
         'ADDRESSTextBox
         '
         Me.ADDRESSTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ADDRESS", True))
+        Me.ADDRESSTextBox.Enabled = False
         Me.ADDRESSTextBox.Location = New System.Drawing.Point(73, 110)
         Me.ADDRESSTextBox.Name = "ADDRESSTextBox"
         Me.ADDRESSTextBox.Size = New System.Drawing.Size(100, 20)
@@ -357,6 +362,7 @@ Partial Class frmClientes
         'PHONETextBox
         '
         Me.PHONETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "PHONE", True))
+        Me.PHONETextBox.Enabled = False
         Me.PHONETextBox.Location = New System.Drawing.Point(73, 81)
         Me.PHONETextBox.Name = "PHONETextBox"
         Me.PHONETextBox.Size = New System.Drawing.Size(100, 20)
@@ -365,6 +371,7 @@ Partial Class frmClientes
         'NAMETextBox
         '
         Me.NAMETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "NAME", True))
+        Me.NAMETextBox.Enabled = False
         Me.NAMETextBox.Location = New System.Drawing.Point(73, 51)
         Me.NAMETextBox.Name = "NAMETextBox"
         Me.NAMETextBox.Size = New System.Drawing.Size(100, 20)
@@ -373,27 +380,11 @@ Partial Class frmClientes
         'IDTextBox
         '
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCUSTOMERBindingSource, "ID", True))
+        Me.IDTextBox.Enabled = False
         Me.IDTextBox.Location = New System.Drawing.Point(73, 22)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
         Me.IDTextBox.TabIndex = 1
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.S_CUSTOMERTableAdapter = Me.S_CUSTOMERTableAdapter
-        Me.TableAdapterManager.S_DEPTTableAdapter = Nothing
-        Me.TableAdapterManager.S_EMPTableAdapter = Nothing
-        Me.TableAdapterManager.S_IMAGETableAdapter = Nothing
-        Me.TableAdapterManager.S_INVENTORYTableAdapter = Nothing
-        Me.TableAdapterManager.S_ITEMTableAdapter = Nothing
-        Me.TableAdapterManager.S_LONGTEXTTableAdapter = Nothing
-        Me.TableAdapterManager.S_ORDTableAdapter = Nothing
-        Me.TableAdapterManager.S_PRODUCTTableAdapter = Nothing
-        Me.TableAdapterManager.S_REGIONTableAdapter = Nothing
-        Me.TableAdapterManager.S_TITLETableAdapter = Nothing
-        Me.TableAdapterManager.S_WAREHOUSETableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = P1CR.DataSetOracleTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'dgvClients
         '
@@ -580,6 +571,27 @@ Partial Class frmClientes
         Me.rbID.Text = "ID"
         Me.rbID.UseVisualStyleBackColor = True
         '
+        'S_CUSTOMERTableAdapter
+        '
+        Me.S_CUSTOMERTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.S_CUSTOMERTableAdapter = Me.S_CUSTOMERTableAdapter
+        Me.TableAdapterManager.S_DEPTTableAdapter = Nothing
+        Me.TableAdapterManager.S_EMPTableAdapter = Nothing
+        Me.TableAdapterManager.S_IMAGETableAdapter = Nothing
+        Me.TableAdapterManager.S_INVENTORYTableAdapter = Nothing
+        Me.TableAdapterManager.S_ITEMTableAdapter = Nothing
+        Me.TableAdapterManager.S_LONGTEXTTableAdapter = Nothing
+        Me.TableAdapterManager.S_ORDTableAdapter = Nothing
+        Me.TableAdapterManager.S_PRODUCTTableAdapter = Nothing
+        Me.TableAdapterManager.S_REGIONTableAdapter = Nothing
+        Me.TableAdapterManager.S_TITLETableAdapter = Nothing
+        Me.TableAdapterManager.S_WAREHOUSETableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = P1CR.DataSetOracleTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -598,12 +610,12 @@ Partial Class frmClientes
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clientes"
-        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mnuClientes.ResumeLayout(False)
         Me.mnuClientes.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.SCUSTOMERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetOracle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvClients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -626,7 +638,6 @@ Partial Class frmClientes
     Friend WithEvents NAMETextBox As TextBox
     Friend WithEvents COMMENTSTextBox As TextBox
     Friend WithEvents REGION_IDTextBox As TextBox
-    Friend WithEvents SALES_REP_IDTextBox As TextBox
     Friend WithEvents CREDIT_RATINGTextBox As TextBox
     Friend WithEvents ZIP_CODETextBox As TextBox
     Friend WithEvents COUNTRYTextBox As TextBox
@@ -654,4 +665,5 @@ Partial Class frmClientes
     Friend WithEvents SALESREPIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents REGIONIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents COMMENTSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SALES_REP_IDTextBox As TextBox
 End Class

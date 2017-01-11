@@ -122,7 +122,17 @@
               <Mapping SourceColumn="COMMENTS" DataSetColumn="COMMENTS" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.S_CUSTOMER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBySearch" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBySearch">
+              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.S_CUSTOMER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByREPID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRepID" GeneratorSourceName="FillByREPID" GetMethodModifier="Public" GetMethodName="GetDataByRepID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRepID" UserSourceName="FillByREPID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT SALES_REP_ID
+FROM            ELCARLOS.S_CUSTOMER
+WHERE        (SALES_REP_ID IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.S_CUSTOMER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBySearch" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBySearch">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID, "NAME", PHONE, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CREDIT_RATING, SALES_REP_ID, REGION_ID, COMMENTS FROM ELCARLOS.S_CUSTOMER WHERE UPPER("NAME") LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))</CommandText>
