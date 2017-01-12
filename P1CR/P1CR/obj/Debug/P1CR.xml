@@ -71,7 +71,17 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:P1CR.DataSetOracle.Report1DataTableDataTable">
+<member name="T:P1CR.DataSetOracle.Orders_rptDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Clientes_OrdenesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Empleado_rptDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -136,7 +146,17 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:P1CR.DataSetOracle.Report1DataTableRow">
+<member name="T:P1CR.DataSetOracle.Orders_rptRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Clientes_OrdenesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Empleado_rptRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -201,7 +221,17 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:P1CR.DataSetOracle.Report1DataTableRowChangeEvent">
+<member name="T:P1CR.DataSetOracle.Orders_rptRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Clientes_OrdenesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Empleado_rptRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -266,7 +296,17 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:P1CR.DataSetOracleTableAdapters.Report1DataTableTableAdapter">
+<member name="T:P1CR.DataSetOracleTableAdapters.OrdenesClientes_rpt">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracleTableAdapters.ClientsDate_rpt">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracleTableAdapters.Empleado_rptTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

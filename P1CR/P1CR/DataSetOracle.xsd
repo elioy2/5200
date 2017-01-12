@@ -1020,14 +1020,74 @@ WHERE UPPER("NAME") LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Report1DataTableTableAdapter" GeneratorDataComponentClassName="Report1DataTableTableAdapter" Name="Report1DataTable" UserDataComponentName="Report1DataTableTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenesClientes_rpt" GeneratorDataComponentClassName="OrdenesClientes_rpt" Name="Orders_rpt" UserDataComponentName="OrdenesClientes_rpt">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fillrpt" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetEmpData" GeneratorSourceName="Fillrpt" GetMethodModifier="Public" GetMethodName="GetEmpData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEmpData" UserSourceName="Fillrpt">
+              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        E.FIRST_NAME AS VENDOR_FIRST_NAME, E.LAST_NAME AS VENDOR_LAST_NAME, O.CUSTOMER_ID, C.NAME AS CLIENT_NAME, C.ADDRESS, C.CITY, C.STATE, C.COUNTRY, C.ZIP_CODE, 
+                         R.NAME AS REGION_NAME, O.ID AS ORDER_NUMBER, O.DATE_ORDERED, O.TOTAL, O.PAYMENT_TYPE, O.ORDER_FILLED, I.PRODUCT_ID AS PRODUCT_NUMBER, I.PRICE AS PRODUCT_PRICE, 
+                         I.QUANTITY AS QTY_ORDERED, I.QUANTITY_SHIPPED AS QTY_SHIPPED, P.NAME AS PRODUCT_NAME
+FROM            S_ORD O, S_ITEM I, S_PRODUCT P, S_EMP E, S_CUSTOMER C, S_REGION R
+WHERE        O.ID = I.ORD_ID AND I.PRODUCT_ID = P.ID AND O.SALES_REP_ID = E.ID AND O.CUSTOMER_ID = C.ID AND C.REGION_ID = R.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VENDOR_FIRST_NAME" DataSetColumn="VENDOR_FIRST_NAME" />
+              <Mapping SourceColumn="VENDOR_LAST_NAME" DataSetColumn="VENDOR_LAST_NAME" />
+              <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
+              <Mapping SourceColumn="ADDRESS" DataSetColumn="ADDRESS" />
+              <Mapping SourceColumn="CITY" DataSetColumn="CITY" />
+              <Mapping SourceColumn="STATE" DataSetColumn="STATE" />
+              <Mapping SourceColumn="COUNTRY" DataSetColumn="COUNTRY" />
+              <Mapping SourceColumn="ZIP_CODE" DataSetColumn="ZIP_CODE" />
+              <Mapping SourceColumn="REGION_NAME" DataSetColumn="REGION_NAME" />
+              <Mapping SourceColumn="ORDER_NUMBER" DataSetColumn="ORDER_NUMBER" />
+              <Mapping SourceColumn="DATE_ORDERED" DataSetColumn="DATE_ORDERED" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="PAYMENT_TYPE" DataSetColumn="PAYMENT_TYPE" />
+              <Mapping SourceColumn="ORDER_FILLED" DataSetColumn="ORDER_FILLED" />
+              <Mapping SourceColumn="PRODUCT_NUMBER" DataSetColumn="PRODUCT_NUMBER" />
+              <Mapping SourceColumn="PRODUCT_PRICE" DataSetColumn="PRODUCT_PRICE" />
+              <Mapping SourceColumn="QTY_ORDERED" DataSetColumn="QTY_ORDERED" />
+              <Mapping SourceColumn="QTY_SHIPPED" DataSetColumn="QTY_SHIPPED" />
+              <Mapping SourceColumn="PRODUCT_NAME" DataSetColumn="PRODUCT_NAME" />
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientsDate_rpt" GeneratorDataComponentClassName="ClientsDate_rpt" Name="Clientes_Ordenes" UserDataComponentName="ClientsDate_rpt">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectName="&quot;SYSTEM&quot;.S_CUSTOMER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        C.NAME AS CLIENT_NAME, TO_CHAR(O.DATE_ORDERED, 'D-fmMonth-YYYY') AS DATE_ORDERED, to_char(O.TOTAL, '$9999,999.99') AS Total
+FROM            S_ORD O, S_CUSTOMER C
+WHERE        C.ID = O.CUSTOMER_ID AND (TO_CHAR(O.DATE_ORDERED, 'DD-fmMonth-yyyy') BETWEEN '1-August-1992' AND '31-August-1992')
+ORDER BY O.TOTAL DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
+              <Mapping SourceColumn="DATE_ORDERED" DataSetColumn="DATE_ORDERED" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Empleado_rptTableAdapter" GeneratorDataComponentClassName="Empleado_rptTableAdapter" Name="Empleado_rpt" UserDataComponentName="Empleado_rptTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        E.FIRST_NAME AS EMPLOYEE_NAME, E.LAST_NAME AS EMPLOYEE_LAST_NAME, C.NAME AS CLIENT_NAME, to_char(SUM(O.TOTAL), '$9999,999.99') AS TOTAL_ORDERS
 FROM            S_CUSTOMER C, S_ORD O, S_EMP E
-WHERE        O.CUSTOMER_ID = C.ID AND E.ID = C.SALES_REP_ID
+WHERE        C.ID = O.CUSTOMER_ID AND C.SALES_REP_ID = E.ID
 GROUP BY C.NAME, E.FIRST_NAME, E.LAST_NAME
 HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                     <Parameters />
@@ -1416,7 +1476,132 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Report1DataTable" msprop:Generator_TableClassName="Report1DataTableDataTable" msprop:Generator_TableVarName="tableReport1DataTable" msprop:Generator_RowChangedName="Report1DataTableRowChanged" msprop:Generator_TablePropName="Report1DataTable" msprop:Generator_RowDeletingName="Report1DataTableRowDeleting" msprop:Generator_RowChangingName="Report1DataTableRowChanging" msprop:Generator_RowEvHandlerName="Report1DataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="Report1DataTableRowDeleted" msprop:Generator_RowClassName="Report1DataTableRow" msprop:Generator_UserTableName="Report1DataTable" msprop:Generator_RowEvArgName="Report1DataTableRowChangeEvent">
+        <xs:element name="Orders_rpt" msprop:Generator_TableClassName="Orders_rptDataTable" msprop:Generator_TableVarName="tableOrders_rpt" msprop:Generator_RowChangedName="Orders_rptRowChanged" msprop:Generator_TablePropName="Orders_rpt" msprop:Generator_RowDeletingName="Orders_rptRowDeleting" msprop:Generator_RowChangingName="Orders_rptRowChanging" msprop:Generator_RowEvHandlerName="Orders_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="Orders_rptRowDeleted" msprop:Generator_RowClassName="Orders_rptRow" msprop:Generator_UserTableName="Orders_rpt" msprop:Generator_RowEvArgName="Orders_rptRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VENDOR_FIRST_NAME" msprop:Generator_ColumnVarNameInTable="columnVENDOR_FIRST_NAME" msprop:Generator_ColumnPropNameInRow="VENDOR_FIRST_NAME" msprop:Generator_ColumnPropNameInTable="VENDOR_FIRST_NAMEColumn" msprop:Generator_UserColumnName="VENDOR_FIRST_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VENDOR_LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnVENDOR_LAST_NAME" msprop:Generator_ColumnPropNameInRow="VENDOR_LAST_NAME" msprop:Generator_ColumnPropNameInTable="VENDOR_LAST_NAMEColumn" msprop:Generator_UserColumnName="VENDOR_LAST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CITY" msprop:Generator_ColumnVarNameInTable="columnCITY" msprop:Generator_ColumnPropNameInRow="CITY" msprop:Generator_ColumnPropNameInTable="CITYColumn" msprop:Generator_UserColumnName="CITY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATE" msprop:Generator_ColumnVarNameInTable="columnSTATE" msprop:Generator_ColumnPropNameInRow="STATE" msprop:Generator_ColumnPropNameInTable="STATEColumn" msprop:Generator_UserColumnName="STATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COUNTRY" msprop:Generator_ColumnVarNameInTable="columnCOUNTRY" msprop:Generator_ColumnPropNameInRow="COUNTRY" msprop:Generator_ColumnPropNameInTable="COUNTRYColumn" msprop:Generator_UserColumnName="COUNTRY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZIP_CODE" msprop:Generator_ColumnVarNameInTable="columnZIP_CODE" msprop:Generator_ColumnPropNameInRow="ZIP_CODE" msprop:Generator_ColumnPropNameInTable="ZIP_CODEColumn" msprop:Generator_UserColumnName="ZIP_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REGION_NAME" msprop:Generator_ColumnVarNameInTable="columnREGION_NAME" msprop:Generator_ColumnPropNameInRow="REGION_NAME" msprop:Generator_ColumnPropNameInTable="REGION_NAMEColumn" msprop:Generator_UserColumnName="REGION_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDER_NUMBER" msprop:Generator_ColumnVarNameInTable="columnORDER_NUMBER" msprop:Generator_ColumnPropNameInRow="ORDER_NUMBER" msprop:Generator_ColumnPropNameInTable="ORDER_NUMBERColumn" msprop:Generator_UserColumnName="ORDER_NUMBER" type="xs:decimal" />
+              <xs:element name="DATE_ORDERED" msprop:Generator_ColumnVarNameInTable="columnDATE_ORDERED" msprop:Generator_ColumnPropNameInRow="DATE_ORDERED" msprop:Generator_ColumnPropNameInTable="DATE_ORDEREDColumn" msprop:Generator_UserColumnName="DATE_ORDERED" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PAYMENT_TYPE" msprop:Generator_ColumnVarNameInTable="columnPAYMENT_TYPE" msprop:Generator_ColumnPropNameInRow="PAYMENT_TYPE" msprop:Generator_ColumnPropNameInTable="PAYMENT_TYPEColumn" msprop:Generator_UserColumnName="PAYMENT_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDER_FILLED" msprop:Generator_ColumnVarNameInTable="columnORDER_FILLED" msprop:Generator_ColumnPropNameInRow="ORDER_FILLED" msprop:Generator_ColumnPropNameInTable="ORDER_FILLEDColumn" msprop:Generator_UserColumnName="ORDER_FILLED" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRODUCT_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NUMBER" msprop:Generator_ColumnPropNameInRow="PRODUCT_NUMBER" msprop:Generator_ColumnPropNameInTable="PRODUCT_NUMBERColumn" msprop:Generator_UserColumnName="PRODUCT_NUMBER" type="xs:decimal" />
+              <xs:element name="PRODUCT_PRICE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_PRICE" msprop:Generator_ColumnPropNameInRow="PRODUCT_PRICE" msprop:Generator_ColumnPropNameInTable="PRODUCT_PRICEColumn" msprop:Generator_UserColumnName="PRODUCT_PRICE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_ORDERED" msprop:Generator_ColumnVarNameInTable="columnQTY_ORDERED" msprop:Generator_ColumnPropNameInRow="QTY_ORDERED" msprop:Generator_ColumnPropNameInTable="QTY_ORDEREDColumn" msprop:Generator_UserColumnName="QTY_ORDERED" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTY_SHIPPED" msprop:Generator_ColumnVarNameInTable="columnQTY_SHIPPED" msprop:Generator_ColumnPropNameInRow="QTY_SHIPPED" msprop:Generator_ColumnPropNameInTable="QTY_SHIPPEDColumn" msprop:Generator_UserColumnName="QTY_SHIPPED" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="PRODUCT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Clientes_Ordenes" msprop:Generator_TableClassName="Clientes_OrdenesDataTable" msprop:Generator_TableVarName="tableClientes_Ordenes" msprop:Generator_RowChangedName="Clientes_OrdenesRowChanged" msprop:Generator_TablePropName="Clientes_Ordenes" msprop:Generator_RowDeletingName="Clientes_OrdenesRowDeleting" msprop:Generator_RowChangingName="Clientes_OrdenesRowChanging" msprop:Generator_RowEvHandlerName="Clientes_OrdenesRowChangeEventHandler" msprop:Generator_RowDeletedName="Clientes_OrdenesRowDeleted" msprop:Generator_RowClassName="Clientes_OrdenesRow" msprop:Generator_UserTableName="Clientes_Ordenes" msprop:Generator_RowEvArgName="Clientes_OrdenesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATE_ORDERED" msprop:Generator_ColumnVarNameInTable="columnDATE_ORDERED" msprop:Generator_ColumnPropNameInRow="DATE_ORDERED" msprop:Generator_ColumnPropNameInTable="DATE_ORDEREDColumn" msprop:Generator_UserColumnName="DATE_ORDERED" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="43" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Empleado_rpt" msprop:Generator_TableClassName="Empleado_rptDataTable" msprop:Generator_TableVarName="tableEmpleado_rpt" msprop:Generator_TablePropName="Empleado_rpt" msprop:Generator_RowDeletingName="Empleado_rptRowDeleting" msprop:Generator_RowChangingName="Empleado_rptRowChanging" msprop:Generator_RowEvHandlerName="Empleado_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="Empleado_rptRowDeleted" msprop:Generator_UserTableName="Empleado_rpt" msprop:Generator_RowChangedName="Empleado_rptRowChanged" msprop:Generator_RowEvArgName="Empleado_rptRowChangeEvent" msprop:Generator_RowClassName="Empleado_rptRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EMPLOYEE_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_NAME" minOccurs="0">
@@ -1513,6 +1698,12 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
     <xs:unique name="S_WAREHOUSE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:S_WAREHOUSE" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Orders_rpt_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Orders_rpt" />
+      <xs:field xpath="mstns:REGION_NAME" />
+      <xs:field xpath="mstns:ORDER_NUMBER" />
+      <xs:field xpath="mstns:PRODUCT_NAME" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

@@ -1,4 +1,8 @@
 ﻿Public Class MainForm
+
+    Public Shared report As String = ""
+
+
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -33,7 +37,22 @@
         Me.Hide()
     End Sub
 
+
     Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
-        InformeEmpleados_clientes.Show()
+        'esto no funciona solo queria tener 1 forma para todos los reportes, le hago el load pero me falta el DataSources 
+        MainForm.report = "Empleados"
+        Informes.Show()
+    End Sub
+
+    Private Sub OrdenesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles OrdenesToolStripMenuItem1.Click
+        'same here
+        MainForm.report = "OrdenesClientes"
+        Informes.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
+        'same here
+        MainForm.report = "ClientesFecha"
+        Informes.Show()
     End Sub
 End Class

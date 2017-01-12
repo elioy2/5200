@@ -60,4 +60,5 @@ C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\pt\Microsoft.SqlServer.Types
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.InformeEmpleados_clientes.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.Informes.resources
+C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\obj\Debug\P1CR.Reports.resources
