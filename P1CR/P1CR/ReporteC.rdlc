@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.26521cm</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.26521cm</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.26521cm</Width>
+              <Width>1in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -29,18 +29,24 @@
                           <TextRuns>
                             <TextRun>
                               <Value>CLIENT NAME</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -59,7 +65,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>DATE ORDERED</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -68,9 +79,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -89,7 +101,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>TOTAL</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -98,9 +115,10 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -112,7 +130,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -124,7 +142,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CLIENT_NAME.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -133,7 +154,7 @@
                       <rd:DefaultName>CLIENT_NAME</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -154,7 +175,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DATE_ORDERED.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -163,7 +187,7 @@
                       <rd:DefaultName>DATE_ORDERED</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -184,7 +208,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TOTAL.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -193,7 +220,7 @@
                       <rd:DefaultName>TOTAL</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -226,9 +253,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.07056cm</Top>
-        <Height>1.2cm</Height>
-        <Width>15.79562cm</Width>
+        <Height>0.5in</Height>
+        <Width>3in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -236,72 +262,15 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.52083in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.21875in</Width>
+  <Width>6.5in</Width>
   <Page>
-    <PageHeader>
-      <Height>0.75875cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox7">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Ordenes de Clientes entre </Value>
-                  <Style>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>1-AUG-1992 y 31-AUG- 1992</Value>
-                  <Style>
-                    <FontStyle>Normal</FontStyle>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextDecoration>None</TextDecoration>
-                    <Color>#000000</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Height>0.75875cm</Height>
-          <Width>15.79562cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
-    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -311,7 +280,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>81c1b271-c204-44a7-9ae1-3bc1a0a11014</rd:DataSourceID>
+      <rd:DataSourceID>3a25f778-d0f1-4725-8da5-7e808ac938ab</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -336,14 +305,14 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetOracle</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Eloy\Source\Repos\5200\P1CR\P1CR\DataSetOracle.xsd</rd:SchemaPath>
-        <rd:TableName>Clientes_Ordenes</rd:TableName>
+        <rd:SchemaPath>C:\Users\chobe\Source\Repos\githubrepo\P1CR\P1CR\DataSetOracle.xsd</rd:SchemaPath>
+        <rd:TableName>VWREPORTEC</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ClientsDate_rpt</rd:TableAdapterName>
+        <rd:TableAdapterName>VWREPORTECTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>73cc4f80-97fe-445e-b0f0-63a11f5a6396</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>b0b73195-64b4-45bd-8622-69e4347c660b</rd:ReportID>
 </Report>

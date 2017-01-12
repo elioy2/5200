@@ -31,18 +31,24 @@ Partial Class MainForm
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrdenesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.OrdenesToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.OrdenesToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
@@ -54,7 +60,7 @@ Partial Class MainForm
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesionToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        Me.FileToolStripMenuItem.Text = "File"
+        Me.FileToolStripMenuItem.Text = "&File"
         '
         'CerrarSesionToolStripMenuItem
         '
@@ -66,7 +72,7 @@ Partial Class MainForm
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.CloseToolStripMenuItem.Text = "&Close"
+        Me.CloseToolStripMenuItem.Text = "&Cerrar"
         '
         'ClientesToolStripMenuItem
         '
@@ -78,19 +84,44 @@ Partial Class MainForm
         '
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
         Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
-        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
+        Me.EmpleadosToolStripMenuItem.Text = "&Empleados"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
-        Me.ProductosToolStripMenuItem.Text = "Productos"
+        Me.ProductosToolStripMenuItem.Text = "&Productos"
         '
         'OrdenesToolStripMenuItem
         '
         Me.OrdenesToolStripMenuItem.Name = "OrdenesToolStripMenuItem"
         Me.OrdenesToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
-        Me.OrdenesToolStripMenuItem.Text = "Ordenes"
+        Me.OrdenesToolStripMenuItem.Text = "&Ordenes"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteAToolStripMenuItem, Me.ReporteBToolStripMenuItem, Me.ReporteCToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "&Reportes"
+        '
+        'ReporteAToolStripMenuItem
+        '
+        Me.ReporteAToolStripMenuItem.Name = "ReporteAToolStripMenuItem"
+        Me.ReporteAToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ReporteAToolStripMenuItem.Text = "Reporte A"
+        '
+        'ReporteBToolStripMenuItem
+        '
+        Me.ReporteBToolStripMenuItem.Name = "ReporteBToolStripMenuItem"
+        Me.ReporteBToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ReporteBToolStripMenuItem.Text = "Reporte B"
+        '
+        'ReporteCToolStripMenuItem
+        '
+        Me.ReporteCToolStripMenuItem.Name = "ReporteCToolStripMenuItem"
+        Me.ReporteCToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ReporteCToolStripMenuItem.Text = "Reporte C"
         '
         'AyudaToolStripMenuItem
         '
@@ -105,36 +136,66 @@ Partial Class MainForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.AboutToolStripMenuItem.Text = "About..."
         '
-        'ReportToolStripMenuItem
+        'Panel1
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem1, Me.OrdenesToolStripMenuItem1, Me.ClientesToolStripMenuItem1})
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.ReportToolStripMenuItem.Text = "Report"
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(12, 50)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(760, 195)
+        Me.Panel1.TabIndex = 1
         '
-        'EmpleadosToolStripMenuItem1
+        'Label4
         '
-        Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
-        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.EmpleadosToolStripMenuItem1.Text = "Empleados "
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Myriad Hebrew", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.LightSeaGreen
+        Me.Label4.Location = New System.Drawing.Point(32, 58)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(691, 46)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "¡Bienvenido(a) al sistema Summit Power!"
         '
-        'OrdenesToolStripMenuItem1
+        'Label3
         '
-        Me.OrdenesToolStripMenuItem1.Name = "OrdenesToolStripMenuItem1"
-        Me.OrdenesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.OrdenesToolStripMenuItem1.Text = "Ordenes"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Myriad Hebrew", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(137, 151)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(113, 40)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Label3"
         '
-        'ClientesToolStripMenuItem1
+        'Label2
         '
-        Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.ClientesToolStripMenuItem1.Text = "Clientes"
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Myriad Hebrew", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 151)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(139, 40)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Usuario:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Myriad Hebrew", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(561, 155)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(113, 40)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Label1"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(784, 279)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -143,6 +204,8 @@ Partial Class MainForm
         Me.Text = "Summit Power Dashboard"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,8 +221,13 @@ Partial Class MainForm
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmpleadosToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents OrdenesToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ClientesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteBToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteCToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

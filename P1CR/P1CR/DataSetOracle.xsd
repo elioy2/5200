@@ -2,10 +2,9 @@
 <xs:schema id="DataSetOracle" targetNamespace="http://tempuri.org/DataSetOracle.xsd" xmlns:mstns="http://tempuri.org/DataSetOracle.xsd" xmlns="http://tempuri.org/DataSetOracle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringOracle" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringOracle (MySettings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringOracle" Provider="Oracle.ManagedDataAccess.Client" />
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringForReport" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringForReport (MySettings)" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringForReport" Provider="System.Data.OracleClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringOracle" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringOracle (MySettings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringOracle" Provider="Oracle.ManagedDataAccess.Client" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="S_CUSTOMERTableAdapter" GeneratorDataComponentClassName="S_CUSTOMERTableAdapter" Name="S_CUSTOMER" UserDataComponentName="S_CUSTOMERTableAdapter">
@@ -1020,16 +1019,30 @@ WHERE UPPER("NAME") LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenesClientes_rpt" GeneratorDataComponentClassName="OrdenesClientes_rpt" Name="Orders_rpt" UserDataComponentName="OrdenesClientes_rpt">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWREPORTEATableAdapter" GeneratorDataComponentClassName="VWREPORTEATableAdapter" Name="VWREPORTEA" UserDataComponentName="VWREPORTEATableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.VWREPORTEA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        E.FIRST_NAME AS VENDOR_FIRST_NAME, E.LAST_NAME AS VENDOR_LAST_NAME, O.CUSTOMER_ID, C.NAME AS CLIENT_NAME, C.ADDRESS, C.CITY, C.STATE, C.COUNTRY, C.ZIP_CODE, 
-                         R.NAME AS REGION_NAME, O.ID AS ORDER_NUMBER, O.DATE_ORDERED, O.TOTAL, O.PAYMENT_TYPE, O.ORDER_FILLED, I.PRODUCT_ID AS PRODUCT_NUMBER, I.PRICE AS PRODUCT_PRICE, 
-                         I.QUANTITY AS QTY_ORDERED, I.QUANTITY_SHIPPED AS QTY_SHIPPED, P.NAME AS PRODUCT_NAME
-FROM            S_ORD O, S_ITEM I, S_PRODUCT P, S_EMP E, S_CUSTOMER C, S_REGION R
-WHERE        O.ID = I.ORD_ID AND I.PRODUCT_ID = P.ID AND O.SALES_REP_ID = E.ID AND O.CUSTOMER_ID = C.ID AND C.REGION_ID = R.ID</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT EMPLOYEE_NAME, CLIENT_NAME, TOTAL_ORDERS FROM ELCARLOS.VWREPORTEA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EMPLOYEE_NAME" DataSetColumn="EMPLOYEE_NAME" />
+              <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
+              <Mapping SourceColumn="TOTAL_ORDERS" DataSetColumn="TOTAL_ORDERS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWREPORTEBTableAdapter" GeneratorDataComponentClassName="VWREPORTEBTableAdapter" Name="VWREPORTEB" UserDataComponentName="VWREPORTEBTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.VWREPORTEB" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT VENDOR_FIRST_NAME, VENDOR_LAST_NAME, CUSTOMER_ID, CLIENT_NAME, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, REGION_NAME, ORDER_NUMBER, DATE_ORDERED, TOTAL, PAYMENT_TYPE, ORDER_FILLED, PRODUCT_NUMBER, PRODUCT_PRICE, QTY_ORDERED, QTY_SHIPPED, PRODUCT_NAME FROM ELCARLOS.VWREPORTEB</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1038,6 +1051,7 @@ WHERE        O.ID = I.ORD_ID AND I.PRODUCT_ID = P.ID AND O.SALES_REP_ID = E.ID A
             <Mappings>
               <Mapping SourceColumn="VENDOR_FIRST_NAME" DataSetColumn="VENDOR_FIRST_NAME" />
               <Mapping SourceColumn="VENDOR_LAST_NAME" DataSetColumn="VENDOR_LAST_NAME" />
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
               <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
               <Mapping SourceColumn="ADDRESS" DataSetColumn="ADDRESS" />
               <Mapping SourceColumn="CITY" DataSetColumn="CITY" />
@@ -1055,19 +1069,15 @@ WHERE        O.ID = I.ORD_ID AND I.PRODUCT_ID = P.ID AND O.SALES_REP_ID = E.ID A
               <Mapping SourceColumn="QTY_ORDERED" DataSetColumn="QTY_ORDERED" />
               <Mapping SourceColumn="QTY_SHIPPED" DataSetColumn="QTY_SHIPPED" />
               <Mapping SourceColumn="PRODUCT_NAME" DataSetColumn="PRODUCT_NAME" />
-              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientsDate_rpt" GeneratorDataComponentClassName="ClientsDate_rpt" Name="Clientes_Ordenes" UserDataComponentName="ClientsDate_rpt">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWREPORTECTableAdapter" GeneratorDataComponentClassName="VWREPORTECTableAdapter" Name="VWREPORTEC" UserDataComponentName="VWREPORTECTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectName="&quot;SYSTEM&quot;.S_CUSTOMER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionStringOracle (MySettings)" DbObjectName="ELCARLOS.VWREPORTEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        C.NAME AS CLIENT_NAME, TO_CHAR(O.DATE_ORDERED, 'D-fmMonth-YYYY') AS DATE_ORDERED, to_char(O.TOTAL, '$9999,999.99') AS Total
-FROM            S_ORD O, S_CUSTOMER C
-WHERE        C.ID = O.CUSTOMER_ID AND (TO_CHAR(O.DATE_ORDERED, 'DD-fmMonth-yyyy') BETWEEN '1-August-1992' AND '31-August-1992')
-ORDER BY O.TOTAL DESC</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CLIENT_NAME, DATE_ORDERED, TOTAL FROM ELCARLOS.VWREPORTEC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1080,29 +1090,6 @@ ORDER BY O.TOTAL DESC</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Empleado_rptTableAdapter" GeneratorDataComponentClassName="Empleado_rptTableAdapter" Name="Empleado_rpt" UserDataComponentName="Empleado_rptTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        E.FIRST_NAME AS EMPLOYEE_NAME, E.LAST_NAME AS EMPLOYEE_LAST_NAME, C.NAME AS CLIENT_NAME, to_char(SUM(O.TOTAL), '$9999,999.99') AS TOTAL_ORDERS
-FROM            S_CUSTOMER C, S_ORD O, S_EMP E
-WHERE        C.ID = O.CUSTOMER_ID AND C.SALES_REP_ID = E.ID
-GROUP BY C.NAME, E.FIRST_NAME, E.LAST_NAME
-HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="EMPLOYEE_NAME" DataSetColumn="EMPLOYEE_NAME" />
-              <Mapping SourceColumn="EMPLOYEE_LAST_NAME" DataSetColumn="EMPLOYEE_LAST_NAME" />
-              <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
-              <Mapping SourceColumn="TOTAL_ORDERS" DataSetColumn="TOTAL_ORDERS" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1111,7 +1098,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
   <xs:element name="DataSetOracle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetOracle" msprop:Generator_UserDSName="DataSetOracle">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="S_CUSTOMER" msprop:Generator_TableClassName="S_CUSTOMERDataTable" msprop:Generator_TableVarName="tableS_CUSTOMER" msprop:Generator_TablePropName="S_CUSTOMER" msprop:Generator_RowDeletingName="S_CUSTOMERRowDeleting" msprop:Generator_RowChangingName="S_CUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="S_CUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="S_CUSTOMERRowDeleted" msprop:Generator_UserTableName="S_CUSTOMER" msprop:Generator_RowChangedName="S_CUSTOMERRowChanged" msprop:Generator_RowEvArgName="S_CUSTOMERRowChangeEvent" msprop:Generator_RowClassName="S_CUSTOMERRow">
+        <xs:element name="S_CUSTOMER" msprop:Generator_TableClassName="S_CUSTOMERDataTable" msprop:Generator_TableVarName="tableS_CUSTOMER" msprop:Generator_RowChangedName="S_CUSTOMERRowChanged" msprop:Generator_TablePropName="S_CUSTOMER" msprop:Generator_RowDeletingName="S_CUSTOMERRowDeleting" msprop:Generator_RowChangingName="S_CUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="S_CUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="S_CUSTOMERRowDeleted" msprop:Generator_RowClassName="S_CUSTOMERRow" msprop:Generator_UserTableName="S_CUSTOMER" msprop:Generator_RowEvArgName="S_CUSTOMERRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1183,7 +1170,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_DEPT" msprop:Generator_TableClassName="S_DEPTDataTable" msprop:Generator_TableVarName="tableS_DEPT" msprop:Generator_TablePropName="S_DEPT" msprop:Generator_RowDeletingName="S_DEPTRowDeleting" msprop:Generator_RowChangingName="S_DEPTRowChanging" msprop:Generator_RowEvHandlerName="S_DEPTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_DEPTRowDeleted" msprop:Generator_UserTableName="S_DEPT" msprop:Generator_RowChangedName="S_DEPTRowChanged" msprop:Generator_RowEvArgName="S_DEPTRowChangeEvent" msprop:Generator_RowClassName="S_DEPTRow">
+        <xs:element name="S_DEPT" msprop:Generator_TableClassName="S_DEPTDataTable" msprop:Generator_TableVarName="tableS_DEPT" msprop:Generator_RowChangedName="S_DEPTRowChanged" msprop:Generator_TablePropName="S_DEPT" msprop:Generator_RowDeletingName="S_DEPTRowDeleting" msprop:Generator_RowChangingName="S_DEPTRowChanging" msprop:Generator_RowEvHandlerName="S_DEPTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_DEPTRowDeleted" msprop:Generator_RowClassName="S_DEPTRow" msprop:Generator_UserTableName="S_DEPT" msprop:Generator_RowEvArgName="S_DEPTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1198,7 +1185,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_EMP" msprop:Generator_TableClassName="S_EMPDataTable" msprop:Generator_TableVarName="tableS_EMP" msprop:Generator_TablePropName="S_EMP" msprop:Generator_RowDeletingName="S_EMPRowDeleting" msprop:Generator_RowChangingName="S_EMPRowChanging" msprop:Generator_RowEvHandlerName="S_EMPRowChangeEventHandler" msprop:Generator_RowDeletedName="S_EMPRowDeleted" msprop:Generator_UserTableName="S_EMP" msprop:Generator_RowChangedName="S_EMPRowChanged" msprop:Generator_RowEvArgName="S_EMPRowChangeEvent" msprop:Generator_RowClassName="S_EMPRow">
+        <xs:element name="S_EMP" msprop:Generator_TableClassName="S_EMPDataTable" msprop:Generator_TableVarName="tableS_EMP" msprop:Generator_RowChangedName="S_EMPRowChanged" msprop:Generator_TablePropName="S_EMP" msprop:Generator_RowDeletingName="S_EMPRowDeleting" msprop:Generator_RowChangingName="S_EMPRowChanging" msprop:Generator_RowEvHandlerName="S_EMPRowChangeEventHandler" msprop:Generator_RowDeletedName="S_EMPRowDeleted" msprop:Generator_RowClassName="S_EMPRow" msprop:Generator_UserTableName="S_EMP" msprop:Generator_RowEvArgName="S_EMPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1253,7 +1240,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_IMAGE" msprop:Generator_TableClassName="S_IMAGEDataTable" msprop:Generator_TableVarName="tableS_IMAGE" msprop:Generator_TablePropName="S_IMAGE" msprop:Generator_RowDeletingName="S_IMAGERowDeleting" msprop:Generator_RowChangingName="S_IMAGERowChanging" msprop:Generator_RowEvHandlerName="S_IMAGERowChangeEventHandler" msprop:Generator_RowDeletedName="S_IMAGERowDeleted" msprop:Generator_UserTableName="S_IMAGE" msprop:Generator_RowChangedName="S_IMAGERowChanged" msprop:Generator_RowEvArgName="S_IMAGERowChangeEvent" msprop:Generator_RowClassName="S_IMAGERow">
+        <xs:element name="S_IMAGE" msprop:Generator_TableClassName="S_IMAGEDataTable" msprop:Generator_TableVarName="tableS_IMAGE" msprop:Generator_RowChangedName="S_IMAGERowChanged" msprop:Generator_TablePropName="S_IMAGE" msprop:Generator_RowDeletingName="S_IMAGERowDeleting" msprop:Generator_RowChangingName="S_IMAGERowChanging" msprop:Generator_RowEvHandlerName="S_IMAGERowChangeEventHandler" msprop:Generator_RowDeletedName="S_IMAGERowDeleted" msprop:Generator_RowClassName="S_IMAGERow" msprop:Generator_UserTableName="S_IMAGE" msprop:Generator_RowEvArgName="S_IMAGERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1282,7 +1269,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_INVENTORY" msprop:Generator_TableClassName="S_INVENTORYDataTable" msprop:Generator_TableVarName="tableS_INVENTORY" msprop:Generator_TablePropName="S_INVENTORY" msprop:Generator_RowDeletingName="S_INVENTORYRowDeleting" msprop:Generator_RowChangingName="S_INVENTORYRowChanging" msprop:Generator_RowEvHandlerName="S_INVENTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="S_INVENTORYRowDeleted" msprop:Generator_UserTableName="S_INVENTORY" msprop:Generator_RowChangedName="S_INVENTORYRowChanged" msprop:Generator_RowEvArgName="S_INVENTORYRowChangeEvent" msprop:Generator_RowClassName="S_INVENTORYRow">
+        <xs:element name="S_INVENTORY" msprop:Generator_TableClassName="S_INVENTORYDataTable" msprop:Generator_TableVarName="tableS_INVENTORY" msprop:Generator_RowChangedName="S_INVENTORYRowChanged" msprop:Generator_TablePropName="S_INVENTORY" msprop:Generator_RowDeletingName="S_INVENTORYRowDeleting" msprop:Generator_RowChangingName="S_INVENTORYRowChanging" msprop:Generator_RowEvHandlerName="S_INVENTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="S_INVENTORYRowDeleted" msprop:Generator_RowClassName="S_INVENTORYRow" msprop:Generator_UserTableName="S_INVENTORY" msprop:Generator_RowEvArgName="S_INVENTORYRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PRODUCT_ID" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_ID" msprop:Generator_ColumnPropNameInRow="PRODUCT_ID" msprop:Generator_ColumnPropNameInTable="PRODUCT_IDColumn" msprop:Generator_UserColumnName="PRODUCT_ID" type="xs:int" />
@@ -1301,7 +1288,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_ITEM" msprop:Generator_TableClassName="S_ITEMDataTable" msprop:Generator_TableVarName="tableS_ITEM" msprop:Generator_TablePropName="S_ITEM" msprop:Generator_RowDeletingName="S_ITEMRowDeleting" msprop:Generator_RowChangingName="S_ITEMRowChanging" msprop:Generator_RowEvHandlerName="S_ITEMRowChangeEventHandler" msprop:Generator_RowDeletedName="S_ITEMRowDeleted" msprop:Generator_UserTableName="S_ITEM" msprop:Generator_RowChangedName="S_ITEMRowChanged" msprop:Generator_RowEvArgName="S_ITEMRowChangeEvent" msprop:Generator_RowClassName="S_ITEMRow">
+        <xs:element name="S_ITEM" msprop:Generator_TableClassName="S_ITEMDataTable" msprop:Generator_TableVarName="tableS_ITEM" msprop:Generator_RowChangedName="S_ITEMRowChanged" msprop:Generator_TablePropName="S_ITEM" msprop:Generator_RowDeletingName="S_ITEMRowDeleting" msprop:Generator_RowChangingName="S_ITEMRowChanging" msprop:Generator_RowEvHandlerName="S_ITEMRowChangeEventHandler" msprop:Generator_RowDeletedName="S_ITEMRowDeleted" msprop:Generator_RowClassName="S_ITEMRow" msprop:Generator_UserTableName="S_ITEM" msprop:Generator_RowEvArgName="S_ITEMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ORD_ID" msprop:Generator_ColumnVarNameInTable="columnORD_ID" msprop:Generator_ColumnPropNameInRow="ORD_ID" msprop:Generator_ColumnPropNameInTable="ORD_IDColumn" msprop:Generator_UserColumnName="ORD_ID" type="xs:int" />
@@ -1313,7 +1300,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_LONGTEXT" msprop:Generator_TableClassName="S_LONGTEXTDataTable" msprop:Generator_TableVarName="tableS_LONGTEXT" msprop:Generator_TablePropName="S_LONGTEXT" msprop:Generator_RowDeletingName="S_LONGTEXTRowDeleting" msprop:Generator_RowChangingName="S_LONGTEXTRowChanging" msprop:Generator_RowEvHandlerName="S_LONGTEXTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_LONGTEXTRowDeleted" msprop:Generator_UserTableName="S_LONGTEXT" msprop:Generator_RowChangedName="S_LONGTEXTRowChanged" msprop:Generator_RowEvArgName="S_LONGTEXTRowChangeEvent" msprop:Generator_RowClassName="S_LONGTEXTRow">
+        <xs:element name="S_LONGTEXT" msprop:Generator_TableClassName="S_LONGTEXTDataTable" msprop:Generator_TableVarName="tableS_LONGTEXT" msprop:Generator_RowChangedName="S_LONGTEXTRowChanged" msprop:Generator_TablePropName="S_LONGTEXT" msprop:Generator_RowDeletingName="S_LONGTEXTRowDeleting" msprop:Generator_RowChangingName="S_LONGTEXTRowChanging" msprop:Generator_RowEvHandlerName="S_LONGTEXTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_LONGTEXTRowDeleted" msprop:Generator_RowClassName="S_LONGTEXTRow" msprop:Generator_UserTableName="S_LONGTEXT" msprop:Generator_RowEvArgName="S_LONGTEXTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1341,7 +1328,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_ORD" msprop:Generator_TableClassName="S_ORDDataTable" msprop:Generator_TableVarName="tableS_ORD" msprop:Generator_TablePropName="S_ORD" msprop:Generator_RowDeletingName="S_ORDRowDeleting" msprop:Generator_RowChangingName="S_ORDRowChanging" msprop:Generator_RowEvHandlerName="S_ORDRowChangeEventHandler" msprop:Generator_RowDeletedName="S_ORDRowDeleted" msprop:Generator_UserTableName="S_ORD" msprop:Generator_RowChangedName="S_ORDRowChanged" msprop:Generator_RowEvArgName="S_ORDRowChangeEvent" msprop:Generator_RowClassName="S_ORDRow">
+        <xs:element name="S_ORD" msprop:Generator_TableClassName="S_ORDDataTable" msprop:Generator_TableVarName="tableS_ORD" msprop:Generator_RowChangedName="S_ORDRowChanged" msprop:Generator_TablePropName="S_ORD" msprop:Generator_RowDeletingName="S_ORDRowDeleting" msprop:Generator_RowChangingName="S_ORDRowChanging" msprop:Generator_RowEvHandlerName="S_ORDRowChangeEventHandler" msprop:Generator_RowDeletedName="S_ORDRowDeleted" msprop:Generator_RowClassName="S_ORDRow" msprop:Generator_UserTableName="S_ORD" msprop:Generator_RowEvArgName="S_ORDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1367,7 +1354,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_PRODUCT" msprop:Generator_TableClassName="S_PRODUCTDataTable" msprop:Generator_TableVarName="tableS_PRODUCT" msprop:Generator_TablePropName="S_PRODUCT" msprop:Generator_RowDeletingName="S_PRODUCTRowDeleting" msprop:Generator_RowChangingName="S_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="S_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_PRODUCTRowDeleted" msprop:Generator_UserTableName="S_PRODUCT" msprop:Generator_RowChangedName="S_PRODUCTRowChanged" msprop:Generator_RowEvArgName="S_PRODUCTRowChangeEvent" msprop:Generator_RowClassName="S_PRODUCTRow">
+        <xs:element name="S_PRODUCT" msprop:Generator_TableClassName="S_PRODUCTDataTable" msprop:Generator_TableVarName="tableS_PRODUCT" msprop:Generator_RowChangedName="S_PRODUCTRowChanged" msprop:Generator_TablePropName="S_PRODUCT" msprop:Generator_RowDeletingName="S_PRODUCTRowDeleting" msprop:Generator_RowChangingName="S_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="S_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="S_PRODUCTRowDeleted" msprop:Generator_RowClassName="S_PRODUCTRow" msprop:Generator_UserTableName="S_PRODUCT" msprop:Generator_RowEvArgName="S_PRODUCTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1398,7 +1385,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_REGION" msprop:Generator_TableClassName="S_REGIONDataTable" msprop:Generator_TableVarName="tableS_REGION" msprop:Generator_TablePropName="S_REGION" msprop:Generator_RowDeletingName="S_REGIONRowDeleting" msprop:Generator_RowChangingName="S_REGIONRowChanging" msprop:Generator_RowEvHandlerName="S_REGIONRowChangeEventHandler" msprop:Generator_RowDeletedName="S_REGIONRowDeleted" msprop:Generator_UserTableName="S_REGION" msprop:Generator_RowChangedName="S_REGIONRowChanged" msprop:Generator_RowEvArgName="S_REGIONRowChangeEvent" msprop:Generator_RowClassName="S_REGIONRow">
+        <xs:element name="S_REGION" msprop:Generator_TableClassName="S_REGIONDataTable" msprop:Generator_TableVarName="tableS_REGION" msprop:Generator_RowChangedName="S_REGIONRowChanged" msprop:Generator_TablePropName="S_REGION" msprop:Generator_RowDeletingName="S_REGIONRowDeleting" msprop:Generator_RowChangingName="S_REGIONRowChanging" msprop:Generator_RowEvHandlerName="S_REGIONRowChangeEventHandler" msprop:Generator_RowDeletedName="S_REGIONRowDeleted" msprop:Generator_RowClassName="S_REGIONRow" msprop:Generator_UserTableName="S_REGION" msprop:Generator_RowEvArgName="S_REGIONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1412,7 +1399,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_TITLE" msprop:Generator_TableClassName="S_TITLEDataTable" msprop:Generator_TableVarName="tableS_TITLE" msprop:Generator_TablePropName="S_TITLE" msprop:Generator_RowDeletingName="S_TITLERowDeleting" msprop:Generator_RowChangingName="S_TITLERowChanging" msprop:Generator_RowEvHandlerName="S_TITLERowChangeEventHandler" msprop:Generator_RowDeletedName="S_TITLERowDeleted" msprop:Generator_UserTableName="S_TITLE" msprop:Generator_RowChangedName="S_TITLERowChanged" msprop:Generator_RowEvArgName="S_TITLERowChangeEvent" msprop:Generator_RowClassName="S_TITLERow">
+        <xs:element name="S_TITLE" msprop:Generator_TableClassName="S_TITLEDataTable" msprop:Generator_TableVarName="tableS_TITLE" msprop:Generator_RowChangedName="S_TITLERowChanged" msprop:Generator_TablePropName="S_TITLE" msprop:Generator_RowDeletingName="S_TITLERowDeleting" msprop:Generator_RowChangingName="S_TITLERowChanging" msprop:Generator_RowEvHandlerName="S_TITLERowChangeEventHandler" msprop:Generator_RowDeletedName="S_TITLERowDeleted" msprop:Generator_RowClassName="S_TITLERow" msprop:Generator_UserTableName="S_TITLE" msprop:Generator_RowEvArgName="S_TITLERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TITLE" msprop:Generator_ColumnVarNameInTable="columnTITLE" msprop:Generator_ColumnPropNameInRow="TITLE" msprop:Generator_ColumnPropNameInTable="TITLEColumn" msprop:Generator_UserColumnName="TITLE">
@@ -1425,7 +1412,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="S_WAREHOUSE" msprop:Generator_TableClassName="S_WAREHOUSEDataTable" msprop:Generator_TableVarName="tableS_WAREHOUSE" msprop:Generator_TablePropName="S_WAREHOUSE" msprop:Generator_RowDeletingName="S_WAREHOUSERowDeleting" msprop:Generator_RowChangingName="S_WAREHOUSERowChanging" msprop:Generator_RowEvHandlerName="S_WAREHOUSERowChangeEventHandler" msprop:Generator_RowDeletedName="S_WAREHOUSERowDeleted" msprop:Generator_UserTableName="S_WAREHOUSE" msprop:Generator_RowChangedName="S_WAREHOUSERowChanged" msprop:Generator_RowEvArgName="S_WAREHOUSERowChangeEvent" msprop:Generator_RowClassName="S_WAREHOUSERow">
+        <xs:element name="S_WAREHOUSE" msprop:Generator_TableClassName="S_WAREHOUSEDataTable" msprop:Generator_TableVarName="tableS_WAREHOUSE" msprop:Generator_RowChangedName="S_WAREHOUSERowChanged" msprop:Generator_TablePropName="S_WAREHOUSE" msprop:Generator_RowDeletingName="S_WAREHOUSERowDeleting" msprop:Generator_RowChangingName="S_WAREHOUSERowChanging" msprop:Generator_RowEvHandlerName="S_WAREHOUSERowChangeEventHandler" msprop:Generator_RowDeletedName="S_WAREHOUSERowDeleted" msprop:Generator_RowClassName="S_WAREHOUSERow" msprop:Generator_UserTableName="S_WAREHOUSE" msprop:Generator_RowEvArgName="S_WAREHOUSERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1476,7 +1463,34 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Orders_rpt" msprop:Generator_TableClassName="Orders_rptDataTable" msprop:Generator_TableVarName="tableOrders_rpt" msprop:Generator_RowChangedName="Orders_rptRowChanged" msprop:Generator_TablePropName="Orders_rpt" msprop:Generator_RowDeletingName="Orders_rptRowDeleting" msprop:Generator_RowChangingName="Orders_rptRowChanging" msprop:Generator_RowEvHandlerName="Orders_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="Orders_rptRowDeleted" msprop:Generator_RowClassName="Orders_rptRow" msprop:Generator_UserTableName="Orders_rpt" msprop:Generator_RowEvArgName="Orders_rptRowChangeEvent">
+        <xs:element name="VWREPORTEA" msprop:Generator_TableClassName="VWREPORTEADataTable" msprop:Generator_TableVarName="tableVWREPORTEA" msprop:Generator_TablePropName="VWREPORTEA" msprop:Generator_RowDeletingName="VWREPORTEARowDeleting" msprop:Generator_RowChangingName="VWREPORTEARowChanging" msprop:Generator_RowEvHandlerName="VWREPORTEARowChangeEventHandler" msprop:Generator_RowDeletedName="VWREPORTEARowDeleted" msprop:Generator_UserTableName="VWREPORTEA" msprop:Generator_RowChangedName="VWREPORTEARowChanged" msprop:Generator_RowEvArgName="VWREPORTEARowChangeEvent" msprop:Generator_RowClassName="VWREPORTEARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPLOYEE_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="51" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTAL_ORDERS" msprop:Generator_ColumnVarNameInTable="columnTOTAL_ORDERS" msprop:Generator_ColumnPropNameInRow="TOTAL_ORDERS" msprop:Generator_ColumnPropNameInTable="TOTAL_ORDERSColumn" msprop:Generator_UserColumnName="TOTAL_ORDERS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VWREPORTEB" msprop:Generator_TableClassName="VWREPORTEBDataTable" msprop:Generator_TableVarName="tableVWREPORTEB" msprop:Generator_TablePropName="VWREPORTEB" msprop:Generator_RowDeletingName="VWREPORTEBRowDeleting" msprop:Generator_RowChangingName="VWREPORTEBRowChanging" msprop:Generator_RowEvHandlerName="VWREPORTEBRowChangeEventHandler" msprop:Generator_RowDeletedName="VWREPORTEBRowDeleted" msprop:Generator_UserTableName="VWREPORTEB" msprop:Generator_RowChangedName="VWREPORTEBRowChanged" msprop:Generator_RowEvArgName="VWREPORTEBRowChangeEvent" msprop:Generator_RowClassName="VWREPORTEBRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VENDOR_FIRST_NAME" msprop:Generator_ColumnVarNameInTable="columnVENDOR_FIRST_NAME" msprop:Generator_ColumnPropNameInRow="VENDOR_FIRST_NAME" msprop:Generator_ColumnPropNameInTable="VENDOR_FIRST_NAMEColumn" msprop:Generator_UserColumnName="VENDOR_FIRST_NAME" minOccurs="0">
@@ -1493,6 +1507,7 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:int" />
               <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1542,9 +1557,9 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ORDER_NUMBER" msprop:Generator_ColumnVarNameInTable="columnORDER_NUMBER" msprop:Generator_ColumnPropNameInRow="ORDER_NUMBER" msprop:Generator_ColumnPropNameInTable="ORDER_NUMBERColumn" msprop:Generator_UserColumnName="ORDER_NUMBER" type="xs:decimal" />
+              <xs:element name="ORDER_NUMBER" msprop:Generator_ColumnVarNameInTable="columnORDER_NUMBER" msprop:Generator_ColumnPropNameInRow="ORDER_NUMBER" msprop:Generator_ColumnPropNameInTable="ORDER_NUMBERColumn" msprop:Generator_UserColumnName="ORDER_NUMBER" type="xs:int" />
               <xs:element name="DATE_ORDERED" msprop:Generator_ColumnVarNameInTable="columnDATE_ORDERED" msprop:Generator_ColumnPropNameInRow="DATE_ORDERED" msprop:Generator_ColumnPropNameInTable="DATE_ORDEREDColumn" msprop:Generator_UserColumnName="DATE_ORDERED" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:double" minOccurs="0" />
               <xs:element name="PAYMENT_TYPE" msprop:Generator_ColumnVarNameInTable="columnPAYMENT_TYPE" msprop:Generator_ColumnPropNameInRow="PAYMENT_TYPE" msprop:Generator_ColumnPropNameInTable="PAYMENT_TYPEColumn" msprop:Generator_UserColumnName="PAYMENT_TYPE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1559,10 +1574,10 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PRODUCT_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NUMBER" msprop:Generator_ColumnPropNameInRow="PRODUCT_NUMBER" msprop:Generator_ColumnPropNameInTable="PRODUCT_NUMBERColumn" msprop:Generator_UserColumnName="PRODUCT_NUMBER" type="xs:decimal" />
-              <xs:element name="PRODUCT_PRICE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_PRICE" msprop:Generator_ColumnPropNameInRow="PRODUCT_PRICE" msprop:Generator_ColumnPropNameInTable="PRODUCT_PRICEColumn" msprop:Generator_UserColumnName="PRODUCT_PRICE" type="xs:decimal" minOccurs="0" />
-              <xs:element name="QTY_ORDERED" msprop:Generator_ColumnVarNameInTable="columnQTY_ORDERED" msprop:Generator_ColumnPropNameInRow="QTY_ORDERED" msprop:Generator_ColumnPropNameInTable="QTY_ORDEREDColumn" msprop:Generator_UserColumnName="QTY_ORDERED" type="xs:decimal" minOccurs="0" />
-              <xs:element name="QTY_SHIPPED" msprop:Generator_ColumnVarNameInTable="columnQTY_SHIPPED" msprop:Generator_ColumnPropNameInRow="QTY_SHIPPED" msprop:Generator_ColumnPropNameInTable="QTY_SHIPPEDColumn" msprop:Generator_UserColumnName="QTY_SHIPPED" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRODUCT_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NUMBER" msprop:Generator_ColumnPropNameInRow="PRODUCT_NUMBER" msprop:Generator_ColumnPropNameInTable="PRODUCT_NUMBERColumn" msprop:Generator_UserColumnName="PRODUCT_NUMBER" type="xs:int" />
+              <xs:element name="PRODUCT_PRICE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_PRICE" msprop:Generator_ColumnPropNameInRow="PRODUCT_PRICE" msprop:Generator_ColumnPropNameInTable="PRODUCT_PRICEColumn" msprop:Generator_UserColumnName="PRODUCT_PRICE" type="xs:double" minOccurs="0" />
+              <xs:element name="QTY_ORDERED" msprop:Generator_ColumnVarNameInTable="columnQTY_ORDERED" msprop:Generator_ColumnPropNameInRow="QTY_ORDERED" msprop:Generator_ColumnPropNameInTable="QTY_ORDEREDColumn" msprop:Generator_UserColumnName="QTY_ORDERED" type="xs:int" minOccurs="0" />
+              <xs:element name="QTY_SHIPPED" msprop:Generator_ColumnVarNameInTable="columnQTY_SHIPPED" msprop:Generator_ColumnPropNameInRow="QTY_SHIPPED" msprop:Generator_ColumnPropNameInTable="QTY_SHIPPEDColumn" msprop:Generator_UserColumnName="QTY_SHIPPED" type="xs:int" minOccurs="0" />
               <xs:element name="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="PRODUCT_NAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1570,11 +1585,10 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Clientes_Ordenes" msprop:Generator_TableClassName="Clientes_OrdenesDataTable" msprop:Generator_TableVarName="tableClientes_Ordenes" msprop:Generator_RowChangedName="Clientes_OrdenesRowChanged" msprop:Generator_TablePropName="Clientes_Ordenes" msprop:Generator_RowDeletingName="Clientes_OrdenesRowDeleting" msprop:Generator_RowChangingName="Clientes_OrdenesRowChanging" msprop:Generator_RowEvHandlerName="Clientes_OrdenesRowChangeEventHandler" msprop:Generator_RowDeletedName="Clientes_OrdenesRowDeleted" msprop:Generator_RowClassName="Clientes_OrdenesRow" msprop:Generator_UserTableName="Clientes_Ordenes" msprop:Generator_RowEvArgName="Clientes_OrdenesRowChangeEvent">
+        <xs:element name="VWREPORTEC" msprop:Generator_TableClassName="VWREPORTECDataTable" msprop:Generator_TableVarName="tableVWREPORTEC" msprop:Generator_TablePropName="VWREPORTEC" msprop:Generator_RowDeletingName="VWREPORTECRowDeleting" msprop:Generator_RowChangingName="VWREPORTECRowChanging" msprop:Generator_RowEvHandlerName="VWREPORTECRowChangeEventHandler" msprop:Generator_RowDeletedName="VWREPORTECRowDeleted" msprop:Generator_UserTableName="VWREPORTEC" msprop:Generator_RowChangedName="VWREPORTECRowChanged" msprop:Generator_RowEvArgName="VWREPORTECRowChangeEvent" msprop:Generator_RowClassName="VWREPORTECRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
@@ -1592,40 +1606,6 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="13" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Empleado_rpt" msprop:Generator_TableClassName="Empleado_rptDataTable" msprop:Generator_TableVarName="tableEmpleado_rpt" msprop:Generator_TablePropName="Empleado_rpt" msprop:Generator_RowDeletingName="Empleado_rptRowDeleting" msprop:Generator_RowChangingName="Empleado_rptRowChanging" msprop:Generator_RowEvHandlerName="Empleado_rptRowChangeEventHandler" msprop:Generator_RowDeletedName="Empleado_rptRowDeleted" msprop:Generator_UserTableName="Empleado_rpt" msprop:Generator_RowChangedName="Empleado_rptRowChanged" msprop:Generator_RowEvArgName="Empleado_rptRowChangeEvent" msprop:Generator_RowClassName="Empleado_rptRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="EMPLOYEE_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_NAME" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EMPLOYEE_LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_LAST_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_LAST_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_LAST_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_LAST_NAME">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TOTAL_ORDERS" msprop:Generator_ColumnVarNameInTable="columnTOTAL_ORDERS" msprop:Generator_ColumnPropNameInRow="TOTAL_ORDERS" msprop:Generator_ColumnPropNameInTable="TOTAL_ORDERSColumn" msprop:Generator_UserColumnName="TOTAL_ORDERS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="13" />
@@ -1699,31 +1679,25 @@ HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
       <xs:selector xpath=".//mstns:S_WAREHOUSE" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="Orders_rpt_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Orders_rpt" />
-      <xs:field xpath="mstns:REGION_NAME" />
-      <xs:field xpath="mstns:ORDER_NUMBER" />
-      <xs:field xpath="mstns:PRODUCT_NAME" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="S_CUSTOMER_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_CUSTOMER" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_CUSTOMER" msprop:Generator_ChildPropName="GetS_CUSTOMERRows" msprop:Generator_UserRelationName="S_CUSTOMER_REGION_ID_FK" msprop:Generator_RelationVarName="relationS_CUSTOMER_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" msprop:Generator_ParentPropName="S_REGIONRow" />
-      <msdata:Relationship name="S_SALES_REP_ID_FK" msdata:parent="S_EMP" msdata:child="S_CUSTOMER" msdata:parentkey="ID" msdata:childkey="SALES_REP_ID" msprop:Generator_UserChildTable="S_CUSTOMER" msprop:Generator_ChildPropName="GetS_CUSTOMERRows" msprop:Generator_UserRelationName="S_SALES_REP_ID_FK" msprop:Generator_RelationVarName="relationS_SALES_REP_ID_FK" msprop:Generator_UserParentTable="S_EMP" msprop:Generator_ParentPropName="S_EMPRow" />
-      <msdata:Relationship name="S_DEPT_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_DEPT" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_DEPT" msprop:Generator_ChildPropName="GetS_DEPTRows" msprop:Generator_UserRelationName="S_DEPT_REGION_ID_FK" msprop:Generator_RelationVarName="relationS_DEPT_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" msprop:Generator_ParentPropName="S_REGIONRow" />
-      <msdata:Relationship name="S_EMP_DEPT_ID_FK" msdata:parent="S_DEPT" msdata:child="S_EMP" msdata:parentkey="ID" msdata:childkey="DEPT_ID" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_DEPT_ID_FK" msprop:Generator_ParentPropName="S_DEPTRow" msprop:Generator_RelationVarName="relationS_EMP_DEPT_ID_FK" msprop:Generator_UserParentTable="S_DEPT" />
-      <msdata:Relationship name="S_EMP_MANAGER_ID_FK" msdata:parent="S_EMP" msdata:child="S_EMP" msdata:parentkey="ID" msdata:childkey="MANAGER_ID" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_MANAGER_ID_FK" msprop:Generator_RelationVarName="relationS_EMP_MANAGER_ID_FK" msprop:Generator_UserParentTable="S_EMP" msprop:Generator_ParentPropName="S_EMPRowParent" />
-      <msdata:Relationship name="S_EMP_TITLE_FK" msdata:parent="S_TITLE" msdata:child="S_EMP" msdata:parentkey="TITLE" msdata:childkey="TITLE" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_TITLE_FK" msprop:Generator_RelationVarName="relationS_EMP_TITLE_FK" msprop:Generator_UserParentTable="S_TITLE" msprop:Generator_ParentPropName="S_TITLERow" />
-      <msdata:Relationship name="S_INVENTORY_PRODUCT_ID_FK" msdata:parent="S_PRODUCT" msdata:child="S_INVENTORY" msdata:parentkey="ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="S_INVENTORY" msprop:Generator_ChildPropName="GetS_INVENTORYRows" msprop:Generator_UserRelationName="S_INVENTORY_PRODUCT_ID_FK" msprop:Generator_RelationVarName="relationS_INVENTORY_PRODUCT_ID_FK" msprop:Generator_UserParentTable="S_PRODUCT" msprop:Generator_ParentPropName="S_PRODUCTRow" />
-      <msdata:Relationship name="S_INVENTORY_WAREHOUSE_ID_FK" msdata:parent="S_WAREHOUSE" msdata:child="S_INVENTORY" msdata:parentkey="ID" msdata:childkey="WAREHOUSE_ID" msprop:Generator_UserChildTable="S_INVENTORY" msprop:Generator_ChildPropName="GetS_INVENTORYRows" msprop:Generator_UserRelationName="S_INVENTORY_WAREHOUSE_ID_FK" msprop:Generator_RelationVarName="relationS_INVENTORY_WAREHOUSE_ID_FK" msprop:Generator_UserParentTable="S_WAREHOUSE" msprop:Generator_ParentPropName="S_WAREHOUSERow" />
-      <msdata:Relationship name="S_ITEM_ORD_ID_FK" msdata:parent="S_ORD" msdata:child="S_ITEM" msdata:parentkey="ID" msdata:childkey="ORD_ID" msprop:Generator_UserChildTable="S_ITEM" msprop:Generator_ChildPropName="GetS_ITEMRows" msprop:Generator_UserRelationName="S_ITEM_ORD_ID_FK" msprop:Generator_RelationVarName="relationS_ITEM_ORD_ID_FK" msprop:Generator_UserParentTable="S_ORD" msprop:Generator_ParentPropName="S_ORDRow" />
-      <msdata:Relationship name="S_ITEM_PRODUCT_ID_FK" msdata:parent="S_PRODUCT" msdata:child="S_ITEM" msdata:parentkey="ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="S_ITEM" msprop:Generator_ChildPropName="GetS_ITEMRows" msprop:Generator_UserRelationName="S_ITEM_PRODUCT_ID_FK" msprop:Generator_RelationVarName="relationS_ITEM_PRODUCT_ID_FK" msprop:Generator_UserParentTable="S_PRODUCT" msprop:Generator_ParentPropName="S_PRODUCTRow" />
-      <msdata:Relationship name="S_ORD_CUSTOMER_ID_FK" msdata:parent="S_CUSTOMER" msdata:child="S_ORD" msdata:parentkey="ID" msdata:childkey="CUSTOMER_ID" msprop:Generator_UserChildTable="S_ORD" msprop:Generator_ChildPropName="GetS_ORDRows" msprop:Generator_UserRelationName="S_ORD_CUSTOMER_ID_FK" msprop:Generator_ParentPropName="S_CUSTOMERRow" msprop:Generator_RelationVarName="relationS_ORD_CUSTOMER_ID_FK" msprop:Generator_UserParentTable="S_CUSTOMER" />
-      <msdata:Relationship name="S_ORD_SALES_REP_ID_FK" msdata:parent="S_EMP" msdata:child="S_ORD" msdata:parentkey="ID" msdata:childkey="SALES_REP_ID" msprop:Generator_UserChildTable="S_ORD" msprop:Generator_ChildPropName="GetS_ORDRows" msprop:Generator_UserRelationName="S_ORD_SALES_REP_ID_FK" msprop:Generator_ParentPropName="S_EMPRow" msprop:Generator_RelationVarName="relationS_ORD_SALES_REP_ID_FK" msprop:Generator_UserParentTable="S_EMP" />
-      <msdata:Relationship name="S_PRODUCT_IMAGE_ID_FK" msdata:parent="S_IMAGE" msdata:child="S_PRODUCT" msdata:parentkey="ID" msdata:childkey="IMAGE_ID" msprop:Generator_UserChildTable="S_PRODUCT" msprop:Generator_ChildPropName="GetS_PRODUCTRows" msprop:Generator_UserRelationName="S_PRODUCT_IMAGE_ID_FK" msprop:Generator_ParentPropName="S_IMAGERow" msprop:Generator_RelationVarName="relationS_PRODUCT_IMAGE_ID_FK" msprop:Generator_UserParentTable="S_IMAGE" />
-      <msdata:Relationship name="S_PRODUCT_LONGTEXT_ID_FK" msdata:parent="S_LONGTEXT" msdata:child="S_PRODUCT" msdata:parentkey="ID" msdata:childkey="LONGTEXT_ID" msprop:Generator_UserChildTable="S_PRODUCT" msprop:Generator_ChildPropName="GetS_PRODUCTRows" msprop:Generator_UserRelationName="S_PRODUCT_LONGTEXT_ID_FK" msprop:Generator_ParentPropName="S_LONGTEXTRow" msprop:Generator_RelationVarName="relationS_PRODUCT_LONGTEXT_ID_FK" msprop:Generator_UserParentTable="S_LONGTEXT" />
-      <msdata:Relationship name="S_WAREHOUSE_MANAGER_ID_FK" msdata:parent="S_EMP" msdata:child="S_WAREHOUSE" msdata:parentkey="ID" msdata:childkey="MANAGER_ID" msprop:Generator_UserChildTable="S_WAREHOUSE" msprop:Generator_ChildPropName="GetS_WAREHOUSERows" msprop:Generator_UserRelationName="S_WAREHOUSE_MANAGER_ID_FK" msprop:Generator_ParentPropName="S_EMPRow" msprop:Generator_RelationVarName="relationS_WAREHOUSE_MANAGER_ID_FK" msprop:Generator_UserParentTable="S_EMP" />
-      <msdata:Relationship name="S_WAREHOUSE_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_WAREHOUSE" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_WAREHOUSE" msprop:Generator_ChildPropName="GetS_WAREHOUSERows" msprop:Generator_UserRelationName="S_WAREHOUSE_REGION_ID_FK" msprop:Generator_ParentPropName="S_REGIONRow" msprop:Generator_RelationVarName="relationS_WAREHOUSE_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" />
+      <msdata:Relationship name="S_CUSTOMER_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_CUSTOMER" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_CUSTOMER" msprop:Generator_ChildPropName="GetS_CUSTOMERRows" msprop:Generator_UserRelationName="S_CUSTOMER_REGION_ID_FK" msprop:Generator_ParentPropName="S_REGIONRow" msprop:Generator_RelationVarName="relationS_CUSTOMER_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" />
+      <msdata:Relationship name="S_SALES_REP_ID_FK" msdata:parent="S_EMP" msdata:child="S_CUSTOMER" msdata:parentkey="ID" msdata:childkey="SALES_REP_ID" msprop:Generator_UserChildTable="S_CUSTOMER" msprop:Generator_ChildPropName="GetS_CUSTOMERRows" msprop:Generator_UserRelationName="S_SALES_REP_ID_FK" msprop:Generator_ParentPropName="S_EMPRow" msprop:Generator_RelationVarName="relationS_SALES_REP_ID_FK" msprop:Generator_UserParentTable="S_EMP" />
+      <msdata:Relationship name="S_DEPT_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_DEPT" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_DEPT" msprop:Generator_ChildPropName="GetS_DEPTRows" msprop:Generator_UserRelationName="S_DEPT_REGION_ID_FK" msprop:Generator_ParentPropName="S_REGIONRow" msprop:Generator_RelationVarName="relationS_DEPT_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" />
+      <msdata:Relationship name="S_EMP_DEPT_ID_FK" msdata:parent="S_DEPT" msdata:child="S_EMP" msdata:parentkey="ID" msdata:childkey="DEPT_ID" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_DEPT_ID_FK" msprop:Generator_RelationVarName="relationS_EMP_DEPT_ID_FK" msprop:Generator_UserParentTable="S_DEPT" msprop:Generator_ParentPropName="S_DEPTRow" />
+      <msdata:Relationship name="S_EMP_MANAGER_ID_FK" msdata:parent="S_EMP" msdata:child="S_EMP" msdata:parentkey="ID" msdata:childkey="MANAGER_ID" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_MANAGER_ID_FK" msprop:Generator_ParentPropName="S_EMPRowParent" msprop:Generator_RelationVarName="relationS_EMP_MANAGER_ID_FK" msprop:Generator_UserParentTable="S_EMP" />
+      <msdata:Relationship name="S_EMP_TITLE_FK" msdata:parent="S_TITLE" msdata:child="S_EMP" msdata:parentkey="TITLE" msdata:childkey="TITLE" msprop:Generator_UserChildTable="S_EMP" msprop:Generator_ChildPropName="GetS_EMPRows" msprop:Generator_UserRelationName="S_EMP_TITLE_FK" msprop:Generator_ParentPropName="S_TITLERow" msprop:Generator_RelationVarName="relationS_EMP_TITLE_FK" msprop:Generator_UserParentTable="S_TITLE" />
+      <msdata:Relationship name="S_INVENTORY_PRODUCT_ID_FK" msdata:parent="S_PRODUCT" msdata:child="S_INVENTORY" msdata:parentkey="ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="S_INVENTORY" msprop:Generator_ChildPropName="GetS_INVENTORYRows" msprop:Generator_UserRelationName="S_INVENTORY_PRODUCT_ID_FK" msprop:Generator_ParentPropName="S_PRODUCTRow" msprop:Generator_RelationVarName="relationS_INVENTORY_PRODUCT_ID_FK" msprop:Generator_UserParentTable="S_PRODUCT" />
+      <msdata:Relationship name="S_INVENTORY_WAREHOUSE_ID_FK" msdata:parent="S_WAREHOUSE" msdata:child="S_INVENTORY" msdata:parentkey="ID" msdata:childkey="WAREHOUSE_ID" msprop:Generator_UserChildTable="S_INVENTORY" msprop:Generator_ChildPropName="GetS_INVENTORYRows" msprop:Generator_UserRelationName="S_INVENTORY_WAREHOUSE_ID_FK" msprop:Generator_ParentPropName="S_WAREHOUSERow" msprop:Generator_RelationVarName="relationS_INVENTORY_WAREHOUSE_ID_FK" msprop:Generator_UserParentTable="S_WAREHOUSE" />
+      <msdata:Relationship name="S_ITEM_ORD_ID_FK" msdata:parent="S_ORD" msdata:child="S_ITEM" msdata:parentkey="ID" msdata:childkey="ORD_ID" msprop:Generator_UserChildTable="S_ITEM" msprop:Generator_ChildPropName="GetS_ITEMRows" msprop:Generator_UserRelationName="S_ITEM_ORD_ID_FK" msprop:Generator_ParentPropName="S_ORDRow" msprop:Generator_RelationVarName="relationS_ITEM_ORD_ID_FK" msprop:Generator_UserParentTable="S_ORD" />
+      <msdata:Relationship name="S_ITEM_PRODUCT_ID_FK" msdata:parent="S_PRODUCT" msdata:child="S_ITEM" msdata:parentkey="ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="S_ITEM" msprop:Generator_ChildPropName="GetS_ITEMRows" msprop:Generator_UserRelationName="S_ITEM_PRODUCT_ID_FK" msprop:Generator_ParentPropName="S_PRODUCTRow" msprop:Generator_RelationVarName="relationS_ITEM_PRODUCT_ID_FK" msprop:Generator_UserParentTable="S_PRODUCT" />
+      <msdata:Relationship name="S_ORD_CUSTOMER_ID_FK" msdata:parent="S_CUSTOMER" msdata:child="S_ORD" msdata:parentkey="ID" msdata:childkey="CUSTOMER_ID" msprop:Generator_UserChildTable="S_ORD" msprop:Generator_ChildPropName="GetS_ORDRows" msprop:Generator_UserRelationName="S_ORD_CUSTOMER_ID_FK" msprop:Generator_RelationVarName="relationS_ORD_CUSTOMER_ID_FK" msprop:Generator_UserParentTable="S_CUSTOMER" msprop:Generator_ParentPropName="S_CUSTOMERRow" />
+      <msdata:Relationship name="S_ORD_SALES_REP_ID_FK" msdata:parent="S_EMP" msdata:child="S_ORD" msdata:parentkey="ID" msdata:childkey="SALES_REP_ID" msprop:Generator_UserChildTable="S_ORD" msprop:Generator_ChildPropName="GetS_ORDRows" msprop:Generator_UserRelationName="S_ORD_SALES_REP_ID_FK" msprop:Generator_RelationVarName="relationS_ORD_SALES_REP_ID_FK" msprop:Generator_UserParentTable="S_EMP" msprop:Generator_ParentPropName="S_EMPRow" />
+      <msdata:Relationship name="S_PRODUCT_IMAGE_ID_FK" msdata:parent="S_IMAGE" msdata:child="S_PRODUCT" msdata:parentkey="ID" msdata:childkey="IMAGE_ID" msprop:Generator_UserChildTable="S_PRODUCT" msprop:Generator_ChildPropName="GetS_PRODUCTRows" msprop:Generator_UserRelationName="S_PRODUCT_IMAGE_ID_FK" msprop:Generator_RelationVarName="relationS_PRODUCT_IMAGE_ID_FK" msprop:Generator_UserParentTable="S_IMAGE" msprop:Generator_ParentPropName="S_IMAGERow" />
+      <msdata:Relationship name="S_PRODUCT_LONGTEXT_ID_FK" msdata:parent="S_LONGTEXT" msdata:child="S_PRODUCT" msdata:parentkey="ID" msdata:childkey="LONGTEXT_ID" msprop:Generator_UserChildTable="S_PRODUCT" msprop:Generator_ChildPropName="GetS_PRODUCTRows" msprop:Generator_UserRelationName="S_PRODUCT_LONGTEXT_ID_FK" msprop:Generator_RelationVarName="relationS_PRODUCT_LONGTEXT_ID_FK" msprop:Generator_UserParentTable="S_LONGTEXT" msprop:Generator_ParentPropName="S_LONGTEXTRow" />
+      <msdata:Relationship name="S_WAREHOUSE_MANAGER_ID_FK" msdata:parent="S_EMP" msdata:child="S_WAREHOUSE" msdata:parentkey="ID" msdata:childkey="MANAGER_ID" msprop:Generator_UserChildTable="S_WAREHOUSE" msprop:Generator_ChildPropName="GetS_WAREHOUSERows" msprop:Generator_UserRelationName="S_WAREHOUSE_MANAGER_ID_FK" msprop:Generator_RelationVarName="relationS_WAREHOUSE_MANAGER_ID_FK" msprop:Generator_UserParentTable="S_EMP" msprop:Generator_ParentPropName="S_EMPRow" />
+      <msdata:Relationship name="S_WAREHOUSE_REGION_ID_FK" msdata:parent="S_REGION" msdata:child="S_WAREHOUSE" msdata:parentkey="ID" msdata:childkey="REGION_ID" msprop:Generator_UserChildTable="S_WAREHOUSE" msprop:Generator_ChildPropName="GetS_WAREHOUSERows" msprop:Generator_UserRelationName="S_WAREHOUSE_REGION_ID_FK" msprop:Generator_RelationVarName="relationS_WAREHOUSE_REGION_ID_FK" msprop:Generator_UserParentTable="S_REGION" msprop:Generator_ParentPropName="S_REGIONRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

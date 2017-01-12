@@ -55,7 +55,6 @@
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
@@ -80,10 +79,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formas\AboutBox1.Designer.vb">
+    <Compile Include="AboutBox1.Designer.vb">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\AboutBox1.vb">
+    <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataSetOracle.Designer.vb">
@@ -94,46 +93,52 @@
     <Compile Include="DataSetOracle.vb">
       <DependentUpon>DataSetOracle.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formas\frmClientes.Designer.vb">
+    <Compile Include="frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\frmClientes.vb">
+    <Compile Include="frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formas\frmEmpleados.Designer.vb">
+    <Compile Include="frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\frmEmpleados.vb">
+    <Compile Include="frmEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formas\frmOrdenes.Designer.vb">
+    <Compile Include="frmOrdenes.Designer.vb">
       <DependentUpon>frmOrdenes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\frmOrdenes.vb">
+    <Compile Include="frmOrdenes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formas\frmProductos.Designer.vb">
+    <Compile Include="frmProductos.Designer.vb">
       <DependentUpon>frmProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\frmProductos.vb">
+    <Compile Include="frmProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formas\Informes.Designer.vb">
-      <DependentUpon>Informes.vb</DependentUpon>
+    <Compile Include="frmReporteA.Designer.vb">
+      <DependentUpon>frmReporteA.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\Informes.vb">
+    <Compile Include="frmReporteA.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formas\Login.Designer.vb">
+    <Compile Include="frmReporteB.Designer.vb">
+      <DependentUpon>frmReporteB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteC.Designer.vb">
+      <DependentUpon>frmReporteC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formas\Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formas\Reports.Designer.vb">
-      <DependentUpon>Reports.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formas\Reports.vb">
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.vb">
@@ -159,31 +164,40 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SplashSummit.Designer.vb">
+      <DependentUpon>SplashSummit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashSummit.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formas\AboutBox1.resx">
+    <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\frmClientes.resx">
+    <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\frmEmpleados.resx">
+    <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\frmOrdenes.resx">
+    <EmbeddedResource Include="frmOrdenes.resx">
       <DependentUpon>frmOrdenes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\frmProductos.resx">
+    <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\Informes.resx">
-      <DependentUpon>Informes.vb</DependentUpon>
+    <EmbeddedResource Include="frmReporteA.resx">
+      <DependentUpon>frmReporteA.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formas\Login.resx">
+    <EmbeddedResource Include="frmReporteB.resx">
+      <DependentUpon>frmReporteB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteC.resx">
+      <DependentUpon>frmReporteC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formas\Reports.resx">
-      <DependentUpon>Reports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
@@ -194,9 +208,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\ClientesFecha.rdlc" />
-    <EmbeddedResource Include="Reports\Empleados.rdlc" />
-    <EmbeddedResource Include="Reports\OrdenesClientes.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReporteB.rdlc" />
+    <EmbeddedResource Include="ReporteC.rdlc" />
+    <EmbeddedResource Include="SplashSummit.resx">
+      <DependentUpon>SplashSummit.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSetOracle.xsc">

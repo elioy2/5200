@@ -1,8 +1,4 @@
 ﻿Public Class MainForm
-
-    Public Shared report As String = ""
-
-
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -37,22 +33,23 @@
         Me.Hide()
     End Sub
 
-
-    Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
-        'esto no funciona solo queria tener 1 forma para todos los reportes, le hago el load pero me falta el DataSources 
-        MainForm.report = "Empleados"
-        Informes.Show()
+    Private Sub ReporteAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteAToolStripMenuItem.Click
+        Me.Hide()
+        frmReporteA.Show()
     End Sub
 
-    Private Sub OrdenesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles OrdenesToolStripMenuItem1.Click
-        'same here
-        MainForm.report = "OrdenesClientes"
-        Informes.Show()
+    Private Sub ReporteBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteBToolStripMenuItem.Click
+        Me.Hide()
+        frmReporteB.Show()
     End Sub
 
-    Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
-        'same here
-        MainForm.report = "ClientesFecha"
-        Informes.Show()
+    Private Sub ReporteCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteCToolStripMenuItem.Click
+        Me.Hide()
+        frmReporteC.Show()
+    End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.Text = Today
+        Label3.Text = user
     End Sub
 End Class
