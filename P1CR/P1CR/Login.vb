@@ -12,7 +12,7 @@
         Dim passv As String
         Dim statusv As Integer
         'Query para seleccionar datos del usuario
-        sqlStr = "Select  USERID, password, status, FIRST_NAME, LAST_NAME from S_EMP where USERID='" + txtuser.Text + "'"
+        sqlStr = "Select  UPPER(USERID), password, status, FIRST_NAME, LAST_NAME from S_EMP where UPPER(USERID)='" + txtuser.Text.ToUpper() + "'"
         Try
             'Declaro connection string
             Dim connectionString As String = oradb
@@ -34,7 +34,7 @@
                 user = table.Rows(0).ItemArray(3).ToString() & " " & table.Rows(0).ItemArray(4).ToString()
 
                 'Si el usuario existe ejecuto
-                If txtuser.Text = userv Then
+                If txtuser.Text.ToUpper() = userv Then
                     'Si el usuario esta activo ejecuto
                     If statusv = "1" Then
                         'Le añado un intento al usuario
@@ -76,7 +76,7 @@
                 MessageBox.Show("Ha sobrepasado los intentos permitidos, su cuenta ha sido desactivada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Me.Close()
             End If
-        Catch ex As DataException
+        Catch ex As Exception
             MessageBox.Show("La base de datos no se encuentra disponible")
         End Try
 
