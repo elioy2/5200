@@ -33,7 +33,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub ReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportToolStripMenuItem.Click
+    Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
         InformeEmpleados_clientes.Show()
     End Sub
 End Class

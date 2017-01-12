@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>EMPLOYEE NAME</Value>
+                              <Value>NOMBRE DE EMPLEADO</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -60,7 +60,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLIENT NAME</Value>
+                              <Value>NOMBRE DE CLIENTE</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -92,7 +92,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TOTAL ORDERS</Value>
+                              <Value>TOTAL DE ORDENES</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
