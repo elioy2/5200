@@ -71,6 +71,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:P1CR.DataSetOracle.Report1DataTableDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:P1CR.DataSetOracle.S_CUSTOMERRow">
 <summary>
 Represents strongly named DataRow class.
@@ -127,6 +132,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:P1CR.DataSetOracle.S_WAREHOUSERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracle.Report1DataTableRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -191,6 +201,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:P1CR.DataSetOracle.Report1DataTableRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:P1CR.DataSetOracleTableAdapters.S_CUSTOMERTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -247,6 +262,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:P1CR.DataSetOracleTableAdapters.S_WAREHOUSETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:P1CR.DataSetOracleTableAdapters.Report1DataTableTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

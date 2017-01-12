@@ -2,9 +2,10 @@
 <xs:schema id="DataSetOracle" targetNamespace="http://tempuri.org/DataSetOracle.xsd" xmlns:mstns="http://tempuri.org/DataSetOracle.xsd" xmlns="http://tempuri.org/DataSetOracle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringOracle" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringOracle (MySettings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringOracle" Provider="Oracle.ManagedDataAccess.Client" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringOracle" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringOracle (MySettings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringOracle" Provider="Oracle.ManagedDataAccess.Client" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringForReport" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringForReport (MySettings)" PropertyReference="ApplicationSettings.P1CR.My.MySettings.GlobalReference.Default.ConnectionStringForReport" Provider="System.Data.OracleClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="S_CUSTOMERTableAdapter" GeneratorDataComponentClassName="S_CUSTOMERTableAdapter" Name="S_CUSTOMER" UserDataComponentName="S_CUSTOMERTableAdapter">
@@ -1019,6 +1020,29 @@ WHERE UPPER("NAME") LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Report1DataTableTableAdapter" GeneratorDataComponentClassName="Report1DataTableTableAdapter" Name="Report1DataTable" UserDataComponentName="Report1DataTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringForReport (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fillrpt" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetEmpData" GeneratorSourceName="Fillrpt" GetMethodModifier="Public" GetMethodName="GetEmpData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEmpData" UserSourceName="Fillrpt">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        E.FIRST_NAME AS EMPLOYEE_NAME, E.LAST_NAME AS EMPLOYEE_LAST_NAME, C.NAME AS CLIENT_NAME, to_char(SUM(O.TOTAL), '$9999,999.99') AS TOTAL_ORDERS
+FROM            S_CUSTOMER C, S_ORD O, S_EMP E
+WHERE        O.CUSTOMER_ID = C.ID AND E.ID = C.SALES_REP_ID
+GROUP BY C.NAME, E.FIRST_NAME, E.LAST_NAME
+HAVING        (SUM(O.TOTAL) &gt; 1000)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EMPLOYEE_NAME" DataSetColumn="EMPLOYEE_NAME" />
+              <Mapping SourceColumn="EMPLOYEE_LAST_NAME" DataSetColumn="EMPLOYEE_LAST_NAME" />
+              <Mapping SourceColumn="CLIENT_NAME" DataSetColumn="CLIENT_NAME" />
+              <Mapping SourceColumn="TOTAL_ORDERS" DataSetColumn="TOTAL_ORDERS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1389,6 +1413,40 @@ WHERE UPPER("NAME") LIKE CONCAT( '%', CONCAT(UPPER(:name) , '%'))</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MANAGER_ID" msprop:Generator_ColumnVarNameInTable="columnMANAGER_ID" msprop:Generator_ColumnPropNameInRow="MANAGER_ID" msprop:Generator_ColumnPropNameInTable="MANAGER_IDColumn" msprop:Generator_UserColumnName="MANAGER_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Report1DataTable" msprop:Generator_TableClassName="Report1DataTableDataTable" msprop:Generator_TableVarName="tableReport1DataTable" msprop:Generator_RowChangedName="Report1DataTableRowChanged" msprop:Generator_TablePropName="Report1DataTable" msprop:Generator_RowDeletingName="Report1DataTableRowDeleting" msprop:Generator_RowChangingName="Report1DataTableRowChanging" msprop:Generator_RowEvHandlerName="Report1DataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="Report1DataTableRowDeleted" msprop:Generator_RowClassName="Report1DataTableRow" msprop:Generator_UserTableName="Report1DataTable" msprop:Generator_RowEvArgName="Report1DataTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPLOYEE_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMPLOYEE_LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_LAST_NAME" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_LAST_NAME" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_LAST_NAMEColumn" msprop:Generator_UserColumnName="EMPLOYEE_LAST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" msprop:Generator_UserColumnName="CLIENT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTAL_ORDERS" msprop:Generator_ColumnVarNameInTable="columnTOTAL_ORDERS" msprop:Generator_ColumnPropNameInRow="TOTAL_ORDERS" msprop:Generator_ColumnPropNameInTable="TOTAL_ORDERSColumn" msprop:Generator_UserColumnName="TOTAL_ORDERS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

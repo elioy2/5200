@@ -57,10 +57,20 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=localhost:1521/xe;PASSWORD=05c28r92;USER ID=ELCARLOS")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=Shadow-Ghost/xe;PASSWORD=qazplm741;USER ID=system")>  _
         Public ReadOnly Property ConnectionStringOracle() As String
             Get
                 Return CType(Me("ConnectionStringOracle"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=Shadow-Ghost;User ID=system;Password=qazplm741;Unicode=True")>  _
+        Public ReadOnly Property ConnectionStringForReport() As String
+            Get
+                Return CType(Me("ConnectionStringForReport"),String)
             End Get
         End Property
     End Class
